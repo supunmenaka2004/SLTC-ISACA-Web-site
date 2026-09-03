@@ -7,7 +7,6 @@ export default function Preloader() {
   const [mounted, setMounted] = useState(false);
   const [loading, setLoading] = useState(true);
   const [progress, setProgress] = useState(0);
-  const [statusText, setStatusText] = useState("INITIALIZING SYSTEM");
 
   useEffect(() => {
     setMounted(true);
@@ -19,21 +18,12 @@ export default function Preloader() {
         currentProgress = 100;
         clearInterval(interval);
       }
-      
       setProgress(currentProgress);
-
-      if (currentProgress >= 85) {
-        setStatusText("ACCESS GRANTED");
-      } else if (currentProgress >= 45) {
-        setStatusText("SECURITY PROTOCOLS READY");
-      } else {
-        setStatusText("INITIALIZING SYSTEM");
-      }
     }, 35);
 
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 2100);
 
     return () => {
       clearInterval(interval);
@@ -43,65 +33,88 @@ export default function Preloader() {
 
   if (!mounted || !loading) return null;
 
+  // Calculate SVG stroke dashoffset for circular progress ring
+  const radius = 68;
+  const circumference = 2 * Math.PI * radius;
+  const strokeDashoffset = circumference - (progress / 100) * circumference;
+
   return (
     <AnimatePresence mode="wait">
       {loading && (
         <motion.div
-          key="icasa-hud-preloader"
+          key="icasa-quantum-preloader"
           initial={{ opacity: 1 }}
-          exit={{ opacity: 0, scale: 0.98, filter: "blur(6px)" }}
-          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed inset-0 z-[9999] bg-[#02060d] flex flex-col items-center justify-center font-sans overflow-hidden select-none"
+          exit={{ opacity: 0, scale: 1.03, filter: "blur(10px)" }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="fixed inset-0 z-[9999] bg-[#02050b] flex flex-col items-center justify-center font-sans overflow-hidden select-none"
         >
-          {/* Ambient Deep Cyan Glow */}
-          <div className="absolute w-[500px] h-[500px] bg-cyan-600/10 rounded-full blur-[140px] pointer-events-none" />
+          {/* Deep Ambient Soft Radial Cyan Glow */}
+          <div className="absolute w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[150px] pointer-events-none" />
 
-          {/* Subtle Vertical Scanning Laser Line */}
-          <motion.div
-            initial={{ y: "-100%" }}
-            animate={{ y: "1000%" }}
-            transition={{ duration: 2, ease: "linear", repeat: Infinity }}
-            className="absolute inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent pointer-events-none"
-          />
-
-          {/* Seamless Central HUD Wrapper - NO Boxes */}
-          <div className="relative z-10 flex flex-col items-center px-6 text-center">
+          {/* Central Logo & Circular HUD Progress Arc Wrapper */}
+          <div className="relative z-10 flex flex-col items-center px-6">
             
-            {/* Logo Wrapper with Brightness Enhancement & Smooth Scale Fade */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.94 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-              className="relative mb-10"
-            >
-              <img
-                src="/isaca_transparent.png"
-                alt="ICASA Student Group Sri Lanka Technology Campus"
-                className="w-[260px] sm:w-[340px] h-auto object-contain brightness-[1.65] contrast-[1.15] drop-shadow-[0_0_35px_rgba(56,189,248,0.25)]"
-              />
-            </motion.div>
-
-            {/* Ultra-Clean Minimalist Cyber Progress Arc & Line */}
-            <div className="w-60 sm:w-72 flex flex-col items-center gap-4">
+            <div className="relative flex items-center justify-center mb-8">
               
-              {/* Minimalist Glowing Laser Progress Line */}
-              <div className="w-full h-1 rounded-full bg-slate-900 overflow-hidden relative border border-slate-800 shadow-inner">
-                <div
-                  className="h-full bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-500 rounded-full transition-all duration-75 shadow-[0_0_10px_#06b6d4]"
-                  style={{ width: `${progress}%` }}
+              {/* SVG Glowing Circular Progress Ring */}
+              <svg className="w-56 h-56 -rotate-90 pointer-events-none" viewBox="0 0 160 160">
+                {/* Outer Static Track Ring */}
+                <circle
+                  cx="80"
+                  cy="80"
+                  r={radius}
+                  className="text-slate-800/60"
+                  strokeWidth="2.5"
+                  stroke="currentColor"
+                  fill="transparent"
                 />
+                {/* Animated Glowing Gradient Progress Arc */}
+                <motion.circle
+                  cx="80"
+                  cy="80"
+                  r={radius}
+                  stroke="url(#cyan-gradient)"
+                  strokeWidth="3.5"
+                  strokeLinecap="round"
+                  fill="transparent"
+                  strokeDasharray={circumference}
+                  style={{ strokeDashoffset }}
+                  transition={{ ease: "easeOut" }}
+                />
+                <defs>
+                  <linearGradient id="cyan-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#38bdf8" />
+                    <stop offset="50%" stopColor="#3b82f6" />
+                    <stop offset="100%" stopColor="#6366f1" />
+                  </linearGradient>
+                </defs>
+              </svg>
+
+              {/* Logo Centered Inside the Ring */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="absolute inset-0 flex items-center justify-center p-6"
+              >
+                <img
+                  src="/isaca_transparent.png"
+                  alt="ICASA Student Group Sri Lanka Technology Campus"
+                  className="w-[220px] sm:w-[260px] h-auto object-contain brightness-[1.65] contrast-[1.15] drop-shadow-[0_0_25px_rgba(56,189,248,0.3)]"
+                />
+              </motion.div>
+
+            </div>
+
+            {/* Clean Monospaced Minimal Status & Percentage Display */}
+            <div className="flex flex-col items-center gap-2">
+              <div className="text-xs font-mono font-bold tracking-[0.25em] text-cyan-400 uppercase">
+                {progress < 100 ? "INITIALIZING ICASA SYSTEM" : "SYSTEM ACCESS GRANTED"}
               </div>
 
-              {/* Status Indicator Text */}
-              <div className="flex items-center gap-3 text-xs font-mono font-bold tracking-widest uppercase">
-                <span className={progress >= 85 ? "text-emerald-400 drop-shadow-[0_0_8px_#10b981]" : "text-cyan-400"}>
-                  {statusText}
-                </span>
-                <span className="text-slate-400 font-medium">
-                  [{progress}%]
-                </span>
+              <div className="text-sm font-mono font-medium text-slate-300 tracking-widest">
+                [ {progress}% ]
               </div>
-
             </div>
 
           </div>
