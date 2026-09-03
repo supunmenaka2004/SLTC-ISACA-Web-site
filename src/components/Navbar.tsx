@@ -22,7 +22,7 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 px-3 sm:px-6 pt-3 sm:pt-4 pointer-events-none">
+    <header className="fixed top-0 left-0 right-0 z-50 px-3 sm:px-6 pt-3 sm:pt-4 pointer-events-none transform-gpu">
       <div className="max-w-7xl mx-auto pointer-events-auto">
         
         {/* Floating Horizontal Pill Navbar */}

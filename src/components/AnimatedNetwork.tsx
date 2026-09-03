@@ -30,7 +30,8 @@ export default function AnimatedNetwork() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    let animId: number;
+    let animId: number | null = null;
+    let isVisible = true;
 
     const updateSize = () => {
       const rect = canvas.parentElement?.getBoundingClientRect();
@@ -43,15 +44,6 @@ export default function AnimatedNetwork() {
 
     let { w, h } = updateSize();
 
-    const handleResize = () => {
-      const size = updateSize();
-      w = size.w;
-      h = size.h;
-      initNodes();
-    };
-
-    window.addEventListener("resize", handleResize);
-
     let nodes: Node[] = [];
     let signals: PulseSignal[] = [];
 
@@ -59,14 +51,15 @@ export default function AnimatedNetwork() {
       nodes = [];
       signals = [];
 
-      const count = w < 768 ? 40 : 85;
+      // Optimized node count for 60 FPS smooth performance
+      const count = w < 768 ? 30 : 60;
 
       for (let i = 0; i < count; i++) {
         nodes.push({
           x: Math.random() * w,
           y: Math.random() * h,
-          vx: (Math.random() - 0.5) * 0.6,
-          vy: (Math.random() - 0.5) * 0.6,
+          vx: (Math.random() - 0.5) * 0.5,
+          vy: (Math.random() - 0.5) * 0.5,
           radius: 1.5 + Math.random() * 2,
           alpha: 0.3 + Math.random() * 0.5,
           pulse: Math.random() * Math.PI * 2,
@@ -77,14 +70,26 @@ export default function AnimatedNetwork() {
 
     initNodes();
 
-    const maxDist = w < 768 ? 110 : 160;
+    const handleResize = () => {
+      const size = updateSize();
+      w = size.w;
+      h = size.h;
+      initNodes();
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    const maxDist = w < 768 ? 110 : 150;
+    const maxDistSq = maxDist * maxDist; // Use squared distance to avoid Math.sqrt in loop
 
     const loop = () => {
-      // Pitch dark midnight background fill (#02060d)
+      if (!isVisible) return; // Pause animation loop completely when scrolled out of view!
+
+      // 1. Pitch dark midnight background fill (#02060d)
       ctx.fillStyle = "#02060d";
       ctx.fillRect(0, 0, w, h);
 
-      // Deep dark radial glow
+      // 2. Deep dark radial glow
       const grad = ctx.createRadialGradient(w / 2, h / 2, 40, w / 2, h / 2, Math.max(w, h));
       grad.addColorStop(0, "#061324");
       grad.addColorStop(0.6, "#030814");
@@ -92,7 +97,7 @@ export default function AnimatedNetwork() {
       ctx.fillStyle = grad;
       ctx.fillRect(0, 0, w, h);
 
-      // 1. Move and update nodes
+      // 3. Move and update nodes
       for (let i = 0; i < nodes.length; i++) {
         const n = nodes[i];
         n.x += n.vx;
@@ -106,16 +111,17 @@ export default function AnimatedNetwork() {
         n.pulse += n.pulseSpeed;
       }
 
-      // 2. Draw connecting lines
+      // 4. Draw connecting lines using fast squared distance checks
       for (let i = 0; i < nodes.length; i++) {
         for (let j = i + 1; j < nodes.length; j++) {
           const n1 = nodes[i];
           const n2 = nodes[j];
           const dx = n2.x - n1.x;
           const dy = n2.y - n1.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
+          const distSq = dx * dx + dy * dy;
 
-          if (dist < maxDist) {
+          if (distSq < maxDistSq) {
+            const dist = Math.sqrt(distSq); // Only calculate Math.sqrt for connected nodes!
             const lineOpacity = (1 - dist / maxDist) * 0.35;
             ctx.beginPath();
             ctx.moveTo(n1.x, n1.y);
@@ -125,7 +131,7 @@ export default function AnimatedNetwork() {
             ctx.stroke();
 
             // Randomly create travelling pulse signal along line
-            if (Math.random() < 0.0008 && signals.length < 8) {
+            if (Math.random() < 0.0008 && signals.length < 6) {
               signals.push({
                 fromIdx: i,
                 toIdx: j,
@@ -137,7 +143,7 @@ export default function AnimatedNetwork() {
         }
       }
 
-      // 3. Draw nodes
+      // 5. Draw nodes
       for (let i = 0; i < nodes.length; i++) {
         const n = nodes[i];
         const currentRadius = n.radius + Math.sin(n.pulse) * 0.6;
@@ -156,7 +162,7 @@ export default function AnimatedNetwork() {
         ctx.fill();
       }
 
-      // 4. Draw travelling data signals
+      // 6. Draw travelling data signals
       for (let s = signals.length - 1; s >= 0; s--) {
         const sig = signals[s];
         const n1 = nodes[sig.fromIdx];
@@ -184,18 +190,36 @@ export default function AnimatedNetwork() {
       animId = requestAnimationFrame(loop);
     };
 
-    loop();
+    // IntersectionObserver to pause loop when scrolled out of viewport
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        isVisible = entry.isIntersecting;
+        if (isVisible && !animId) {
+          loop();
+        } else if (!isVisible && animId) {
+          cancelAnimationFrame(animId);
+          animId = null;
+        }
+      },
+      { threshold: 0.05 }
+    );
+
+    observer.observe(canvas);
 
     return () => {
       window.removeEventListener("resize", handleResize);
-      cancelAnimationFrame(animId);
+      observer.disconnect();
+      if (animId) {
+        cancelAnimationFrame(animId);
+      }
     };
   }, []);
 
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full pointer-events-none z-0 block"
+      className="absolute inset-0 w-full h-full pointer-events-none z-0 block will-change-transform"
     />
   );
 }
