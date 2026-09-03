@@ -107,7 +107,7 @@ export default function Preloader() {
 
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2200);
+    }, 2000);
 
     return () => {
       clearInterval(interval);
@@ -121,14 +121,10 @@ export default function Preloader() {
     <AnimatePresence mode="wait">
       {loading && (
         <motion.div
-          key="icasa-cyber-preloader-exit"
+          key="icasa-cyber-bg-preloader"
           initial={{ opacity: 1 }}
-          exit={{
-            opacity: 0,
-            scale: 1.08,
-            filter: "blur(16px)",
-          }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          exit={{ opacity: 0, scale: 0.98, filter: "blur(8px)" }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="fixed inset-0 z-[9999] bg-[#02050b] flex flex-col items-center justify-center font-sans overflow-hidden select-none pointer-events-none"
         >
           {/* Cyber Network Canvas Background Layer */}
@@ -157,26 +153,9 @@ export default function Preloader() {
             </div>
           </div>
 
-          {/* Top Sliding Cyber Shutter Panel (Exit Animation) */}
-          <motion.div
-            exit={{ y: "-100%" }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute top-0 inset-x-0 h-1/2 bg-[#02050b] border-b border-cyan-500/30 z-1"
-          />
-
-          {/* Bottom Sliding Cyber Shutter Panel (Exit Animation) */}
-          <motion.div
-            exit={{ y: "100%" }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute bottom-0 inset-x-0 h-1/2 bg-[#02050b] border-t border-cyan-500/30 z-1"
-          />
-
-          {/* Central Logo & Progress Content Container (Fades & Zooms on Exit) */}
-          <motion.div
-            exit={{ scale: 1.1, opacity: 0 }}
-            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="relative z-10 flex flex-col items-center px-6 text-center"
-          >
+          {/* Central Logo & Progress Content Container */}
+          <div className="relative z-10 flex flex-col items-center px-6 text-center">
+            
             {/* Pure ICASA Logo Display */}
             <motion.div
               initial={{ opacity: 0, scale: 0.94 }}
@@ -204,7 +183,7 @@ export default function Preloader() {
 
               {/* Status Indicator & Percentage Display */}
               <div className="flex items-center gap-3 text-xs font-mono font-bold tracking-widest uppercase">
-                <span className={progress >= 85 ? "text-emerald-400 drop-shadow-[0_0_10px_#10b981]" : "text-cyan-400"}>
+                <span className={progress >= 85 ? "text-emerald-400 drop-shadow-[0_0_8px_#10b981]" : "text-cyan-400"}>
                   {statusText}
                 </span>
                 <span className="text-slate-400 font-medium">
@@ -213,7 +192,8 @@ export default function Preloader() {
               </div>
 
             </div>
-          </motion.div>
+
+          </div>
         </motion.div>
       )}
     </AnimatePresence>
