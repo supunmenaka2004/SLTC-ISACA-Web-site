@@ -38,7 +38,6 @@ export default function Preloader() {
         const render = () => {
           ctx.clearRect(0, 0, w, h);
 
-          // Draw connecting cyber lines
           for (let i = 0; i < nodes.length; i++) {
             for (let j = i + 1; j < nodes.length; j++) {
               const n1 = nodes[i];
@@ -59,7 +58,6 @@ export default function Preloader() {
             }
           }
 
-          // Draw node dots
           for (let i = 0; i < nodes.length; i++) {
             const n = nodes[i];
             n.x += n.vx;
@@ -109,7 +107,7 @@ export default function Preloader() {
 
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 2200);
 
     return () => {
       clearInterval(interval);
@@ -123,25 +121,29 @@ export default function Preloader() {
     <AnimatePresence mode="wait">
       {loading && (
         <motion.div
-          key="icasa-cyber-bg-preloader"
+          key="icasa-cyber-preloader-exit"
           initial={{ opacity: 1 }}
-          exit={{ opacity: 0, scale: 0.98, filter: "blur(8px)" }}
-          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed inset-0 z-[9999] bg-[#02050b] flex flex-col items-center justify-center font-sans overflow-hidden select-none"
+          exit={{
+            opacity: 0,
+            scale: 1.08,
+            filter: "blur(16px)",
+          }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="fixed inset-0 z-[9999] bg-[#02050b] flex flex-col items-center justify-center font-sans overflow-hidden select-none pointer-events-none"
         >
-          {/* 1. Cyber Network Canvas Background Layer */}
+          {/* Cyber Network Canvas Background Layer */}
           <canvas
             ref={canvasRef}
             className="absolute inset-0 w-full h-full pointer-events-none z-0 block"
           />
 
-          {/* 2. Cyber Grid Mesh Matrix Background */}
+          {/* Cyber Grid Mesh Matrix Background */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-30 pointer-events-none z-0" />
 
-          {/* 3. Deep Ambient Soft Cyan Background Radial Glow */}
+          {/* Deep Ambient Soft Cyan Background Radial Glow */}
           <div className="absolute w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[150px] pointer-events-none z-0 animate-pulse" />
 
-          {/* 4. Subtle Corner Cyber Data Streams */}
+          {/* Subtle Corner Cyber Data Streams */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-25 text-[10px] text-cyan-400 font-mono flex justify-between p-8 z-0">
             <div className="space-y-1">
               <div>[SYSTEM_STATUS: ACTIVE]</div>
@@ -155,10 +157,27 @@ export default function Preloader() {
             </div>
           </div>
 
-          {/* Central Logo & Progress Content Container (100% UNTOUCHED LOGO & PROGRESS BAR) */}
-          <div className="relative z-10 flex flex-col items-center px-6 text-center">
-            
-            {/* Pure ICASA Logo Display (UNTOUCHED) */}
+          {/* Top Sliding Cyber Shutter Panel (Exit Animation) */}
+          <motion.div
+            exit={{ y: "-100%" }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="absolute top-0 inset-x-0 h-1/2 bg-[#02050b] border-b border-cyan-500/30 z-1"
+          />
+
+          {/* Bottom Sliding Cyber Shutter Panel (Exit Animation) */}
+          <motion.div
+            exit={{ y: "100%" }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="absolute bottom-0 inset-x-0 h-1/2 bg-[#02050b] border-t border-cyan-500/30 z-1"
+          />
+
+          {/* Central Logo & Progress Content Container (Fades & Zooms on Exit) */}
+          <motion.div
+            exit={{ scale: 1.1, opacity: 0 }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="relative z-10 flex flex-col items-center px-6 text-center"
+          >
+            {/* Pure ICASA Logo Display */}
             <motion.div
               initial={{ opacity: 0, scale: 0.94 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -172,7 +191,7 @@ export default function Preloader() {
               />
             </motion.div>
 
-            {/* Ultra-Clean Minimal Horizontal Progress Bar & Status (UNTOUCHED) */}
+            {/* Ultra-Clean Minimal Horizontal Progress Bar & Status */}
             <div className="w-56 sm:w-64 flex flex-col items-center gap-3">
               
               {/* Thin Cyan Gradient Progress Line */}
@@ -185,7 +204,7 @@ export default function Preloader() {
 
               {/* Status Indicator & Percentage Display */}
               <div className="flex items-center gap-3 text-xs font-mono font-bold tracking-widest uppercase">
-                <span className={progress >= 85 ? "text-emerald-400 drop-shadow-[0_0_8px_#10b981]" : "text-cyan-400"}>
+                <span className={progress >= 85 ? "text-emerald-400 drop-shadow-[0_0_10px_#10b981]" : "text-cyan-400"}>
                   {statusText}
                 </span>
                 <span className="text-slate-400 font-medium">
@@ -194,8 +213,7 @@ export default function Preloader() {
               </div>
 
             </div>
-
-          </div>
+          </motion.div>
         </motion.div>
       )}
     </AnimatePresence>
