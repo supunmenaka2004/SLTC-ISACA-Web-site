@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Preloader() {
@@ -8,10 +8,86 @@ export default function Preloader() {
   const [loading, setLoading] = useState(true);
   const [progress, setProgress] = useState(0);
   const [statusText, setStatusText] = useState("INITIALIZING SYSTEM");
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
+  // Background Cyber Network Canvas Animation
   useEffect(() => {
     setMounted(true);
 
+    const canvas = canvasRef.current;
+    if (canvas) {
+      const ctx = canvas.getContext("2d");
+      if (ctx) {
+        let animId: number;
+        const w = (canvas.width = window.innerWidth);
+        const h = (canvas.height = window.innerHeight);
+
+        const nodes: Array<{ x: number; y: number; vx: number; vy: number; radius: number }> = [];
+        const nodeCount = w < 768 ? 25 : 50;
+
+        for (let i = 0; i < nodeCount; i++) {
+          nodes.push({
+            x: Math.random() * w,
+            y: Math.random() * h,
+            vx: (Math.random() - 0.5) * 0.4,
+            vy: (Math.random() - 0.5) * 0.4,
+            radius: 1.2 + Math.random() * 1.5,
+          });
+        }
+
+        const render = () => {
+          ctx.clearRect(0, 0, w, h);
+
+          // Draw connecting cyber lines
+          for (let i = 0; i < nodes.length; i++) {
+            for (let j = i + 1; j < nodes.length; j++) {
+              const n1 = nodes[i];
+              const n2 = nodes[j];
+              const dx = n2.x - n1.x;
+              const dy = n2.y - n1.y;
+              const distSq = dx * dx + dy * dy;
+
+              if (distSq < 140 * 140) {
+                const opacity = (1 - Math.sqrt(distSq) / 140) * 0.25;
+                ctx.beginPath();
+                ctx.moveTo(n1.x, n1.y);
+                ctx.lineTo(n2.x, n2.y);
+                ctx.strokeStyle = `rgba(56, 189, 248, ${opacity})`;
+                ctx.lineWidth = 0.6;
+                ctx.stroke();
+              }
+            }
+          }
+
+          // Draw node dots
+          for (let i = 0; i < nodes.length; i++) {
+            const n = nodes[i];
+            n.x += n.vx;
+            n.y += n.vy;
+
+            if (n.x < 0 || n.x > w) n.vx *= -1;
+            if (n.y < 0 || n.y > h) n.vy *= -1;
+
+            ctx.beginPath();
+            ctx.arc(n.x, n.y, n.radius, 0, Math.PI * 2);
+            ctx.fillStyle = "rgba(186, 230, 253, 0.6)";
+            ctx.fill();
+          }
+
+          animId = requestAnimationFrame(render);
+        };
+
+        render();
+
+        return () => {
+          cancelAnimationFrame(animId);
+        };
+      }
+    }
+  }, []);
+
+  // Progress Timer
+  useEffect(() => {
     let currentProgress = 0;
     const interval = setInterval(() => {
       currentProgress += 3;
@@ -47,19 +123,42 @@ export default function Preloader() {
     <AnimatePresence mode="wait">
       {loading && (
         <motion.div
-          key="icasa-minimal-preloader"
+          key="icasa-cyber-bg-preloader"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, scale: 0.98, filter: "blur(8px)" }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed inset-0 z-[9999] bg-[#02060d] flex flex-col items-center justify-center font-sans overflow-hidden select-none"
+          className="fixed inset-0 z-[9999] bg-[#02050b] flex flex-col items-center justify-center font-sans overflow-hidden select-none"
         >
-          {/* Deep Ambient Soft Cyan Background Glow */}
-          <div className="absolute w-[500px] h-[500px] bg-cyan-600/10 rounded-full blur-[140px] pointer-events-none" />
+          {/* 1. Cyber Network Canvas Background Layer */}
+          <canvas
+            ref={canvasRef}
+            className="absolute inset-0 w-full h-full pointer-events-none z-0 block"
+          />
 
-          {/* Central Pure Logo & Clean Minimalist Progress Wrapper */}
+          {/* 2. Cyber Grid Mesh Matrix Background */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-30 pointer-events-none z-0" />
+
+          {/* 3. Deep Ambient Soft Cyan Background Radial Glow */}
+          <div className="absolute w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[150px] pointer-events-none z-0 animate-pulse" />
+
+          {/* 4. Subtle Corner Cyber Data Streams */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-25 text-[10px] text-cyan-400 font-mono flex justify-between p-8 z-0">
+            <div className="space-y-1">
+              <div>[SYSTEM_STATUS: ACTIVE]</div>
+              <div>PORT: 443 // TLS_v1.3</div>
+              <div>0x7F000001</div>
+            </div>
+            <div className="space-y-1 text-right">
+              <div>CYBER_DECRYPT</div>
+              <div>HASH: SHA256</div>
+              <div>ICASA_NET_NODE</div>
+            </div>
+          </div>
+
+          {/* Central Logo & Progress Content Container (100% UNTOUCHED LOGO & PROGRESS BAR) */}
           <div className="relative z-10 flex flex-col items-center px-6 text-center">
             
-            {/* Pure ICASA Logo Display (NO Rings, NO Boxes, NO Lines) */}
+            {/* Pure ICASA Logo Display (UNTOUCHED) */}
             <motion.div
               initial={{ opacity: 0, scale: 0.94 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -73,7 +172,7 @@ export default function Preloader() {
               />
             </motion.div>
 
-            {/* Ultra-Clean Minimal Horizontal Progress Bar & Status */}
+            {/* Ultra-Clean Minimal Horizontal Progress Bar & Status (UNTOUCHED) */}
             <div className="w-56 sm:w-64 flex flex-col items-center gap-3">
               
               {/* Thin Cyan Gradient Progress Line */}
