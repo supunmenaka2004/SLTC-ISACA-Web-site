@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #030712;
+    --bg-section: #090f1d;
+    --bg-card: #0d1527;
+
+    --text-white: #ffffff;
+    --text-slate: #cbd5e1;
+    --text-muted: #94a3b8;
+
+    --cyan-accent: #00f0ff;
+    --sky-accent: #38bdf8;
+    --emerald-accent: #00e676;
+    
+    --border-card: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(0, 240, 255, 0.35);
+  }
+
+  body {
+    background-color: #030712;
+    color: #f8fafc;
+    font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Premium Dark Card Class */
+.pro-dark-card {
+  background-color: #0d1527;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.875rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pro-dark-card:hover {
+  border-color: rgba(56, 189, 248, 0.4);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(56, 189, 248, 0.12);
+  transform: translateY(-3px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #030712;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
