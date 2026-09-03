@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans, Geist } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Preloader from "@/components/Preloader";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-sans",
@@ -32,6 +33,7 @@ export default function RootLayout({
       className={`${plusJakartaSans.variable} ${geist.variable} dark scroll-smooth`}
     >
       <body className="min-h-screen flex flex-col bg-[#02060d] text-slate-100 antialiased font-sans">
+        <Preloader />
         <Navbar />
         <main className="flex-grow">
           {children}
