@@ -25,11 +25,11 @@ export default function Hero() {
           className="w-full max-w-4xl space-y-5 flex flex-col items-center text-center"
         >
           {/* Main Heading Matching Brand Gradient */}
-          <h1 className="text-[clamp(2.85rem,7vw,5.5rem)] font-bold tracking-[-0.05em] leading-[1.02] text-center drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)]">
-            <span className="bg-gradient-to-r from-[#13b5d1] via-[#29b99b] to-[#78be20] bg-clip-text text-transparent font-extrabold">
+          <h1 className="text-[clamp(2.85rem,7vw,5.5rem)] font-bold tracking-[-0.035em] leading-[1.08] text-center drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)]">
+            <span className="inline-block bg-gradient-to-r from-[#13b5d1] via-[#29b99b] to-[#78be20] bg-clip-text text-transparent font-extrabold pr-2 sm:pr-3 py-0.5">
               ISACA
             </span>{" "}
-            <span className="text-white font-semibold tracking-[-0.04em]">
+            <span className="text-white font-semibold tracking-[-0.035em]">
               Student Group
             </span>
           </h1>
