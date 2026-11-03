@@ -8,7 +8,7 @@ export default function ClubHistoryPage() {
   const milestones = [
     {
       year: "2024",
-      title: "Foundation of ICASA Student Chapter",
+      title: "Foundation of ISACA Student Chapter",
       description: "Established at Sri Lanka Technology Campus under the School of Computing to foster practical cybersecurity awareness, hands-on learning, and ethical research.",
       icon: Shield,
     },
@@ -47,7 +47,7 @@ export default function ClubHistoryPage() {
           </div>
 
           <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
-            ICASA Club <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">History</span>
+            ISACA Club <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">History</span>
           </h1>
           <p className="text-slate-300 text-base sm:text-lg mt-3 max-w-2xl font-normal">
             Tracing our growth from a student security interest group to an official university chapter leading cybersecurity education.

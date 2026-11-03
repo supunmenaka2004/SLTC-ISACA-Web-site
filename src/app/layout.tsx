@@ -19,7 +19,7 @@ const geist = Geist({
 export const metadata: Metadata = {
   title: "ISACA Student Group | Sri Lanka Technology Campus",
   description: "Official web portal of ISACA Student Group. A student-driven community focused on cybersecurity, technology, innovation, knowledge sharing and responsible digital practices.",
-  keywords: ["ISACA", "ISACA Student Group", "ICASA", "Cybersecurity", "University Technology Club", "IT Audit", "Digital Safety", "Student Community"],
+  keywords: ["ISACA", "ISACA Student Group", "Cybersecurity", "University Technology Club", "IT Audit", "Digital Safety", "Student Community"],
 };
 
 export default function RootLayout({

@@ -17,7 +17,7 @@ export const executiveMembers: TeamMember[] = [
     name: "Kavindu Perera",
     role: "President",
     image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
-    description: "Leading ICASA with a focus on cybersecurity innovation, student skill development, and industry partnerships.",
+    description: "Leading ISACA with a focus on cybersecurity innovation, student skill development, and industry partnerships.",
     socialLinks: {
       linkedin: "https://linkedin.com",
       instagram: "https://instagram.com",
@@ -84,7 +84,7 @@ export const executiveMembers: TeamMember[] = [
     name: "Sanju Kulatunga",
     role: "Web Master",
     image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80",
-    description: "Developing and maintaining the official ICASA Web portal, CTF platform, and digital systems.",
+    description: "Developing and maintaining the official ISACA Web portal, CTF platform, and digital systems.",
     socialLinks: {
       linkedin: "https://linkedin.com",
       github: "https://github.com",

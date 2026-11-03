@@ -233,11 +233,11 @@ export const newsData: NewsItem[] = [
   },
   {
     id: "news-1",
-    title: "ICASA Research Team Highlights Emerging Cloud Misconfiguration and IAM Vulnerability Trends",
+    title: "ISACA Research Team Highlights Emerging Cloud Misconfiguration and IAM Vulnerability Trends",
     category: "Research",
     publishedDate: "September 02, 2026",
     publishedAt: "2026-09-02T00:00:00.000Z",
-    excerpt: "Research by the ICASA Student Chapter reveals common multi-cloud permission flaws that expose academic and enterprise systems to privilege escalation.",
+    excerpt: "Research by the ISACA Student Chapter reveals common multi-cloud permission flaws that expose academic and enterprise systems to privilege escalation.",
     content: [],
     keyHighlights: [
       "Over 65% of audited cloud environments contained over-permissive IAM wildcard policies permitting lateral privilege escalation.",
@@ -248,7 +248,7 @@ export const newsData: NewsItem[] = [
       {
         heading: "Empirical Cloud Security Audit Findings",
         paragraphs: [
-          "The ICASA Student Research Unit, in partnership with faculty advisors from the School of Computing, concluded a six-month telemetry review evaluating cloud security posture across simulated academic infrastructure and enterprise staging environments.",
+          "The ISACA Student Research Unit, in partnership with faculty advisors from the School of Computing, concluded a six-month telemetry review evaluating cloud security posture across simulated academic infrastructure and enterprise staging environments.",
           "The study uncovered widespread reliance on default configuration profiles. Administrators frequently grant broad wildcard permissions (such as `iam:*` or `s3:*`) to accelerate CI/CD deployments, which attackers routinely exploit during initial foothold compromises.",
         ],
       },
@@ -280,7 +280,7 @@ export const newsData: NewsItem[] = [
     image: "/cyber_hero.jpg",
     imageAlt: "Cloud architecture security diagram and identity telemetry visualization",
     publisher: "SLTC ISACA Student Group Research Unit",
-    author: "ICASA Research Team",
+    author: "ISACA Research Team",
     trending: false,
   },
   {

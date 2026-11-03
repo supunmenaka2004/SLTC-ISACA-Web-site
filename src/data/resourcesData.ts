@@ -59,7 +59,7 @@ export const resourcesData: ResourceItem[] = [
   // Research & Learning Materials
   {
     id: "res-6",
-    title: "ICASA Security Cheatsheets & Reference Guides",
+    title: "ISACA Security Cheatsheets & Reference Guides",
     category: "Learning Materials",
     description: "Student-compiled quick reference sheets for common Linux commands, Wireshark packet filters, Nmap scan flags, and Git workflows.",
     linkText: "Download Reference Sheets",

@@ -33,7 +33,7 @@ export default function ContactPage() {
             Get In Touch
           </h1>
           <p className="text-slate-300 text-base mt-2 max-w-2xl">
-            Have questions regarding ICASA Club membership, workshops, or academic partnerships? Contact our executive team.
+            Have questions regarding ISACA Student Group membership, workshops, or academic partnerships? Contact our executive team.
           </p>
         </div>
 
@@ -60,8 +60,8 @@ export default function ContactPage() {
                 <Mail className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
                 <div>
                   <span className="font-bold text-white block mb-0.5">Email Inquiries</span>
-                  <a href="mailto:contact@icasaclub.org" className="text-cyan-400 hover:underline font-mono">
-                    contact@icasaclub.org
+                  <a href="mailto:contact@isacaclub.org" className="text-cyan-400 hover:underline font-mono">
+                    contact@isacaclub.org
                   </a>
                 </div>
               </div>
@@ -157,7 +157,7 @@ export default function ContactPage() {
                   <CheckCircle className="w-10 h-10 text-emerald-400 mx-auto" />
                   <h3 className="text-lg font-bold text-white">Message Sent Successfully</h3>
                   <p className="text-xs sm:text-sm text-slate-300 max-w-md mx-auto">
-                    Thank you, <span className="font-semibold text-white">{formData.name}</span>. Your message has been received by the ICASA Club committee.
+                    Thank you, <span className="font-semibold text-white">{formData.name}</span>. Your message has been received by the ISACA Student Group committee.
                   </p>
                   <button
                     onClick={() => {

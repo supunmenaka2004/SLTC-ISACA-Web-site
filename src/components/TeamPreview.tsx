@@ -37,7 +37,7 @@ export default function TeamPreview() {
 
           {/* Subtitle */}
           <p className="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto font-normal leading-relaxed">
-            The people behind ICASA, working together to learn, innovate and build a safer digital future.
+            The people behind ISACA, working together to learn, innovate and build a safer digital future.
           </p>
         </div>
 

@@ -26,7 +26,7 @@ export default function CommitteePage() {
             Our Committee
           </h1>
           <p className="text-slate-300 text-base mt-2">
-            Meet the student officials guiding ICASA Club towards academic excellence, innovation, and digital security awareness.
+            Meet the student officials guiding ISACA Student Group towards academic excellence, innovation, and digital security awareness.
           </p>
         </div>
 

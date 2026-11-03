@@ -14,7 +14,7 @@ export default function FeaturedIntro() {
           </h2>
 
           <p className="text-slate-300 text-base sm:text-lg leading-relaxed mb-6">
-            ICASA Club is an official university student organization dedicated to empowering students with practical cybersecurity knowledge, technical skills, ethical hacking awareness, and research opportunities. We bridge academic foundations with industrial technology standards.
+            ISACA Student Group is an official university student organization dedicated to empowering students with practical cybersecurity knowledge, technical skills, ethical hacking awareness, and research opportunities. We bridge academic foundations with industrial technology standards.
           </p>
 
           <Link

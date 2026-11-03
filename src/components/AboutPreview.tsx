@@ -40,7 +40,7 @@ export default function AboutPreview() {
 
             {/* Paragraph with Refined Spacing */}
             <p className="text-slate-300 text-base sm:text-[17px] leading-[1.85] font-normal mt-1 max-w-[39rem]">
-              <strong className="text-white font-semibold">ICASA Club</strong> is an official university student organization dedicated to empowering students with practical <span className="text-cyan-300 font-medium">cybersecurity knowledge</span>, technical skills, <span className="text-cyan-300 font-medium">ethical hacking awareness</span>, and research opportunities. We bridge academic foundations with industry technology standards.
+              <strong className="text-white font-semibold">ISACA Student Group</strong> is an official university student organization dedicated to empowering students with practical <span className="text-cyan-300 font-medium">cybersecurity knowledge</span>, technical skills, <span className="text-cyan-300 font-medium">ethical hacking awareness</span>, and research opportunities. We bridge academic foundations with industry technology standards.
             </p>
 
             {/* Styled Read More CTA Link */}
@@ -66,7 +66,7 @@ export default function AboutPreview() {
             <div className="relative w-full aspect-[4/3] overflow-hidden border border-slate-700/70 bg-slate-900 shadow-[0_24px_70px_-35px_rgba(0,0,0,0.9)] group">
               <img
                 src="/about.jpg"
-                alt="ICASA Club Student Cybersecurity Team at Sri Lanka Technology Campus"
+                alt="ISACA Student Group Cybersecurity Team at Sri Lanka Technology Campus"
                 className="w-full h-full object-cover block transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.015]"
               />
             </div>

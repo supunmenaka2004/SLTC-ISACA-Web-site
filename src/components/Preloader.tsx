@@ -121,7 +121,7 @@ export default function Preloader() {
     <AnimatePresence mode="wait">
       {loading && (
         <motion.div
-          key="icasa-cyber-bg-preloader"
+          key="isaca-cyber-bg-preloader"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, scale: 0.98, filter: "blur(8px)" }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
@@ -149,14 +149,14 @@ export default function Preloader() {
             <div className="space-y-1 text-right">
               <div>CYBER_DECRYPT</div>
               <div>HASH: SHA256</div>
-              <div>ICASA_NET_NODE</div>
+              <div>ISACA_NET_NODE</div>
             </div>
           </div>
 
           {/* Central Logo & Progress Content Container */}
           <div className="relative z-10 flex flex-col items-center px-6 text-center">
             
-            {/* Pure ICASA Logo Display */}
+            {/* Pure ISACA Logo Display */}
             <motion.div
               initial={{ opacity: 0, scale: 0.94 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -165,7 +165,7 @@ export default function Preloader() {
             >
               <img
                 src="/isaca_transparent.png"
-                alt="ICASA Student Group Sri Lanka Technology Campus"
+                alt="ISACA Student Group Sri Lanka Technology Campus"
                 className="w-[260px] sm:w-[340px] h-auto object-contain brightness-[1.65] contrast-[1.15] drop-shadow-[0_0_30px_rgba(56,189,248,0.25)]"
               />
             </motion.div>

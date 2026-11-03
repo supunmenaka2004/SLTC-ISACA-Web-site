@@ -58,7 +58,7 @@ export default function CyberNewsFeed() {
               Cyber <span className="text-[var(--cyan-accent)]">News</span>
             </h1>
             <p className="mt-3 max-w-2xl text-sm leading-7 text-[var(--text-slate)] sm:text-base">
-              Articles, research insights, and technological developments published by ICASA members.
+              Articles, research insights, and technological developments published by ISACA members.
             </p>
           </div>
         </header>
@@ -125,7 +125,7 @@ export default function CyberNewsFeed() {
             <div>
               <div className="mb-2 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--cyan-accent)]">
                 <span className="h-1.5 w-1.5 rounded-full bg-[var(--cyan-accent)] animate-pulse" />
-                <span>ICASA Editorial Newsroom · Dispatches</span>
+                <span>ISACA Editorial Newsroom · Dispatches</span>
               </div>
               <h2 id="latest-stories-heading" className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
                 Cybersecurity <span className="text-[var(--cyan-accent)]">Dispatches &amp; Reports</span>
@@ -210,7 +210,7 @@ export default function CyberNewsFeed() {
         {/* Human Editorial Callout: Student Research & Advisory Desk */}
         <section
           className="mt-20 rounded-2xl border border-cyan-500/30 bg-gradient-to-br from-[#091122] via-[#060c18] to-[#040812] p-8 sm:p-12 shadow-2xl relative overflow-hidden"
-          aria-label="Contribute research to ICASA editorial desk"
+          aria-label="Contribute research to ISACA editorial desk"
         >
           {/* Subtle Ambient Corner Glow */}
           <div className="absolute top-0 right-0 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -222,7 +222,7 @@ export default function CyberNewsFeed() {
                 <span>Call For Academic Submissions</span>
               </div>
               <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-white leading-snug">
-                Publish Your Security Research With <span className="text-[var(--cyan-accent)]">ICASA</span>
+                Publish Your Security Research With <span className="text-[var(--cyan-accent)]">ISACA</span>
               </h3>
               <p className="mt-3 text-sm sm:text-base leading-relaxed text-slate-300 font-normal">
                 Are you an SLTC student researching cloud misconfigurations, zero-day threat telemetry, or cryptographic algorithms? Submit your research manuscripts or threat advisories to our student editorial review panel for publication.

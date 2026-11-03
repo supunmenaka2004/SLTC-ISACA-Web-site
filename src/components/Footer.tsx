@@ -85,7 +85,7 @@ export default function Footer() {
                   <GitHubIcon />
                 </a>
                 <a
-                  href="mailto:contact@icasaclub.org"
+                  href="mailto:contact@isacaclub.org"
                   className="p-2 rounded-full bg-slate-900 border border-slate-800 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 transition-colors"
                   aria-label="Mail"
                 >
@@ -109,7 +109,7 @@ export default function Footer() {
         {/* Bottom Copyright */}
         <div className="pt-6 flex flex-wrap items-center justify-between gap-4 text-xs font-medium text-slate-400">
           <div>
-            © 2026 ICASA Club. All Rights Reserved.
+            © 2026 ISACA Student Group. All Rights Reserved.
           </div>
           <div>
             Sri Lanka Technology Campus

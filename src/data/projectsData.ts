@@ -12,13 +12,13 @@ export interface ProjectItem {
 export const projectsData: ProjectItem[] = [
   {
     id: "proj-1",
-    name: "ICASA CTF Competition Platform",
+    name: "ISACA CTF Competition Platform",
     category: "Competition Portal",
     description: "A custom web application built to host university Jeopardy-style cybersecurity competitions, featuring challenge scoring, flag verification, and live scoreboards.",
     status: "Active",
     technologies: ["Next.js", "TypeScript", "Docker", "Tailwind CSS"],
     githubUrl: "https://github.com",
-    demoUrl: "https://ctf.icasaclub.org",
+    demoUrl: "https://ctf.isacaclub.org",
   },
   {
     id: "proj-2",

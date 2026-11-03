@@ -80,7 +80,7 @@ export default function NewsCard({ news }: { news: NewsItem }) {
                   {news.title}
                 </h2>
                 <div className="text-xs text-slate-400 mt-2 font-medium">
-                  Published on {news.publishedDate} • ICASA Publication Unit
+                  Published on {news.publishedDate} • ISACA Publication Unit
                 </div>
               </div>
 

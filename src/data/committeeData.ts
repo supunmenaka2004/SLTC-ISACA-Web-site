@@ -3,11 +3,12 @@ export interface CommitteeMember {
   name: string;
   position: string;
   initials: string;
+  category: "Executive" | "Technical" | "Operations";
   bio: string;
   linkedin: string;
-  github: string;
+  github?: string;
   email: string;
-  category: "Executive" | "Technical" | "Operations";
+  image?: string;
 }
 
 export const committeeData: CommitteeMember[] = [
@@ -20,7 +21,7 @@ export const committeeData: CommitteeMember[] = [
     bio: "Final year Cybersecurity student leading student operations, academic initiatives, and external industry relations.",
     linkedin: "https://linkedin.com",
     github: "https://github.com",
-    email: "president@icasaclub.org",
+    email: "president@isacaclub.org",
   },
   {
     id: "com-2",
@@ -31,7 +32,7 @@ export const committeeData: CommitteeMember[] = [
     bio: "Specializing in Cloud Systems and Digital Trust. Co-managing community workshops and academic event schedules.",
     linkedin: "https://linkedin.com",
     github: "https://github.com",
-    email: "vp@icasaclub.org",
+    email: "vp@isacaclub.org",
   },
   {
     id: "com-3",
@@ -42,7 +43,7 @@ export const committeeData: CommitteeMember[] = [
     bio: "Software Engineering student overseeing member communications, meeting documentation, and constitutional governance.",
     linkedin: "https://linkedin.com",
     github: "https://github.com",
-    email: "secretary@icasaclub.org",
+    email: "secretary@isacaclub.org",
   },
   {
     id: "com-4",
@@ -53,7 +54,7 @@ export const committeeData: CommitteeMember[] = [
     bio: "Computer Science student assisting with event logistics, membership records, and official university correspondence.",
     linkedin: "https://linkedin.com",
     github: "https://github.com",
-    email: "asst.secretary@icasaclub.org",
+    email: "asst.secretary@isacaclub.org",
   },
   {
     id: "com-5",
@@ -64,7 +65,7 @@ export const committeeData: CommitteeMember[] = [
     bio: "Focusing on IT Governance and Audit. Managing club financial accounts, event budgets, and sponsorship records.",
     linkedin: "https://linkedin.com",
     github: "https://github.com",
-    email: "treasurer@icasaclub.org",
+    email: "treasurer@isacaclub.org",
   },
   {
     id: "com-6",
@@ -75,7 +76,7 @@ export const committeeData: CommitteeMember[] = [
     bio: "Assisting with club financial audits, budget tracking, and event sponsorship accounts.",
     linkedin: "https://linkedin.com",
     github: "https://github.com",
-    email: "asst.treasurer@icasaclub.org",
+    email: "asst.treasurer@isacaclub.org",
   },
   {
     id: "com-7",
@@ -83,10 +84,10 @@ export const committeeData: CommitteeMember[] = [
     position: "Web Master",
     initials: "SK",
     category: "Technical",
-    bio: "Developing and maintaining the official ICASA Web portal, CTF platform, and digital systems.",
+    bio: "Developing and maintaining the official ISACA Web portal, CTF platform, and digital systems.",
     linkedin: "https://linkedin.com",
     github: "https://github.com",
-    email: "webmaster@icasaclub.org",
+    email: "webmaster@isacaclub.org",
   },
   {
     id: "com-8",
@@ -97,7 +98,7 @@ export const committeeData: CommitteeMember[] = [
     bio: "Leading technical lab environments, Capture The Flag (CTF) challenges, and student cybersecurity research projects.",
     linkedin: "https://linkedin.com",
     github: "https://github.com",
-    email: "techlead@icasaclub.org",
+    email: "techlead@isacaclub.org",
   },
   {
     id: "com-9",
@@ -108,6 +109,8 @@ export const committeeData: CommitteeMember[] = [
     bio: "Coordinating logistics for seminars, workshops, awareness campaigns, and student community gatherings.",
     linkedin: "https://linkedin.com",
     github: "https://github.com",
-    email: "events@icasaclub.org",
+    email: "events@isacaclub.org",
   },
 ];
+
+export const committeeMembers = committeeData;

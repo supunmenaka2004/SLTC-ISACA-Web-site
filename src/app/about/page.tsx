@@ -37,18 +37,18 @@ export default function AboutPage() {
             About Us
           </div>
           <h1 className="text-4xl sm:text-5xl font-bold text-white tracking-tight">
-            About ICASA Club
+            About ISACA Student Group
           </h1>
         </div>
 
-        {/* Section 1: About ICASA Description & Overview */}
+        {/* Section 1: About ISACA Description & Overview */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
           <div className="lg:col-span-7 space-y-6">
             <h2 className="text-2xl font-bold text-white">
               Empowering Students for a Secure Digital World
             </h2>
             <p className="text-slate-300 text-base leading-relaxed">
-              ICASA Club is an official student-led university organization operating within the School of Computing. Founded by technology enthusiasts, the club provides an open platform for students interested in cybersecurity, software engineering, systems auditing, and digital risk management.
+              ISACA Student Group is an official student-led university organization operating within the School of Computing. Founded by technology enthusiasts, the club provides an open platform for students interested in cybersecurity, software engineering, systems auditing, and digital risk management.
             </p>
             <p className="text-slate-300 text-base leading-relaxed">
               Our initiatives include practical technical workshops, Capture The Flag (CTF) competitions, guest lectures from industry professionals, and research publications. We aim to bridge theoretical university coursework with practical industry applications.
