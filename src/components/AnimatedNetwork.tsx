@@ -47,21 +47,38 @@ export default function AnimatedNetwork() {
     let nodes: Node[] = [];
     let signals: PulseSignal[] = [];
 
+    // Interactive mouse positioning
+    const mouse = { x: -1000, y: -1000, active: false };
+
+    const handleMouseMove = (e: MouseEvent) => {
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+      mouse.active = true;
+    };
+
+    const handleMouseLeave = () => {
+      mouse.active = false;
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mouseleave", handleMouseLeave);
+
     const initNodes = () => {
       nodes = [];
       signals = [];
 
-      // Optimized node count for 60 FPS smooth performance
-      const count = w < 768 ? 30 : 60;
+      // Richer constellation density for vivid digital presence
+      const count = w < 768 ? 45 : 85;
 
       for (let i = 0; i < count; i++) {
         nodes.push({
           x: Math.random() * w,
           y: Math.random() * h,
-          vx: (Math.random() - 0.5) * 0.5,
-          vy: (Math.random() - 0.5) * 0.5,
-          radius: 1.5 + Math.random() * 2,
-          alpha: 0.3 + Math.random() * 0.5,
+          vx: (Math.random() - 0.5) * 0.6,
+          vy: (Math.random() - 0.5) * 0.6,
+          radius: 1.8 + Math.random() * 2.2,
+          alpha: 0.45 + Math.random() * 0.5,
           pulse: Math.random() * Math.PI * 2,
           pulseSpeed: 0.02 + Math.random() * 0.03,
         });
@@ -79,21 +96,21 @@ export default function AnimatedNetwork() {
 
     window.addEventListener("resize", handleResize);
 
-    const maxDist = w < 768 ? 110 : 150;
-    const maxDistSq = maxDist * maxDist; // Use squared distance to avoid Math.sqrt in loop
+    const maxDist = w < 768 ? 120 : 160;
+    const maxDistSq = maxDist * maxDist;
 
     const loop = () => {
-      if (!isVisible) return; // Pause animation loop completely when scrolled out of view!
+      if (!isVisible) return;
 
       // 1. Pitch dark midnight background fill (#02060d)
       ctx.fillStyle = "#02060d";
       ctx.fillRect(0, 0, w, h);
 
-      // 2. Deep dark radial glow
-      const grad = ctx.createRadialGradient(w / 2, h / 2, 40, w / 2, h / 2, Math.max(w, h));
-      grad.addColorStop(0, "#061324");
-      grad.addColorStop(0.6, "#030814");
-      grad.addColorStop(1, "#02040a");
+      // 2. High-tech cyber navy radial backdrop with vibrant center
+      const grad = ctx.createRadialGradient(w / 2, h / 2, 60, w / 2, h / 2, Math.max(w, h));
+      grad.addColorStop(0, "#08213d");
+      grad.addColorStop(0.5, "#041122");
+      grad.addColorStop(1, "#02060d");
       ctx.fillStyle = grad;
       ctx.fillRect(0, 0, w, h);
 
@@ -111,7 +128,7 @@ export default function AnimatedNetwork() {
         n.pulse += n.pulseSpeed;
       }
 
-      // 4. Draw connecting lines using fast squared distance checks
+      // 4. Draw connecting lines with high-definition neon cyan glow
       for (let i = 0; i < nodes.length; i++) {
         for (let j = i + 1; j < nodes.length; j++) {
           const n1 = nodes[i];
@@ -121,48 +138,68 @@ export default function AnimatedNetwork() {
           const distSq = dx * dx + dy * dy;
 
           if (distSq < maxDistSq) {
-            const dist = Math.sqrt(distSq); // Only calculate Math.sqrt for connected nodes!
-            const lineOpacity = (1 - dist / maxDist) * 0.35;
+            const dist = Math.sqrt(distSq);
+            // Clearly visible, high-definition neon cyan lines
+            const lineOpacity = (1 - dist / maxDist) * 0.58;
             ctx.beginPath();
             ctx.moveTo(n1.x, n1.y);
             ctx.lineTo(n2.x, n2.y);
-            ctx.strokeStyle = `rgba(56, 189, 248, ${lineOpacity})`;
-            ctx.lineWidth = 0.8;
+            ctx.strokeStyle = `rgba(34, 211, 238, ${lineOpacity})`;
+            ctx.lineWidth = 1.1;
             ctx.stroke();
 
-            // Randomly create travelling pulse signal along line
-            if (Math.random() < 0.0008 && signals.length < 6) {
+            // Randomly create travelling pulse signals along line
+            if (Math.random() < 0.0025 && signals.length < 10) {
               signals.push({
                 fromIdx: i,
                 toIdx: j,
                 progress: 0,
-                speed: 0.01 + Math.random() * 0.015,
+                speed: 0.012 + Math.random() * 0.018,
               });
             }
           }
         }
+
+        // Connect node to mouse cursor if within range
+        if (mouse.active) {
+          const n = nodes[i];
+          const mdx = mouse.x - n.x;
+          const mdy = mouse.y - n.y;
+          const mdistSq = mdx * mdx + mdy * mdy;
+          const mouseMaxDist = 180;
+          if (mdistSq < mouseMaxDist * mouseMaxDist) {
+            const mdist = Math.sqrt(mdistSq);
+            const mOpacity = (1 - mdist / mouseMaxDist) * 0.75;
+            ctx.beginPath();
+            ctx.moveTo(n.x, n.y);
+            ctx.lineTo(mouse.x, mouse.y);
+            ctx.strokeStyle = `rgba(56, 189, 248, ${mOpacity})`;
+            ctx.lineWidth = 1.3;
+            ctx.stroke();
+          }
+        }
       }
 
-      // 5. Draw nodes
+      // 5. Draw glowing nodes
       for (let i = 0; i < nodes.length; i++) {
         const n = nodes[i];
-        const currentRadius = n.radius + Math.sin(n.pulse) * 0.6;
-        const currentAlpha = Math.min(1, Math.max(0.2, n.alpha + Math.sin(n.pulse) * 0.2));
+        const currentRadius = n.radius + Math.sin(n.pulse) * 0.7;
+        const currentAlpha = Math.min(1, Math.max(0.35, n.alpha + Math.sin(n.pulse) * 0.25));
 
-        // Node Glow
+        // Outer Aura Glow
         ctx.beginPath();
-        ctx.arc(n.x, n.y, currentRadius * 2, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(56, 189, 248, ${currentAlpha * 0.2})`;
+        ctx.arc(n.x, n.y, currentRadius * 3, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(6, 182, 212, ${currentAlpha * 0.35})`;
         ctx.fill();
 
-        // Solid Node Core
+        // Inner Core
         ctx.beginPath();
         ctx.arc(n.x, n.y, currentRadius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(186, 230, 253, ${currentAlpha})`;
+        ctx.fillStyle = `rgba(224, 247, 250, ${Math.min(1, currentAlpha * 1.3)})`;
         ctx.fill();
       }
 
-      // 6. Draw travelling data signals
+      // 6. Draw travelling cyber data signals
       for (let s = signals.length - 1; s >= 0; s--) {
         const sig = signals[s];
         const n1 = nodes[sig.fromIdx];
@@ -178,9 +215,16 @@ export default function AnimatedNetwork() {
           const sx = n1.x + (n2.x - n1.x) * sig.progress;
           const sy = n1.y + (n2.y - n1.y) * sig.progress;
 
+          // Signal pulse glow
           ctx.beginPath();
-          ctx.arc(sx, sy, 2, 0, Math.PI * 2);
-          ctx.fillStyle = "rgba(255, 255, 255, 0.95)";
+          ctx.arc(sx, sy, 4, 0, Math.PI * 2);
+          ctx.fillStyle = "rgba(34, 211, 238, 0.65)";
+          ctx.fill();
+
+          // Signal white core
+          ctx.beginPath();
+          ctx.arc(sx, sy, 2.2, 0, Math.PI * 2);
+          ctx.fillStyle = "rgba(255, 255, 255, 1)";
           ctx.fill();
         } else {
           signals.splice(s, 1);
@@ -209,6 +253,8 @@ export default function AnimatedNetwork() {
 
     return () => {
       window.removeEventListener("resize", handleResize);
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mouseleave", handleMouseLeave);
       observer.disconnect();
       if (animId) {
         cancelAnimationFrame(animId);
