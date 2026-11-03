@@ -15,14 +15,14 @@ export default function NewsCard({ news }: { news: NewsItem }) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="bg-[#0a1120] border border-slate-800/80 hover:border-cyan-500/40 rounded-xl overflow-hidden transition-all duration-300 shadow-lg group flex flex-col h-full"
+        className="bg-[#0a1120] border border-slate-700/70 hover:border-cyan-500/40 rounded-md overflow-hidden transition-colors duration-300 shadow-md group flex flex-col h-full"
       >
         {/* Article Cover Image (55-60% of card height) */}
         <div className="relative w-full h-52 sm:h-56 overflow-hidden bg-slate-900 shrink-0">
           <img
             src={news.image}
             alt={news.title}
-            className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+            className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025]"
           />
         </div>
 
@@ -89,7 +89,9 @@ export default function NewsCard({ news }: { news: NewsItem }) {
               </div>
 
               <div className="text-xs sm:text-sm text-slate-300 leading-relaxed space-y-4 font-normal">
-                <p>{news.content}</p>
+                <div className="space-y-4">
+                  {news.content.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                </div>
               </div>
 
               <div className="pt-4 border-t border-slate-800 flex justify-end">

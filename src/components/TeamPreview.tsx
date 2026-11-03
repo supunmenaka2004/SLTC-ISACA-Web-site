@@ -11,7 +11,7 @@ export default function TeamPreview() {
   const bottomRowMembers = executiveMembers.slice(4, 7);
 
   return (
-    <section className="bg-[#050A14] py-20 font-sans border-b border-slate-800/40 relative overflow-hidden">
+    <section className="bg-[#070d19] py-20 font-sans border-b border-slate-800/40 relative overflow-hidden">
       
       {/* Subtle Background Glow */}
       <div className="absolute top-1/2 right-0 -translate-y-1/2 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl pointer-events-none" />
@@ -21,19 +21,19 @@ export default function TeamPreview() {
         {/* Centered Section Header with Category Tag Badge & Gradient Title */}
         <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center">
           
-          {/* Category Pill Tag: Executive Board 2026/2027 */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-400 text-xs font-bold uppercase tracking-widest mb-4 shadow-sm">
+          {/* Section label */}
+          <div className="inline-flex items-center gap-3 text-cyan-300/90 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.18em] mb-5">
             <Users className="w-3.5 h-3.5 text-cyan-400" />
+            <span className="h-px w-7 bg-cyan-500/70" />
             <span>EXECUTIVE BOARD 2026/2027</span>
           </div>
 
           {/* Prominent Large Heading */}
-          <h2 className="text-4xl sm:text-5xl lg:text-[48px] font-extrabold text-white tracking-tight leading-tight">
-            Meet <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">Our Team</span>
+          <h2 className="text-4xl sm:text-5xl lg:text-[52px] font-semibold text-white tracking-[-0.045em] leading-tight">
+            Meet <span className="text-cyan-300">Our Team</span>
           </h2>
 
-          {/* Cyan Gradient Underline Accent Bar */}
-          <div className="h-1 w-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full my-4" />
+          <div className="h-px w-16 bg-cyan-400/80 my-5" />
 
           {/* Subtitle */}
           <p className="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto font-normal leading-relaxed">
@@ -90,11 +90,11 @@ export default function TeamPreview() {
 
         </div>
 
-        {/* View Full Committee CTA Button */}
+        {/* View Full Committee CTA */}
         <div className="mt-16 text-center flex justify-center">
           <Link
             href="/committee"
-            className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full border border-cyan-500/40 bg-cyan-950/30 text-cyan-300 hover:bg-cyan-500/10 hover:border-cyan-400 hover:text-white font-bold text-xs sm:text-sm uppercase tracking-widest transition-all duration-300 shadow-md group"
+            className="inline-flex items-center gap-3 border-b border-cyan-500/50 pb-2 text-cyan-200 hover:border-cyan-300 hover:text-white font-semibold text-xs sm:text-sm uppercase tracking-[0.12em] transition-colors duration-300 group"
           >
             <span>VIEW FULL COMMITTEE</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1.5 text-cyan-400" />

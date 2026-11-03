@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function AboutPreview() {
   return (
-    <section className="bg-[#050A14] py-24 font-sans border-b border-slate-800/40 relative overflow-hidden">
+    <section className="bg-[#050A14] py-24 sm:py-28 font-sans border-b border-slate-800/40 relative overflow-hidden">
       
       {/* Subtle Background Ambient Glow */}
       <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
@@ -22,24 +22,24 @@ export default function AboutPreview() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-6 flex flex-col items-start justify-center"
+            className="lg:col-span-6 flex flex-col items-start justify-center lg:pr-6"
           >
-            {/* Category Pill Tag */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/70 border border-cyan-500/30 text-cyan-400 text-xs font-semibold uppercase tracking-widest mb-4 shadow-sm backdrop-blur-sm">
-              <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
+            {/* A simple editorial kicker keeps the section label clear without another pill. */}
+            <div className="inline-flex items-center gap-3 text-cyan-300/90 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.18em] mb-6">
+              <ShieldCheck className="w-4 h-4 text-cyan-400" />
+              <span className="h-px w-7 bg-cyan-500/70" />
               <span>ABOUT OUR ORGANIZATION</span>
             </div>
 
             {/* Prominent Large Heading */}
-            <h2 className="text-4xl sm:text-5xl lg:text-[48px] font-extrabold text-white tracking-tight leading-[1.15]">
-              Who <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">We Are</span>
+            <h2 className="text-[2.65rem] sm:text-5xl lg:text-[54px] font-semibold text-white tracking-[-0.045em] leading-[1.08]">
+              Who <span className="text-cyan-300">We Are</span>
             </h2>
 
-            {/* Cyan Gradient Underline Accent Bar */}
-            <div className="h-1 w-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full my-4" />
+            <div className="h-px w-16 bg-cyan-400/80 my-5" />
 
             {/* Paragraph with Refined Spacing */}
-            <p className="text-slate-300 text-base sm:text-lg leading-[1.8] font-normal mt-2">
+            <p className="text-slate-300 text-base sm:text-[17px] leading-[1.85] font-normal mt-1 max-w-[39rem]">
               <strong className="text-white font-semibold">ICASA Club</strong> is an official university student organization dedicated to empowering students with practical <span className="text-cyan-300 font-medium">cybersecurity knowledge</span>, technical skills, <span className="text-cyan-300 font-medium">ethical hacking awareness</span>, and research opportunities. We bridge academic foundations with industry technology standards.
             </p>
 
@@ -47,7 +47,7 @@ export default function AboutPreview() {
             <div className="mt-8">
               <Link
                 href="/about-us"
-                className="inline-flex items-center gap-3 px-7 py-3.5 rounded-full border border-cyan-500/40 bg-cyan-950/40 text-cyan-300 hover:bg-cyan-500/10 hover:border-cyan-400 hover:text-white font-bold text-xs sm:text-sm uppercase tracking-widest transition-all duration-300 shadow-md group"
+                className="inline-flex items-center gap-3 border-b border-cyan-500/50 pb-2 text-cyan-200 hover:border-cyan-300 hover:text-white font-semibold text-xs sm:text-sm uppercase tracking-[0.12em] transition-colors duration-300 group"
               >
                 <span>READ MORE ABOUT OUR MISSION</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-out group-hover:translate-x-1.5 text-cyan-400" />
@@ -61,13 +61,13 @@ export default function AboutPreview() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-6 w-full"
+            className="lg:col-span-6 w-full lg:pl-4"
           >
-            <div className="relative w-full rounded-2xl overflow-hidden border border-slate-800/80 bg-slate-900 shadow-2xl group">
+            <div className="relative w-full aspect-[4/3] overflow-hidden border border-slate-700/70 bg-slate-900 shadow-[0_24px_70px_-35px_rgba(0,0,0,0.9)] group">
               <img
                 src="/about.jpg"
                 alt="ICASA Club Student Cybersecurity Team at Sri Lanka Technology Campus"
-                className="w-full h-auto block rounded-2xl transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.02]"
+                className="w-full h-full object-cover block transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.015]"
               />
             </div>
           </motion.div>

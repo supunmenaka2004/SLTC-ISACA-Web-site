@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowRight, Calendar, ChevronLeft, ChevronRight, X, ShieldCheck } from "lucide-react";
+import { ArrowRight, Calendar, MapPin, ChevronLeft, ChevronRight, X, ShieldCheck } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { eventsData, EventItem } from "@/data/eventsData";
 
@@ -39,29 +39,29 @@ export default function UpcomingEventsSection() {
         {/* Styled Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
           <div>
-            {/* Category Pill Tag */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-400 text-xs font-bold uppercase tracking-widest mb-3 shadow-sm backdrop-blur-sm">
+            {/* Section label */}
+            <div className="inline-flex items-center gap-3 text-cyan-300/90 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.18em] mb-5">
               <Calendar className="w-3.5 h-3.5 text-cyan-400" />
+              <span className="h-px w-7 bg-cyan-500/70" />
               <span>EVENTS & ACTIVITIES</span>
             </div>
 
             {/* Prominent Large Heading */}
-            <h2 className="text-4xl sm:text-5xl lg:text-[48px] font-extrabold text-white tracking-tight leading-tight">
-              Upcoming <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">Events</span>
+            <h2 className="text-4xl sm:text-5xl lg:text-[52px] font-semibold text-white tracking-[-0.045em] leading-tight">
+              Upcoming <span className="text-cyan-300">Events</span>
             </h2>
 
-            {/* Cyan Gradient Underline Accent Bar */}
-            <div className="h-1 w-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full my-4" />
+            <div className="h-px w-16 bg-cyan-400/80 my-5" />
 
             <p className="text-slate-300 text-base sm:text-lg font-normal">
               Discover our workshops, seminars, and student competitions.
             </p>
           </div>
 
-          {/* Outlined Pill CTA Link Button */}
+          {/* Text CTA Link */}
           <Link
             href="/events"
-            className="inline-flex items-center gap-3 px-7 py-3.5 rounded-full border border-cyan-500/40 bg-cyan-950/30 text-cyan-300 hover:bg-cyan-500/10 hover:border-cyan-400 hover:text-white font-bold text-xs sm:text-sm uppercase tracking-widest transition-all duration-300 shadow-md group shrink-0"
+            className="inline-flex items-center gap-3 border-b border-cyan-500/50 pb-2 text-cyan-200 hover:border-cyan-300 hover:text-white font-semibold text-xs sm:text-sm uppercase tracking-[0.12em] transition-colors duration-300 group shrink-0"
           >
             <span>VIEW ALL EVENTS</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1.5 text-cyan-400" />
@@ -80,7 +80,7 @@ export default function UpcomingEventsSection() {
               className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center group"
             >
               {/* Left Side: 55% Image Container */}
-              <div className="lg:col-span-7 w-full aspect-[16/10] rounded-2xl overflow-hidden bg-slate-900 border border-slate-800/80 shadow-2xl relative">
+              <div className="lg:col-span-7 w-full aspect-[16/10] rounded-md overflow-hidden bg-slate-900 border border-slate-700/70 shadow-[0_24px_70px_-35px_rgba(0,0,0,0.9)] relative">
                 <img
                   src={activeEvent.image}
                   alt={activeEvent.title}
@@ -88,7 +88,7 @@ export default function UpcomingEventsSection() {
                 />
                 
                 {/* Event Counter Chip on Image */}
-                <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md border border-slate-700/80 text-xs font-bold text-slate-300 font-mono">
+                <div className="absolute top-4 left-4 px-3 py-1 rounded-sm bg-slate-950/85 backdrop-blur-md border border-slate-700/80 text-xs font-semibold text-slate-200 font-mono">
                   {currentIndex + 1} / {eventsData.length}
                 </div>
               </div>
@@ -112,9 +112,9 @@ export default function UpcomingEventsSection() {
                   </p>
 
                   {/* Date & Location */}
-                  <div className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-400 font-medium">
-                    <span>📅 {activeEvent.date}</span>
-                    <span>📍 {activeEvent.location}</span>
+                  <div className="mt-5 flex flex-col gap-2 text-xs text-slate-400 font-medium">
+                    <span className="inline-flex items-center gap-2"><Calendar className="w-3.5 h-3.5 text-cyan-400/80" />{activeEvent.date}</span>
+                    <span className="inline-flex items-center gap-2"><MapPin className="w-3.5 h-3.5 text-cyan-400/80" />{activeEvent.location}</span>
                   </div>
 
                   {/* View Event Link Button */}
@@ -133,7 +133,7 @@ export default function UpcomingEventsSection() {
                   <button
                     onClick={handlePrev}
                     aria-label="Previous Event"
-                    className="w-11 h-11 rounded-xl bg-[#0a1120] border border-slate-800 text-slate-300 hover:text-white hover:border-cyan-500/50 hover:bg-cyan-950/40 transition-all flex items-center justify-center cursor-pointer shadow-lg active:scale-95 group/btn"
+                    className="w-11 h-11 rounded-sm bg-[#0a1120] border border-slate-700/80 text-slate-300 hover:text-white hover:border-cyan-500/50 hover:bg-cyan-950/40 transition-all flex items-center justify-center cursor-pointer active:scale-95 group/btn"
                   >
                     <ChevronLeft className="w-5 h-5 transition-transform group-hover/btn:-translate-x-0.5" />
                   </button>
@@ -141,7 +141,7 @@ export default function UpcomingEventsSection() {
                   <button
                     onClick={handleNext}
                     aria-label="Next Event"
-                    className="w-11 h-11 rounded-xl bg-[#0a1120] border border-slate-800 text-slate-300 hover:text-white hover:border-cyan-500/50 hover:bg-cyan-950/40 transition-all flex items-center justify-center cursor-pointer shadow-lg active:scale-95 group/btn"
+                    className="w-11 h-11 rounded-sm bg-[#0a1120] border border-slate-700/80 text-slate-300 hover:text-white hover:border-cyan-500/50 hover:bg-cyan-950/40 transition-all flex items-center justify-center cursor-pointer active:scale-95 group/btn"
                   >
                     <ChevronRight className="w-5 h-5 transition-transform group-hover/btn:translate-x-0.5" />
                   </button>
