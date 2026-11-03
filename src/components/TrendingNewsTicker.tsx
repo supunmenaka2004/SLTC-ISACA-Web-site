@@ -15,23 +15,13 @@ export default function TrendingNewsTicker() {
       aria-label="Trending Cybersecurity News Ticker"
       className="mb-10 sm:mb-12 overflow-hidden"
     >
-      {/* Ticker Header / Trending Label */}
-      <div className="mb-3.5 flex items-center justify-between gap-3">
-        <div className="flex items-center gap-2.5">
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xs bg-cyan-950/85 border border-cyan-500/40 text-[10px] font-bold uppercase tracking-[0.18em] text-cyan-300 shadow-sm">
-            <Flame className="w-3.5 h-3.5 text-cyan-400" aria-hidden="true" />
-            <span>TRENDING</span>
-          </span>
-          <span className="text-xs sm:text-[13px] font-bold uppercase tracking-[0.14em] text-white">
-            Trending Cyber Stories
-          </span>
-          <span className="hidden sm:inline-block h-px w-10 bg-cyan-500/40" />
-        </div>
-        <div className="flex items-center gap-2">
-          <span className="text-[10px] font-semibold uppercase tracking-[0.15em] text-cyan-400/80">
-            Threat Intelligence Feed
-          </span>
-        </div>
+      {/* Ticker Header / Trending News Label */}
+      <div className="mb-3.5 flex items-center gap-2.5">
+        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xs bg-cyan-950/85 border border-cyan-500/40 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.18em] text-cyan-300 shadow-sm">
+          <Flame className="w-3.5 h-3.5 text-cyan-400" aria-hidden="true" />
+          <span>TRENDING NEWS</span>
+        </span>
+        <span className="h-px w-10 sm:w-14 bg-cyan-500/40" />
       </div>
 
       {/* Embedded High-Priority CSS for Guaranteed Towards-Left Continuous Auto-Sweep */}
