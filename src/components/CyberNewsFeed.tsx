@@ -48,11 +48,6 @@ export default function CyberNewsFeed() {
         
         {/* Page Header */}
         <header className="mb-6 border-b border-white/10 pb-6 sm:mb-8 sm:pb-7">
-          <div className="mb-4 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--cyan-accent)] sm:text-[11px]">
-            <span>SLTC ISACA</span>
-            <span className="text-[var(--text-muted)]">/</span>
-            <span className="text-[var(--text-muted)]">Cyber News</span>
-          </div>
           <div>
             <h1 className="text-4xl font-semibold tracking-[-0.055em] sm:text-5xl lg:text-[3.75rem]">
               Cyber <span className="text-[var(--cyan-accent)]">News</span>
