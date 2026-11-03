@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Search } from "lucide-react";
+import { ArrowRight, Search, ShieldCheck, FileText, Sparkles } from "lucide-react";
 import { newsCategories, newsData } from "@/data/newsData";
 import NewsStoryCard from "@/components/NewsStoryCard";
 import TrendingNewsTicker from "@/components/TrendingNewsTicker";
@@ -14,7 +14,7 @@ export default function CyberNewsFeed() {
   const [query, setQuery] = useState("");
   const [visibleCount, setVisibleCount] = useState(6);
   const featuredArticle = newsData.find((article) => article.featured) ?? newsData[0];
-  const categories = ["All News", "Technology", ...newsCategories];
+  const categories = ["All News", ...newsCategories];
 
   const matchingArticles = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
@@ -23,7 +23,7 @@ export default function CyberNewsFeed() {
       const matchesCategory = activeCategory === "All News" || article.category === activeCategory;
       const matchesQuery =
         !normalizedQuery ||
-        `${article.title} ${article.excerpt} ${article.category} ${article.publisher}`
+        `${article.title} ${article.excerpt} ${article.category} ${article.publisher} ${article.author ?? ""}`
           .toLowerCase()
           .includes(normalizedQuery);
 
@@ -63,10 +63,10 @@ export default function CyberNewsFeed() {
           </div>
         </header>
 
-        {/* Cinematic Horizontal Scrolling News Ticker */}
+        {/* Cinematic Horizontal Scrolling News Ticker (KEPT UNCHANGED) */}
         <TrendingNewsTicker />
 
-        {/* Featured Story Full-Width Banner */}
+        {/* Featured Story Full-Width Banner (KEPT UNCHANGED) */}
         {showFeatured && featuredArticle && (
           <motion.section
             aria-label="Featured cybersecurity story"
@@ -117,34 +117,45 @@ export default function CyberNewsFeed() {
           </motion.section>
         )}
 
-        {/* Stories Listing Section */}
+        {/* Human Editorial Newsroom Section */}
         <section aria-labelledby="latest-stories-heading" id="latest-stories" className="scroll-mt-24">
-          <div className="mb-6 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+          
+          {/* Editorial Masthead Bar */}
+          <div className="mb-8 flex flex-col gap-5 border-b border-white/[0.08] pb-6 lg:flex-row lg:items-end lg:justify-between">
             <div>
-              <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--cyan-accent)]">
-                SLTC ISACA · Insights &amp; Publications
-              </p>
-              <h2 id="latest-stories-heading" className="text-2xl font-semibold tracking-[-0.04em] sm:text-3xl">
-                Latest Cybersecurity News
+              <div className="mb-2 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--cyan-accent)]">
+                <span className="h-1.5 w-1.5 rounded-full bg-[var(--cyan-accent)] animate-pulse" />
+                <span>ICASA Editorial Newsroom · Dispatches</span>
+              </div>
+              <h2 id="latest-stories-heading" className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+                Cybersecurity <span className="text-[var(--cyan-accent)]">Dispatches &amp; Reports</span>
               </h2>
+              <p className="mt-1 text-xs sm:text-sm text-slate-400">
+                Curated research papers, vulnerability analyses, and field advisories from our student chapter.
+              </p>
             </div>
-            <label className="flex h-11 w-full items-center gap-3 rounded-md border border-[var(--border-card)] bg-[var(--bg-section)] px-3.5 text-[var(--text-muted)] transition-colors focus-within:border-[var(--cyan-accent)] lg:max-w-xs">
-              <Search className="h-4 w-4 shrink-0 text-[var(--cyan-accent)]" aria-hidden="true" />
-              <input
-                type="search"
-                value={query}
-                onChange={(event) => {
-                  setQuery(event.target.value);
-                  setVisibleCount(6);
-                }}
-                placeholder="Search stories"
-                aria-label="Search news stories"
-                className="h-full min-w-0 flex-1 bg-transparent text-sm text-white outline-none placeholder:text-[var(--text-muted)]"
-              />
-            </label>
+
+            {/* Editorial Search Bar */}
+            <div className="flex items-center gap-3">
+              <label className="flex h-11 w-full items-center gap-3 rounded-lg border border-white/[0.12] bg-[#091122]/90 px-3.5 text-slate-400 transition-colors focus-within:border-[var(--cyan-accent)] focus-within:bg-[#0c162d] lg:w-72 shadow-inner">
+                <Search className="h-4 w-4 shrink-0 text-[var(--cyan-accent)]" aria-hidden="true" />
+                <input
+                  type="search"
+                  value={query}
+                  onChange={(event) => {
+                    setQuery(event.target.value);
+                    setVisibleCount(6);
+                  }}
+                  placeholder="Search dispatches & keywords..."
+                  aria-label="Search news stories"
+                  className="h-full min-w-0 flex-1 bg-transparent text-xs sm:text-sm text-white outline-none placeholder:text-slate-500"
+                />
+              </label>
+            </div>
           </div>
 
-          <div className="mb-7 flex gap-2 overflow-x-auto pb-2" aria-label="Filter stories by topic">
+          {/* Curated Category Filter Tabs */}
+          <div className="mb-8 flex gap-2 overflow-x-auto pb-2 scrollbar-none" aria-label="Filter stories by topic">
             {categories.map((category) => {
               const isActive = activeCategory === category;
 
@@ -154,10 +165,10 @@ export default function CyberNewsFeed() {
                   type="button"
                   aria-pressed={isActive}
                   onClick={() => selectCategory(category)}
-                  className={`shrink-0 rounded-full border px-3.5 py-2 text-[11px] font-medium transition-colors cursor-pointer ${
+                  className={`shrink-0 rounded-md border px-3.5 py-1.5 text-xs font-semibold tracking-wide transition-all cursor-pointer ${
                     isActive
-                      ? "border-[var(--cyan-accent)] bg-[var(--cyan-accent)] text-[var(--bg-main)]"
-                      : "border-[var(--border-card)] bg-[var(--bg-section)] text-[var(--text-slate)] hover:border-[var(--border-hover)] hover:text-white"
+                      ? "border-[var(--cyan-accent)] bg-[var(--cyan-accent)] text-[#030712] shadow-[0_0_15px_rgba(0,240,255,0.25)]"
+                      : "border-white/[0.08] bg-[#0c1426]/70 text-slate-300 hover:border-cyan-400/40 hover:text-white"
                   }`}
                 >
                   {category}
@@ -166,30 +177,78 @@ export default function CyberNewsFeed() {
             })}
           </div>
 
+          {/* News Stories Grid */}
           {visibleArticles.length > 0 ? (
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {visibleArticles.map((article) => (
                 <NewsStoryCard key={article.id} news={article} variant="newsroom" />
               ))}
             </div>
           ) : (
-            <div className="rounded-xl border border-[var(--border-card)] bg-[var(--bg-section)] py-14 text-center">
-              <p className="text-base font-medium text-white">No stories found</p>
-              <p className="mt-2 text-sm text-[var(--text-muted)]">Try another keyword or topic.</p>
+            <div className="rounded-xl border border-white/[0.08] bg-[#0c1426]/60 py-16 text-center">
+              <FileText className="h-8 w-8 text-slate-500 mx-auto mb-3" />
+              <p className="text-base font-semibold text-white">No dispatches match your query</p>
+              <p className="mt-1 text-sm text-slate-400">Try selecting another topic or clearing search terms.</p>
             </div>
           )}
 
+          {/* Load More Button */}
           {visibleArticles.length < listedArticles.length && (
-            <div className="mt-8 text-center">
+            <div className="mt-10 text-center">
               <button
                 type="button"
                 onClick={() => setVisibleCount((count) => count + 6)}
-                className="rounded-md border border-[var(--border-card)] px-6 py-3 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--text-slate)] transition-colors hover:border-[var(--border-hover)] hover:text-white cursor-pointer"
+                className="inline-flex items-center gap-2 rounded-md border border-cyan-500/40 bg-cyan-950/40 px-7 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-cyan-300 transition-colors hover:border-cyan-400 hover:bg-cyan-500/20 hover:text-white cursor-pointer"
               >
-                Load more stories <ArrowRight className="ml-2 inline h-4 w-4" aria-hidden="true" />
+                <span>Load More Reports</span>
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </button>
             </div>
           )}
+        </section>
+
+        {/* Human Editorial Callout: Student Research & Advisory Desk */}
+        <section
+          className="mt-20 rounded-2xl border border-cyan-500/30 bg-gradient-to-br from-[#091122] via-[#060c18] to-[#040812] p-8 sm:p-12 shadow-2xl relative overflow-hidden"
+          aria-label="Contribute research to ICASA editorial desk"
+        >
+          {/* Subtle Ambient Corner Glow */}
+          <div className="absolute top-0 right-0 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+            <div className="max-w-2xl">
+              <div className="mb-3 inline-flex items-center gap-2 px-3 py-1 rounded-xs bg-cyan-950/80 border border-cyan-500/40 text-[10px] font-bold uppercase tracking-[0.18em] text-cyan-300">
+                <Sparkles className="h-3.5 w-3.5 text-cyan-400" />
+                <span>Call For Academic Submissions</span>
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-white leading-snug">
+                Publish Your Security Research With <span className="text-[var(--cyan-accent)]">ICASA</span>
+              </h3>
+              <p className="mt-3 text-sm sm:text-base leading-relaxed text-slate-300 font-normal">
+                Are you an SLTC student researching cloud misconfigurations, zero-day threat telemetry, or cryptographic algorithms? Submit your research manuscripts or threat advisories to our student editorial review panel for publication.
+              </p>
+              <div className="mt-4 flex items-center gap-2 text-xs text-slate-400">
+                <ShieldCheck className="h-4 w-4 text-cyan-400 shrink-0" />
+                <span>Reviewed and edited by the SLTC ISACA Student Group Academic Editorial Board</span>
+              </div>
+            </div>
+
+            <div className="shrink-0 flex flex-col sm:flex-row gap-3.5">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-md bg-[var(--cyan-accent)] text-[#030712] font-bold text-xs uppercase tracking-[0.14em] transition-all hover:bg-white shadow-[0_0_20px_rgba(0,240,255,0.25)]"
+              >
+                <span>Submit Research</span>
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href="/about-us"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-md border border-white/15 bg-white/5 text-slate-200 font-semibold text-xs uppercase tracking-[0.14em] transition-colors hover:bg-white/10 hover:text-white"
+              >
+                <span>About Editorial Desk</span>
+              </Link>
+            </div>
+          </div>
         </section>
 
       </div>
