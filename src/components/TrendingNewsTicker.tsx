@@ -6,16 +6,16 @@ import { Flame } from "lucide-react";
 import { newsData } from "@/data/newsData";
 
 export default function TrendingNewsTicker() {
-  // Use all real published cybersecurity stories, duplicated to ensure smooth wide-screen coverage
+  // 7 authentic published stories, duplicated twice per track for 4K seamless ultra-wide coverage
   const baseItems = newsData;
-  const tickerItems = [...baseItems, ...baseItems];
+  const trackItems = [...baseItems, ...baseItems];
 
   return (
     <section
       aria-label="Trending Cybersecurity News Ticker"
       className="mb-10 sm:mb-12 overflow-hidden"
     >
-      {/* Ticker Header / Section Kicker */}
+      {/* Ticker Header / Radar Kicker */}
       <div className="mb-3 flex items-center justify-between gap-3">
         <div className="flex items-center gap-2.5">
           <span className="relative flex h-2 w-2">
@@ -27,14 +27,47 @@ export default function TrendingNewsTicker() {
           </span>
           <span className="hidden sm:inline-block h-px w-8 bg-cyan-500/40" />
         </div>
-        <div className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-400">
-          <Flame className="w-3.5 h-3.5 text-cyan-400" aria-hidden="true" />
-          <span>Live Radar</span>
+        <div className="flex items-center gap-2">
+          <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-xs bg-cyan-950/70 border border-cyan-500/30 text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.14em] text-cyan-300">
+            <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 animate-pulse" />
+            <span>AUTO SWEEP</span>
+          </span>
+          <span className="hidden sm:inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-400">
+            <Flame className="w-3.5 h-3.5 text-cyan-400" aria-hidden="true" />
+            <span>LIVE RADAR</span>
+          </span>
         </div>
       </div>
 
+      {/* Embedded High-Priority CSS for Guaranteed Left-to-Right Continuous Auto-Sweep */}
+      <style>{`
+        @keyframes sweepLeftToRight {
+          0% {
+            transform: translate3d(-50%, 0, 0);
+            -webkit-transform: translate3d(-50%, 0, 0);
+          }
+          100% {
+            transform: translate3d(0%, 0, 0);
+            -webkit-transform: translate3d(0%, 0, 0);
+          }
+        }
+
+        .ticker-auto-sweep-track {
+          display: flex !important;
+          width: max-content !important;
+          animation: sweepLeftToRight 30s linear infinite !important;
+          -webkit-animation: sweepLeftToRight 30s linear infinite !important;
+          will-change: transform;
+        }
+
+        .ticker-auto-sweep-track:hover {
+          animation-play-state: paused !important;
+          -webkit-animation-play-state: paused !important;
+        }
+      `}</style>
+
       {/* Ticker Viewport Container with Left/Right Ambient Fade Masks */}
-      <div className="relative w-full overflow-hidden rounded-xl border border-white/10 bg-[#060b17]/80 py-3.5 backdrop-blur-sm ticker-pause-hover shadow-xl">
+      <div className="relative w-full overflow-hidden rounded-xl border border-white/10 bg-[#060b17]/90 py-3.5 backdrop-blur-md shadow-2xl">
         
         {/* Left Ambient Fade Mask */}
         <div
@@ -48,17 +81,23 @@ export default function TrendingNewsTicker() {
           className="pointer-events-none absolute right-0 top-0 bottom-0 z-20 w-12 sm:w-24 bg-gradient-to-l from-[#030712] via-[#030712]/80 to-transparent"
         />
 
-        {/* Continuous Left-to-Right Scrolling Marquee Track */}
-        <div className="animate-ticker-ltr flex">
+        {/* Continuous Left-to-Right Auto Sweeping Marquee Track */}
+        <div
+          className="ticker-auto-sweep-track flex"
+          style={{
+            animation: "sweepLeftToRight 30s linear infinite",
+            WebkitAnimation: "sweepLeftToRight 30s linear infinite",
+          }}
+        >
           {/* Track 1 */}
           <div className="flex shrink-0 items-center gap-4 pr-4">
-            {tickerItems.map((news, index) => (
+            {trackItems.map((news, index) => (
               <Link
                 key={`track1-${news.id}-${index}`}
                 href={`/cyber-news/${news.id}`}
-                className="group relative flex-shrink-0 w-[290px] sm:w-[330px] h-[145px] sm:h-[155px] overflow-hidden rounded-lg border border-white/10 bg-[#0d1527] transition-all duration-300 hover:border-cyan-400/60 hover:shadow-[0_4px_24px_rgba(0,240,255,0.18)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-400 focus-visible:outline-offset-2"
+                className="group relative flex-shrink-0 w-[290px] sm:w-[330px] h-[145px] sm:h-[155px] overflow-hidden rounded-lg border border-white/10 bg-[#0d1527] transition-all duration-300 hover:border-cyan-400/70 hover:shadow-[0_4px_24px_rgba(0,240,255,0.22)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-400 focus-visible:outline-offset-2"
               >
-                {/* 1. Relevant Cybersecurity Background Image */}
+                {/* Background Image */}
                 <Image
                   src={news.image}
                   alt={news.imageAlt}
@@ -67,15 +106,15 @@ export default function TrendingNewsTicker() {
                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
 
-                {/* 2. Dark Gradient Overlay (Transparent at top to dark at bottom) */}
+                {/* Dark Gradient Overlay */}
                 <div
                   aria-hidden="true"
                   className="absolute inset-0 bg-gradient-to-t from-[#020611]/98 via-[#020611]/70 to-[#020611]/15 transition-opacity duration-300 group-hover:via-[#020611]/60"
                 />
 
-                {/* 3. Text Overlay: Lower-Left Area directly on top of the image */}
+                {/* Text Overlay: Lower-Left Area */}
                 <div className="absolute inset-0 flex flex-col justify-end p-3.5 sm:p-4 text-left">
-                  {/* Small Category Label & Publication Date */}
+                  {/* Category & Date */}
                   <div className="mb-1.5 flex items-center gap-2">
                     <span className="inline-block px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.14em] text-cyan-300 bg-cyan-950/80 border border-cyan-500/40 rounded-xs backdrop-blur-sm">
                       {news.category}
@@ -85,7 +124,7 @@ export default function TrendingNewsTicker() {
                     </span>
                   </div>
 
-                  {/* Bold, Readable News Headline */}
+                  {/* Headline */}
                   <h3 className="text-xs sm:text-[13px] font-bold leading-snug tracking-tight text-white line-clamp-2 transition-colors duration-200 group-hover:text-cyan-200">
                     {news.title}
                   </h3>
@@ -94,19 +133,19 @@ export default function TrendingNewsTicker() {
             ))}
           </div>
 
-          {/* Track 2 (Identical duplicate for seamless continuous loop) */}
+          {/* Track 2 (Mathematically identical duplicate for seamless infinite loop) */}
           <div
             className="flex shrink-0 items-center gap-4 pr-4"
             aria-hidden="true"
           >
-            {tickerItems.map((news, index) => (
+            {trackItems.map((news, index) => (
               <Link
                 key={`track2-${news.id}-${index}`}
                 href={`/cyber-news/${news.id}`}
                 tabIndex={-1}
-                className="group relative flex-shrink-0 w-[290px] sm:w-[330px] h-[145px] sm:h-[155px] overflow-hidden rounded-lg border border-white/10 bg-[#0d1527] transition-all duration-300 hover:border-cyan-400/60 hover:shadow-[0_4px_24px_rgba(0,240,255,0.18)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-400 focus-visible:outline-offset-2"
+                className="group relative flex-shrink-0 w-[290px] sm:w-[330px] h-[145px] sm:h-[155px] overflow-hidden rounded-lg border border-white/10 bg-[#0d1527] transition-all duration-300 hover:border-cyan-400/70 hover:shadow-[0_4px_24px_rgba(0,240,255,0.22)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-400 focus-visible:outline-offset-2"
               >
-                {/* 1. Relevant Cybersecurity Background Image */}
+                {/* Background Image */}
                 <Image
                   src={news.image}
                   alt={news.imageAlt}
@@ -115,15 +154,15 @@ export default function TrendingNewsTicker() {
                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
 
-                {/* 2. Dark Gradient Overlay */}
+                {/* Dark Gradient Overlay */}
                 <div
                   aria-hidden="true"
                   className="absolute inset-0 bg-gradient-to-t from-[#020611]/98 via-[#020611]/70 to-[#020611]/15 transition-opacity duration-300 group-hover:via-[#020611]/60"
                 />
 
-                {/* 3. Text Overlay: Lower-Left Area directly on top of the image */}
+                {/* Text Overlay: Lower-Left Area */}
                 <div className="absolute inset-0 flex flex-col justify-end p-3.5 sm:p-4 text-left">
-                  {/* Small Category Label & Publication Date */}
+                  {/* Category & Date */}
                   <div className="mb-1.5 flex items-center gap-2">
                     <span className="inline-block px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.14em] text-cyan-300 bg-cyan-950/80 border border-cyan-500/40 rounded-xs backdrop-blur-sm">
                       {news.category}
@@ -133,7 +172,7 @@ export default function TrendingNewsTicker() {
                     </span>
                   </div>
 
-                  {/* Bold, Readable News Headline */}
+                  {/* Headline */}
                   <h3 className="text-xs sm:text-[13px] font-bold leading-snug tracking-tight text-white line-clamp-2 transition-colors duration-200 group-hover:text-cyan-200">
                     {news.title}
                   </h3>
