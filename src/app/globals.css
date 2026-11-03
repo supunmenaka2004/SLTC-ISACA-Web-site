@@ -56,3 +56,32 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #334155;
 }
+
+/* Cinematic Horizontal Scrolling News Ticker (Left to Right) */
+@keyframes ticker-scroll-ltr {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0%, 0, 0);
+  }
+}
+
+.animate-ticker-ltr {
+  display: flex;
+  width: max-content;
+  animation: ticker-scroll-ltr 42s linear infinite;
+  will-change: transform;
+}
+
+.ticker-pause-hover:hover .animate-ticker-ltr,
+.ticker-pause-hover:focus-within .animate-ticker-ltr {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-ticker-ltr {
+    animation: none;
+    transform: none;
+  }
+}

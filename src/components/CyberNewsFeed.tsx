@@ -1,12 +1,13 @@
-﻿"use client";
+"use client";
 
 import { useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Flame, Search } from "lucide-react";
+import { ArrowRight, Search } from "lucide-react";
 import { newsCategories, newsData } from "@/data/newsData";
 import NewsStoryCard from "@/components/NewsStoryCard";
+import TrendingNewsTicker from "@/components/TrendingNewsTicker";
 
 const threatTopics = [
   "Threat Research",
@@ -49,7 +50,6 @@ export default function CyberNewsFeed() {
     (article) => !showFeatured || article.id !== featuredArticle?.id,
   );
   const visibleArticles = listedArticles.slice(0, visibleCount);
-  const trendingStories = newsData.filter((article) => article.trending).slice(0, 4);
 
   function selectCategory(category: string) {
     setActiveCategory(category);
@@ -59,17 +59,28 @@ export default function CyberNewsFeed() {
   return (
     <div className="min-h-screen bg-[var(--bg-main)] pb-24 pt-28 text-[var(--text-white)] sm:pt-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <header className="mb-8 border-b border-white/10 pb-7 sm:mb-10 sm:pb-8">
+        
+        {/* Page Header */}
+        <header className="mb-6 border-b border-white/10 pb-6 sm:mb-8 sm:pb-7">
           <div className="mb-4 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--cyan-accent)] sm:text-[11px]">
-            <span>SLTC ISACA</span><span className="text-[var(--text-muted)]">/</span><span className="text-[var(--text-muted)]">Cyber News</span>
+            <span>SLTC ISACA</span>
+            <span className="text-[var(--text-muted)]">/</span>
+            <span className="text-[var(--text-muted)]">Cyber News</span>
           </div>
           <div>
-            <div>
-              <h1 className="text-4xl font-semibold tracking-[-0.055em] sm:text-5xl lg:text-[3.75rem]">Cyber <span className="text-[var(--cyan-accent)]">News</span></h1>
-              <p className="mt-3 max-w-2xl text-sm leading-7 text-[var(--text-slate)] sm:text-base">Articles, research insights, and technological developments published by ICASA members.</p>
-            </div>
+            <h1 className="text-4xl font-semibold tracking-[-0.055em] sm:text-5xl lg:text-[3.75rem]">
+              Cyber <span className="text-[var(--cyan-accent)]">News</span>
+            </h1>
+            <p className="mt-3 max-w-2xl text-sm leading-7 text-[var(--text-slate)] sm:text-base">
+              Articles, research insights, and technological developments published by ICASA members.
+            </p>
           </div>
         </header>
+
+        {/* Cinematic Horizontal Scrolling News Ticker (Image Backgrounds + Text Overlay) */}
+        <TrendingNewsTicker />
+
+        {/* Featured Split Hero Section (Unit 42 Inspired) */}
         {showFeatured && featuredArticle && (
           <motion.section
             aria-label="Featured cybersecurity stories"
@@ -98,9 +109,9 @@ export default function CyberNewsFeed() {
                   </span>
                   <span className="text-[var(--text-slate)]">{featuredArticle.publishedDate}</span>
                 </div>
-                <h1 className="max-w-3xl text-[1.7rem] font-semibold leading-[1.12] tracking-[-0.04em] sm:text-3xl lg:text-[2.55rem]">
+                <h2 className="max-w-3xl text-[1.7rem] font-bold leading-[1.12] tracking-[-0.04em] sm:text-3xl lg:text-[2.55rem] text-white">
                   {featuredArticle.title}
-                </h1>
+                </h2>
                 <p className="mt-3 line-clamp-2 max-w-2xl text-sm leading-6 text-[var(--text-slate)] sm:text-[15px] sm:leading-7">
                   {featuredArticle.excerpt}
                 </p>
@@ -137,9 +148,9 @@ export default function CyberNewsFeed() {
                       <span className="text-[var(--cyan-accent)]">{story.category}</span>
                       <span className="text-[var(--text-muted)]">{story.publishedDate}</span>
                     </div>
-                    <h2 className="line-clamp-3 text-xs font-semibold leading-snug text-white transition-colors group-hover:text-[var(--cyan-accent)] sm:text-sm">
+                    <h3 className="line-clamp-2 text-xs font-semibold leading-snug text-white transition-colors group-hover:text-[var(--cyan-accent)] sm:text-sm">
                       {story.title}
-                    </h2>
+                    </h3>
                     <span className="mt-1 block truncate text-[9px] text-[var(--text-muted)]">{story.publisher}</span>
                     <span className="mt-1 inline-flex items-center gap-1 text-[9px] font-semibold uppercase tracking-[0.08em] text-[var(--cyan-accent)]">
                       Read full story <ArrowRight className="h-3 w-3" aria-hidden="true" />
@@ -151,6 +162,7 @@ export default function CyberNewsFeed() {
           </motion.section>
         )}
 
+        {/* Stories Listing Section */}
         <section aria-labelledby="latest-stories-heading" id="latest-stories" className="scroll-mt-24">
           <div className="mb-6 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
             <div>
@@ -187,7 +199,7 @@ export default function CyberNewsFeed() {
                   type="button"
                   aria-pressed={isActive}
                   onClick={() => selectCategory(category)}
-                  className={`shrink-0 rounded-full border px-3.5 py-2 text-[11px] font-medium transition-colors ${
+                  className={`shrink-0 rounded-full border px-3.5 py-2 text-[11px] font-medium transition-colors cursor-pointer ${
                     isActive
                       ? "border-[var(--cyan-accent)] bg-[var(--cyan-accent)] text-[var(--bg-main)]"
                       : "border-[var(--border-card)] bg-[var(--bg-section)] text-[var(--text-slate)] hover:border-[var(--border-hover)] hover:text-white"
@@ -217,7 +229,7 @@ export default function CyberNewsFeed() {
               <button
                 type="button"
                 onClick={() => setVisibleCount((count) => count + 4)}
-                className="rounded-md border border-[var(--border-card)] px-6 py-3 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--text-slate)] transition-colors hover:border-[var(--border-hover)] hover:text-white"
+                className="rounded-md border border-[var(--border-card)] px-6 py-3 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--text-slate)] transition-colors hover:border-[var(--border-hover)] hover:text-white cursor-pointer"
               >
                 Load more stories <ArrowRight className="ml-2 inline h-4 w-4" aria-hidden="true" />
               </button>
@@ -225,8 +237,9 @@ export default function CyberNewsFeed() {
           )}
         </section>
 
-        <section className="mt-16 border-y border-white/10 py-8 sm:mt-20" aria-labelledby="threat-topics-heading">
-          <div className="mb-5 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--cyan-accent)]">
+        {/* Threat Intelligence Explore Coverage Topics */}
+        <section className="mt-16 border-t border-white/10 pt-10 sm:mt-20" aria-labelledby="threat-topics-heading">
+          <div className="mb-4 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--cyan-accent)]">
             <span className="h-px w-7 bg-[var(--cyan-accent)]" />
             <span>Explore coverage</span>
           </div>
@@ -243,7 +256,7 @@ export default function CyberNewsFeed() {
                   document.getElementById("latest-stories")?.scrollIntoView({ behavior: "smooth", block: "start" });
                 }}
                 aria-pressed={activeCategory === topic}
-                className={`rounded-full border px-3.5 py-2 text-xs transition-colors ${
+                className={`rounded-full border px-3.5 py-2 text-xs transition-colors cursor-pointer ${
                   activeCategory === topic
                     ? "border-[var(--cyan-accent)] bg-[var(--cyan-accent)] text-[var(--bg-main)]"
                     : "border-[var(--border-card)] bg-[var(--bg-section)] text-[var(--text-slate)] hover:border-[var(--border-hover)] hover:text-white"
@@ -255,29 +268,6 @@ export default function CyberNewsFeed() {
           </div>
         </section>
 
-        <section className="mt-14" aria-labelledby="trending-heading">
-          <div className="mb-5 flex items-center gap-3">
-            <Flame className="h-4 w-4 text-[var(--cyan-accent)]" aria-hidden="true" />
-            <h2 id="trending-heading" className="text-xl font-semibold sm:text-2xl">Trending Stories</h2>
-          </div>
-          <ol className="grid grid-cols-1 divide-y divide-[var(--border-card)] border-y border-[var(--border-card)] sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-4">
-            {trendingStories.map((story) => (
-              <li key={story.id}>
-                <Link href={`/cyber-news/${story.id}`} className="group flex h-full gap-3 p-4 transition-colors hover:bg-white/[0.035] sm:p-5">
-                  <span className="relative h-16 w-20 shrink-0 overflow-hidden rounded-md bg-[var(--bg-card)]">
-                    <Image src={story.image} alt={story.imageAlt} fill sizes="80px" className="object-cover transition-transform duration-500 group-hover:scale-105" />
-                  </span>
-                  <span className="min-w-0">
-                    <span className="mb-1 block truncate text-[9px] font-semibold uppercase tracking-[0.12em] text-[var(--cyan-accent)]">{story.category} · {story.publishedDate}</span>
-                    <span className="line-clamp-2 block text-sm font-medium leading-snug text-[var(--text-slate)] transition-colors group-hover:text-white">{story.title}</span>
-                    <span className="mt-1 block truncate text-[9px] text-[var(--text-muted)]">{story.publisher}</span>
-                    <span className="mt-1 inline-flex items-center gap-1 text-[9px] font-semibold uppercase tracking-[0.08em] text-[var(--cyan-accent)]">Read story <ArrowRight className="h-3 w-3" aria-hidden="true" /></span>
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ol>
-        </section>
       </div>
     </div>
   );
