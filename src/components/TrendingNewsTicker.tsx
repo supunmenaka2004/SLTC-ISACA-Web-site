@@ -15,26 +15,21 @@ export default function TrendingNewsTicker() {
       aria-label="Trending Cybersecurity News Ticker"
       className="mb-10 sm:mb-12 overflow-hidden"
     >
-      {/* Ticker Header / Radar Kicker */}
-      <div className="mb-3 flex items-center justify-between gap-3">
+      {/* Ticker Header / Trending Label */}
+      <div className="mb-3.5 flex items-center justify-between gap-3">
         <div className="flex items-center gap-2.5">
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400" />
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xs bg-cyan-950/85 border border-cyan-500/40 text-[10px] font-bold uppercase tracking-[0.18em] text-cyan-300 shadow-sm">
+            <Flame className="w-3.5 h-3.5 text-cyan-400" aria-hidden="true" />
+            <span>TRENDING</span>
           </span>
-          <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.2em] text-cyan-300">
-            Trending Intelligence
+          <span className="text-xs sm:text-[13px] font-bold uppercase tracking-[0.14em] text-white">
+            Trending Cyber Stories
           </span>
-          <span className="hidden sm:inline-block h-px w-8 bg-cyan-500/40" />
+          <span className="hidden sm:inline-block h-px w-10 bg-cyan-500/40" />
         </div>
         <div className="flex items-center gap-2">
-          <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-xs bg-cyan-950/70 border border-cyan-500/30 text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.14em] text-cyan-300">
-            <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 animate-pulse" />
-            <span>AUTO SWEEP</span>
-          </span>
-          <span className="hidden sm:inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-400">
-            <Flame className="w-3.5 h-3.5 text-cyan-400" aria-hidden="true" />
-            <span>LIVE RADAR</span>
+          <span className="text-[10px] font-semibold uppercase tracking-[0.15em] text-cyan-400/80">
+            Threat Intelligence Feed
           </span>
         </div>
       </div>
@@ -55,8 +50,8 @@ export default function TrendingNewsTicker() {
         .ticker-auto-sweep-track {
           display: flex !important;
           width: max-content !important;
-          animation: sweepLeftToRight 70s linear infinite !important;
-          -webkit-animation: sweepLeftToRight 70s linear infinite !important;
+          animation: sweepLeftToRight 110s linear infinite !important;
+          -webkit-animation: sweepLeftToRight 110s linear infinite !important;
           will-change: transform;
         }
 
@@ -85,8 +80,8 @@ export default function TrendingNewsTicker() {
         <div
           className="ticker-auto-sweep-track flex"
           style={{
-            animation: "sweepLeftToRight 70s linear infinite",
-            WebkitAnimation: "sweepLeftToRight 70s linear infinite",
+            animation: "sweepLeftToRight 110s linear infinite",
+            WebkitAnimation: "sweepLeftToRight 110s linear infinite",
           }}
         >
           {/* Track 1 */}
