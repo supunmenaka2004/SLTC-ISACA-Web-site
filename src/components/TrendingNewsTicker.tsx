@@ -55,8 +55,8 @@ export default function TrendingNewsTicker() {
         .ticker-auto-sweep-track {
           display: flex !important;
           width: max-content !important;
-          animation: sweepLeftToRight 30s linear infinite !important;
-          -webkit-animation: sweepLeftToRight 30s linear infinite !important;
+          animation: sweepLeftToRight 70s linear infinite !important;
+          -webkit-animation: sweepLeftToRight 70s linear infinite !important;
           will-change: transform;
         }
 
@@ -85,8 +85,8 @@ export default function TrendingNewsTicker() {
         <div
           className="ticker-auto-sweep-track flex"
           style={{
-            animation: "sweepLeftToRight 30s linear infinite",
-            WebkitAnimation: "sweepLeftToRight 30s linear infinite",
+            animation: "sweepLeftToRight 70s linear infinite",
+            WebkitAnimation: "sweepLeftToRight 70s linear infinite",
           }}
         >
           {/* Track 1 */}
