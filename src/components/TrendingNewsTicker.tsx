@@ -34,24 +34,24 @@ export default function TrendingNewsTicker() {
         </div>
       </div>
 
-      {/* Embedded High-Priority CSS for Guaranteed Left-to-Right Continuous Auto-Sweep */}
+      {/* Embedded High-Priority CSS for Guaranteed Towards-Left Continuous Auto-Sweep */}
       <style>{`
-        @keyframes sweepLeftToRight {
+        @keyframes sweepTowardsLeft {
           0% {
-            transform: translate3d(-50%, 0, 0);
-            -webkit-transform: translate3d(-50%, 0, 0);
+            transform: translate3d(0, 0, 0);
+            -webkit-transform: translate3d(0, 0, 0);
           }
           100% {
-            transform: translate3d(0%, 0, 0);
-            -webkit-transform: translate3d(0%, 0, 0);
+            transform: translate3d(-50%, 0, 0);
+            -webkit-transform: translate3d(-50%, 0, 0);
           }
         }
 
         .ticker-auto-sweep-track {
           display: flex !important;
           width: max-content !important;
-          animation: sweepLeftToRight 110s linear infinite !important;
-          -webkit-animation: sweepLeftToRight 110s linear infinite !important;
+          animation: sweepTowardsLeft 110s linear infinite !important;
+          -webkit-animation: sweepTowardsLeft 110s linear infinite !important;
           will-change: transform;
         }
 
@@ -76,12 +76,12 @@ export default function TrendingNewsTicker() {
           className="pointer-events-none absolute right-0 top-0 bottom-0 z-20 w-12 sm:w-24 bg-gradient-to-l from-[#030712] via-[#030712]/80 to-transparent"
         />
 
-        {/* Continuous Left-to-Right Auto Sweeping Marquee Track */}
+        {/* Continuous Towards-Left Auto Sweeping Marquee Track */}
         <div
           className="ticker-auto-sweep-track flex"
           style={{
-            animation: "sweepLeftToRight 110s linear infinite",
-            WebkitAnimation: "sweepLeftToRight 110s linear infinite",
+            animation: "sweepTowardsLeft 110s linear infinite",
+            WebkitAnimation: "sweepTowardsLeft 110s linear infinite",
           }}
         >
           {/* Track 1 */}
