@@ -13,7 +13,7 @@ export default function ContactForm() {
   const [toast, setToast] = useState<{ message: string; type: "success" | "error" } | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) {
       showToast("Please fill in all required fields.", "error");
@@ -28,11 +28,25 @@ export default function ContactForm() {
 
     setIsSubmitting(true);
 
-    setTimeout(() => {
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        showToast("Your message was dispatched successfully! We will get in touch shortly.", "success");
+        setFormData({ name: "", email: "", studentId: "", message: "" });
+      } else {
+        const data = await res.json();
+        showToast(data.error || "Failed to dispatch message. Please try again.", "error");
+      }
+    } catch {
+      showToast("Network error. Please try again later.", "error");
+    } finally {
       setIsSubmitting(false);
-      showToast("Your message was dispatched successfully! We will get in touch shortly.", "success");
-      setFormData({ name: "", email: "", studentId: "", message: "" });
-    }, 1500);
+    }
   };
 
   const showToast = (message: string, type: "success" | "error") => {

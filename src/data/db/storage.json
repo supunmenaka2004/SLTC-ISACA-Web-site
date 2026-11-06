@@ -1,0 +1,3540 @@
+{
+  "users": [
+    {
+      "id": "usr-admin-1",
+      "email": "admin@isaca.sltc.lk",
+      "passwordHash": "4eda3487067ade40604e16fe7b5e46ed4c314fdf885b47991dad6f62e0b4e6bf8e3d7df2bd49a0502f31fe33b55dacff1d7efa4588ba4ac48023087a59f679de",
+      "salt": "1e3b37e2260bfacb2b7e3078cce4fa7d",
+      "name": "SLTC ISACA Super Admin",
+      "role": "SUPER_ADMIN",
+      "status": "ACTIVE",
+      "createdAt": "2026-11-06T09:20:54.731Z",
+      "lastLoginAt": "2026-11-06T13:36:01.759Z"
+    },
+    {
+      "id": "usr-chief-1",
+      "email": "chief.editor@isaca.sltc.lk",
+      "passwordHash": "6c05b617bbe3202f2f9d511ede24cf2c5f57b89c0cea907281972da12d1e1895ad03622c8acd3cf1716fc3c60a807850cd9d740db72728852c3fb3d92ae1165e",
+      "salt": "fb6ebf678266097040dcf7e70462da67",
+      "name": "Devindi Silva (Chief Editor)",
+      "role": "CHIEF_EDITOR",
+      "status": "ACTIVE",
+      "createdAt": "2026-11-06T09:20:54.731Z",
+      "lastLoginAt": "2026-11-06T09:27:20.052Z"
+    },
+    {
+      "id": "usr-editor-1",
+      "email": "news.editor@isaca.sltc.lk",
+      "passwordHash": "2cc9c552d638928577ad2c72e4a69cf20f34831235d840d9a9f2eafb3f07368cdb4e61b649620363732193c0b63597153dd9b9565c34bf7382c46b734a2942dd",
+      "salt": "4fd5cbd0b9dc8969eb81d3ba6449df15",
+      "name": "Naveen Perera (News Editor)",
+      "role": "NEWS_EDITOR",
+      "status": "ACTIVE",
+      "createdAt": "2026-11-06T09:20:54.731Z",
+      "lastLoginAt": "2026-11-06T09:27:19.969Z"
+    },
+    {
+      "id": "usr-contrib-1",
+      "email": "contributor@isaca.sltc.lk",
+      "passwordHash": "6af1c75763e68c52417e875292c5be609648eaed00c5046b9d9271657f2aad6b64d72c8b33b04adca58a2bfdb1d002ded879162075cf3fe12b73596c83c2c839",
+      "salt": "f695352de402026af6fce3c5ad70b899",
+      "name": "Sanduni Fernando (News Contributor)",
+      "role": "NEWS_CONTRIBUTOR",
+      "status": "ACTIVE",
+      "createdAt": "2026-11-06T09:20:54.731Z",
+      "lastLoginAt": "2026-11-06T09:27:19.856Z"
+    },
+    {
+      "id": "usr-content-1",
+      "email": "content.admin@isaca.sltc.lk",
+      "passwordHash": "d2e129efaed2be9995a36d4d79201aeea1b5dfd0c70309e97a333cfff784e1d1177d2bcfefa3a1dbcd156771539bd70431be0d0604e378b4718fff6951c763cb",
+      "salt": "dbf4da13615da907095d3e69388b3b98",
+      "name": "Devindi Silva (Content Admin)",
+      "role": "CONTENT_ADMIN",
+      "status": "ACTIVE",
+      "createdAt": "2026-11-06T10:52:33.370Z"
+    },
+    {
+      "id": "usr-viewer-1",
+      "email": "viewer@isaca.sltc.lk",
+      "passwordHash": "c81887bc8b9e2fb1af535c65046f79f46cb919fd74af8930d63c9778225998cb1096979c3e60574d2694bede272774c1e6ed2c4ab8c3a7235b34f66877807ed4",
+      "salt": "b5fb6b50e221a6f6fbc81b8f293cd347",
+      "name": "Auditor Guest (Viewer)",
+      "role": "VIEWER",
+      "status": "ACTIVE",
+      "createdAt": "2026-11-06T10:52:33.436Z"
+    }
+  ],
+  "siteSettings": {
+    "siteTitle": "ISACA Student Group | Sri Lanka Technology Campus",
+    "tagline": "Empowering Students for a Secure Digital World",
+    "description": "Official web portal of ISACA Student Group. A student-driven community focused on cybersecurity, technology, innovation, knowledge sharing and responsible digital practices.",
+    "keywords": [
+      "ISACA",
+      "ISACA Student Group",
+      "Cybersecurity",
+      "University Technology Club",
+      "IT Audit",
+      "Digital Safety",
+      "Student Community",
+      "SLTC"
+    ],
+    "ogImage": "/cyber_hero.jpg",
+    "twitterCard": "summary_large_image",
+    "canonicalUrl": "https://sltc-isaca-web-site.vercel.app",
+    "favicon": "/favicon.ico",
+    "contactEmail": "isaca@sltc.ac.lk",
+    "contactPhone": "+94 11 210 0500",
+    "address": "School of Computing, Sri Lanka Technology Campus, Meepe, Padukka, Sri Lanka",
+    "socials": {
+      "linkedin": "https://linkedin.com",
+      "github": "https://github.com",
+      "youtube": "https://youtube.com",
+      "instagram": "https://instagram.com"
+    }
+  },
+  "theme": {
+    "id": "theme-default",
+    "name": "SLTC ISACA Institutional Dark",
+    "colors": {
+      "cyanAccent": "#00F0FF"
+    },
+    "typography": {
+      "headingFont": "Plus Jakarta Sans, sans-serif",
+      "bodyFont": "Plus Jakarta Sans, sans-serif",
+      "baseFontSize": "16px",
+      "headingWeight": "700",
+      "lineHeight": "1.6",
+      "letterSpacing": "-0.02em"
+    },
+    "components": {
+      "buttonRadius": "sm",
+      "cardRadius": "0.875rem",
+      "cardGlow": true,
+      "glassmorphism": true
+    },
+    "logo": {
+      "mainLogo": "/isaca_full_logo.png",
+      "transparentLogo": "/isaca_transparent.png",
+      "favicon": "/favicon.ico",
+      "logoHeight": 52
+    },
+    "isDraft": false,
+    "version": 4,
+    "updatedAt": "2026-11-06T10:40:25.672Z"
+  },
+  "themeDraft": {
+    "id": "theme-default",
+    "name": "SLTC ISACA Institutional Dark",
+    "colors": {
+      "cyanAccent": "#00F0FF"
+    },
+    "typography": {
+      "headingFont": "Plus Jakarta Sans, sans-serif",
+      "bodyFont": "Plus Jakarta Sans, sans-serif",
+      "baseFontSize": "16px",
+      "headingWeight": "700",
+      "lineHeight": "1.6",
+      "letterSpacing": "-0.02em"
+    },
+    "components": {
+      "buttonRadius": "sm",
+      "cardRadius": "0.875rem",
+      "cardGlow": true,
+      "glassmorphism": true
+    },
+    "logo": {
+      "mainLogo": "/isaca_full_logo.png",
+      "transparentLogo": "/isaca_transparent.png",
+      "favicon": "/favicon.ico",
+      "logoHeight": 52
+    },
+    "isDraft": true,
+    "version": 4,
+    "updatedAt": "2026-11-06T10:40:25.672Z"
+  },
+  "themeVersions": [
+    {
+      "id": "ver-4-05eeb0",
+      "version": 4,
+      "label": "Version 4 Update",
+      "config": {
+        "id": "theme-default",
+        "name": "SLTC ISACA Institutional Dark",
+        "colors": {
+          "cyanAccent": "#00F0FF"
+        },
+        "typography": {
+          "headingFont": "Plus Jakarta Sans, sans-serif",
+          "bodyFont": "Plus Jakarta Sans, sans-serif",
+          "baseFontSize": "16px",
+          "headingWeight": "700",
+          "lineHeight": "1.6",
+          "letterSpacing": "-0.02em"
+        },
+        "components": {
+          "buttonRadius": "sm",
+          "cardRadius": "0.875rem",
+          "cardGlow": true,
+          "glassmorphism": true
+        },
+        "logo": {
+          "mainLogo": "/isaca_full_logo.png",
+          "transparentLogo": "/isaca_transparent.png",
+          "favicon": "/favicon.ico",
+          "logoHeight": 52
+        },
+        "isDraft": false,
+        "version": 4,
+        "updatedAt": "2026-11-06T10:40:25.672Z"
+      },
+      "savedBy": "SLTC ISACA Super Admin",
+      "createdAt": "2026-11-06T10:40:25.672Z"
+    },
+    {
+      "id": "ver-3-b679d7",
+      "version": 3,
+      "label": "Custom Cyber Neon Theme v2",
+      "config": {
+        "id": "theme-default",
+        "name": "SLTC ISACA Institutional Dark",
+        "colors": {
+          "cyanAccent": "#00F0FF"
+        },
+        "typography": {
+          "headingFont": "Plus Jakarta Sans, sans-serif",
+          "bodyFont": "Plus Jakarta Sans, sans-serif",
+          "baseFontSize": "16px",
+          "headingWeight": "700",
+          "lineHeight": "1.6",
+          "letterSpacing": "-0.02em"
+        },
+        "components": {
+          "buttonRadius": "sm",
+          "cardRadius": "0.875rem",
+          "cardGlow": true,
+          "glassmorphism": true
+        },
+        "logo": {
+          "mainLogo": "/isaca_full_logo.png",
+          "transparentLogo": "/isaca_transparent.png",
+          "favicon": "/favicon.ico",
+          "logoHeight": 52
+        },
+        "isDraft": false,
+        "version": 3,
+        "updatedAt": "2026-11-06T09:27:20.095Z"
+      },
+      "savedBy": "SLTC ISACA Super Admin",
+      "createdAt": "2026-11-06T09:27:20.095Z"
+    },
+    {
+      "id": "ver-2-50f993",
+      "version": 2,
+      "label": "Custom Cyber Neon Theme v2",
+      "config": {
+        "id": "theme-default",
+        "name": "SLTC ISACA Institutional Dark",
+        "colors": {
+          "bgMain": "#030712",
+          "bgSection": "#090f1d",
+          "bgCard": "#0d1527",
+          "textWhite": "#ffffff",
+          "textSlate": "#cbd5e1",
+          "textMuted": "#94a3b8",
+          "cyanAccent": "#00f0ff",
+          "skyAccent": "#38bdf8",
+          "emeraldAccent": "#00e676",
+          "borderCard": "rgba(255, 255, 255, 0.08)",
+          "borderHover": "rgba(0, 240, 255, 0.35)",
+          "buttonBg": "#02060d",
+          "buttonText": "#f1f5f9",
+          "buttonBorder": "rgba(6, 182, 212, 0.8)"
+        },
+        "typography": {
+          "headingFont": "Plus Jakarta Sans, sans-serif",
+          "bodyFont": "Plus Jakarta Sans, sans-serif",
+          "baseFontSize": "16px",
+          "headingWeight": "700",
+          "lineHeight": "1.6",
+          "letterSpacing": "-0.02em"
+        },
+        "components": {
+          "buttonRadius": "sm",
+          "cardRadius": "0.875rem",
+          "cardGlow": true,
+          "glassmorphism": true
+        },
+        "logo": {
+          "mainLogo": "/isaca_full_logo.png",
+          "transparentLogo": "/isaca_transparent.png",
+          "favicon": "/favicon.ico",
+          "logoHeight": 52
+        },
+        "isDraft": false,
+        "version": 2,
+        "updatedAt": "2026-11-06T09:27:03.416Z"
+      },
+      "savedBy": "SLTC ISACA Super Admin",
+      "createdAt": "2026-11-06T09:27:03.416Z"
+    },
+    {
+      "id": "ver-1",
+      "version": 1,
+      "label": "Default Brand Baseline",
+      "config": {
+        "id": "theme-default",
+        "name": "SLTC ISACA Institutional Dark",
+        "colors": {
+          "bgMain": "#030712",
+          "bgSection": "#090f1d",
+          "bgCard": "#0d1527",
+          "textWhite": "#ffffff",
+          "textSlate": "#cbd5e1",
+          "textMuted": "#94a3b8",
+          "cyanAccent": "#00f0ff",
+          "skyAccent": "#38bdf8",
+          "emeraldAccent": "#00e676",
+          "borderCard": "rgba(255, 255, 255, 0.08)",
+          "borderHover": "rgba(0, 240, 255, 0.35)",
+          "buttonBg": "#02060d",
+          "buttonText": "#f1f5f9",
+          "buttonBorder": "rgba(6, 182, 212, 0.8)"
+        },
+        "typography": {
+          "headingFont": "Plus Jakarta Sans, sans-serif",
+          "bodyFont": "Plus Jakarta Sans, sans-serif",
+          "baseFontSize": "16px",
+          "headingWeight": "700",
+          "lineHeight": "1.6",
+          "letterSpacing": "-0.02em"
+        },
+        "components": {
+          "buttonRadius": "sm",
+          "cardRadius": "0.875rem",
+          "cardGlow": true,
+          "glassmorphism": true
+        },
+        "logo": {
+          "mainLogo": "/isaca_full_logo.png",
+          "transparentLogo": "/isaca_transparent.png",
+          "favicon": "/favicon.ico",
+          "logoHeight": 52
+        },
+        "isDraft": false,
+        "version": 1,
+        "updatedAt": "2026-11-06T09:20:49.420Z"
+      },
+      "savedBy": "Super Admin",
+      "createdAt": "2026-11-06T09:20:54.731Z"
+    }
+  ],
+  "media": [
+    {
+      "id": "med-1793965240390-458f67",
+      "filename": "about-1793965240389-9af52e.jpg",
+      "originalName": "about.jpg",
+      "mimeType": "image/jpeg",
+      "size": 614115,
+      "url": "/uploads/about-1793965240389-9af52e.jpg",
+      "altText": "about",
+      "category": "general",
+      "uploadedBy": "SLTC ISACA Super Admin",
+      "uploadedAt": "2026-11-06T11:40:40.390Z"
+    },
+    {
+      "id": "med-1793965191111-8ee6aa",
+      "filename": "Golden_Laurel_Congratulations_Badge-1793965191110-86ff28.png",
+      "originalName": "Golden Laurel Congratulations Badge.png",
+      "mimeType": "image/png",
+      "size": 1156096,
+      "url": "/uploads/Golden_Laurel_Congratulations_Badge-1793965191110-86ff28.png",
+      "altText": "Golden Laurel Congratulations Badge",
+      "category": "general",
+      "uploadedBy": "SLTC ISACA Super Admin",
+      "uploadedAt": "2026-11-06T11:39:51.111Z"
+    },
+    {
+      "id": "med-logo-1",
+      "filename": "isaca_full_logo.png",
+      "originalName": "isaca_full_logo.png",
+      "mimeType": "image/png",
+      "size": 45000,
+      "url": "/isaca_full_logo.png",
+      "altText": "Official ISACA Student Group Logo",
+      "category": "logo",
+      "uploadedBy": "System",
+      "uploadedAt": "2026-11-06T09:20:54.731Z"
+    },
+    {
+      "id": "med-logo-2",
+      "filename": "isaca_transparent.png",
+      "originalName": "isaca_transparent.png",
+      "mimeType": "image/png",
+      "size": 38000,
+      "url": "/isaca_transparent.png",
+      "altText": "ISACA Transparent Navbar Emblem",
+      "category": "logo",
+      "uploadedBy": "System",
+      "uploadedAt": "2026-11-06T09:20:54.731Z"
+    },
+    {
+      "id": "med-hero-1",
+      "filename": "cyber_hero.jpg",
+      "originalName": "cyber_hero.jpg",
+      "mimeType": "image/jpeg",
+      "size": 180000,
+      "url": "/cyber_hero.jpg",
+      "altText": "SLTC Cyber Lab Ambient Background",
+      "category": "hero",
+      "uploadedBy": "System",
+      "uploadedAt": "2026-11-06T09:20:54.731Z"
+    },
+    {
+      "id": "med-about-1",
+      "filename": "about.jpg",
+      "originalName": "about.jpg",
+      "mimeType": "image/jpeg",
+      "size": 154000,
+      "url": "/about.jpg",
+      "altText": "ISACA Committee Team Showcase",
+      "category": "general",
+      "uploadedBy": "System",
+      "uploadedAt": "2026-11-06T09:20:54.731Z"
+    }
+  ],
+  "committee": [
+    {
+      "id": "com-pres-1",
+      "name": "Kavindu Perera",
+      "position": "President",
+      "initials": "KP",
+      "category": "Executive",
+      "bio": "Updated from Committee side: Synchronized seamlessly!",
+      "linkedin": "https://linkedin.com",
+      "github": "https://github.com",
+      "email": "kavindu.perera@isacaclub.org",
+      "image": "/uploads/Nisal_Samarasinghe-1793968085598-296bbe.jpg",
+      "order": 1,
+      "archived": false,
+      "instagram": "https://instagram.com"
+    },
+    {
+      "id": "com-vp-1",
+      "name": "Dilini Fernando",
+      "position": "Vice President",
+      "initials": "DF",
+      "category": "Executive",
+      "bio": "Coordinating strategic initiatives, ethical hacking workshops, and student research mentorship.",
+      "linkedin": "https://linkedin.com",
+      "email": "dilini.fernando@isacaclub.org",
+      "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80",
+      "order": 2,
+      "archived": false
+    },
+    {
+      "id": "com-sec-1",
+      "name": "Thisara Jayasinghe",
+      "position": "Secretary",
+      "initials": "TJ",
+      "category": "Executive",
+      "bio": "Managing organizational operations, official communications, and chapter administrative governance.",
+      "linkedin": "https://linkedin.com",
+      "github": "https://github.com",
+      "email": "thisara.jayasinghe@isacaclub.org",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
+      "order": 3,
+      "archived": false
+    },
+    {
+      "id": "com-asst-sec-1",
+      "name": "Maneesha Rathnayake",
+      "position": "Assistant Secretary",
+      "initials": "MR",
+      "category": "Executive",
+      "bio": "Assisting operational workflows, member onboarding, and official meeting documentations.",
+      "linkedin": "https://linkedin.com",
+      "email": "maneesha.rathnayake@isacaclub.org",
+      "image": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80",
+      "order": 4,
+      "archived": false
+    },
+    {
+      "id": "com-treas-1",
+      "name": "Nethmi Silva",
+      "position": "Treasurer",
+      "initials": "NS",
+      "category": "Executive",
+      "bio": "Overseeing financial planning, event sponsorships, and resource allocation for club projects.",
+      "linkedin": "https://linkedin.com",
+      "email": "nethmi.silva@isacaclub.org",
+      "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80",
+      "order": 5,
+      "archived": false
+    },
+    {
+      "id": "com-asst-treas-1",
+      "name": "Kusal Gunaratne",
+      "position": "Assistant Treasurer",
+      "initials": "KG",
+      "category": "Executive",
+      "bio": "Assisting with club financial audits, budget tracking, and event sponsorship accounts.",
+      "linkedin": "https://linkedin.com",
+      "github": "https://github.com",
+      "email": "kusal.gunaratne@isacaclub.org",
+      "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80",
+      "order": 6,
+      "archived": false
+    },
+    {
+      "id": "com-webmaster-1",
+      "name": "Sanju Kulatunga",
+      "position": "Web Master",
+      "initials": "SK",
+      "category": "Technical",
+      "bio": "Developing and maintaining the official ISACA Web portal, CTF platform, and digital systems.",
+      "linkedin": "https://linkedin.com",
+      "github": "https://github.com",
+      "email": "sanju.kulatunga@isacaclub.org",
+      "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80",
+      "order": 7,
+      "archived": false
+    },
+    {
+      "id": "com-tech-1",
+      "name": "Ruwan Senanayake",
+      "position": "Technical Lead",
+      "initials": "RS",
+      "category": "Technical",
+      "bio": "Architecting CTF competitions, hands-on lab environments, and technical infrastructure.",
+      "linkedin": "https://linkedin.com",
+      "github": "https://github.com",
+      "email": "ruwan.senanayake@isacaclub.org",
+      "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80",
+      "order": 8,
+      "archived": false
+    },
+    {
+      "id": "com-event-1",
+      "name": "Anurangi Abeyratne",
+      "position": "Event Coordinator",
+      "initials": "AA",
+      "category": "Operations",
+      "bio": "Organizing guest speaker seminars, cyber summits, and university-wide hackathons.",
+      "linkedin": "https://linkedin.com",
+      "email": "anurangi.abeyratne@isacaclub.org",
+      "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80",
+      "order": 9,
+      "archived": false
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj-1",
+      "name": "ISACA CTF Competition Platform",
+      "category": "Competition Portal",
+      "description": "A custom web application built to host university Jeopardy-style cybersecurity competitions, featuring challenge scoring, flag verification, and live scoreboards.",
+      "status": "Active",
+      "technologies": [
+        "Next.js",
+        "TypeScript",
+        "Docker",
+        "Tailwind CSS"
+      ],
+      "githubUrl": "https://github.com",
+      "demoUrl": "https://ctf.isacaclub.org",
+      "order": 1,
+      "archived": false
+    },
+    {
+      "id": "proj-2",
+      "name": "Student Cyber Awareness Portal",
+      "category": "Education Platform",
+      "description": "An educational web portal offering interactive learning modules, phishing awareness guidance, and password security tips for students.",
+      "status": "Active",
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Node.js",
+        "PostgreSQL"
+      ],
+      "githubUrl": "https://github.com",
+      "order": 2,
+      "archived": false
+    },
+    {
+      "id": "proj-3",
+      "name": "Automated Repository Security Audit Tool",
+      "category": "Security Tool",
+      "description": "A lightweight static analysis tool designed to scan code repositories for exposed secrets, outdated dependencies, and security misconfigurations.",
+      "status": "Ongoing",
+      "technologies": [
+        "Python",
+        "Go",
+        "Git API"
+      ],
+      "githubUrl": "https://github.com",
+      "order": 3,
+      "archived": false
+    },
+    {
+      "id": "proj-4",
+      "name": "Network Traffic & Intrusion Simulation Sandbox",
+      "category": "Research Lab",
+      "description": "A controlled laboratory environment for analyzing network packet captures, testing Suricata IDS rules, and auditing security log events.",
+      "status": "Completed",
+      "technologies": [
+        "Suricata",
+        "Wireshark",
+        "Linux",
+        "Bash"
+      ],
+      "githubUrl": "https://github.com",
+      "order": 4,
+      "archived": false
+    },
+    {
+      "id": "proj-5",
+      "name": "Threat Intelligence Feed Aggregator",
+      "category": "Threat Research",
+      "description": "A research project that aggregates public cybersecurity advisories and open-source IOC indicators into clean JSON data feeds.",
+      "status": "Active",
+      "technologies": [
+        "Python",
+        "FastAPI",
+        "SQLite"
+      ],
+      "githubUrl": "https://github.com",
+      "order": 5,
+      "archived": false
+    },
+    {
+      "id": "proj-6",
+      "name": "Campus Web Accessibility & Security Assessment",
+      "category": "Community Project",
+      "description": "A collaborative review of university student web projects, providing recommendations for web accessibility, SSL setup, and input validation.",
+      "status": "Completed",
+      "technologies": [
+        "OWASP ZAP",
+        "Lighthouse",
+        "Burp Suite"
+      ],
+      "order": 6,
+      "archived": false
+    }
+  ],
+  "messages": [
+    {
+      "id": "msg-1793957239655-a09146",
+      "name": "Security Researcher",
+      "email": "researcher@cert.org",
+      "message": "Coordination request regarding recent critical zero-day bulletin.",
+      "status": "unread",
+      "createdAt": "2026-11-06T09:27:19.655Z"
+    },
+    {
+      "id": "msg-1793957222936-4982c2",
+      "name": "Security Researcher",
+      "email": "researcher@cert.org",
+      "message": "Coordination request regarding recent critical zero-day bulletin.",
+      "status": "unread",
+      "createdAt": "2026-11-06T09:27:02.936Z"
+    },
+    {
+      "id": "msg-1793957150202-620dbf",
+      "name": "Security Researcher",
+      "email": "researcher@cert.org",
+      "message": "Coordination request regarding recent critical zero-day bulletin.",
+      "status": "unread",
+      "createdAt": "2026-11-06T09:25:50.202Z"
+    },
+    {
+      "id": "msg-seed-1",
+      "name": "Hirun Senaratne",
+      "email": "hirun.s@sltc.ac.lk",
+      "studentId": "IT220894",
+      "message": "Hello ISACA Team, I am interested in joining the upcoming ethical hacking bootcamp and CTF competitions. How can I enroll in the technical track?",
+      "status": "unread",
+      "createdAt": "2026-11-06T05:20:54.731Z"
+    },
+    {
+      "id": "msg-seed-2",
+      "name": "Rashmika Weerasinghe",
+      "email": "rashmika.w@industrypartners.lk",
+      "message": "Greetings from TechSecurity Partners. We would like to discuss sponsoring the next ISACA Cyber Summit and conducting an industry guest session on Cloud Forensics.",
+      "status": "read",
+      "createdAt": "2026-11-05T05:20:54.731Z",
+      "notes": "Reviewed by President. Forwarded to VP for sponsorship prospectus follow-up."
+    }
+  ],
+  "news": [
+    {
+      "id": "news-1793957239871-077b",
+      "slug": "critical-firmware-zero-day-discovered-in-enterprise-routers",
+      "title": "Critical Firmware Zero-Day Discovered in Enterprise Routers",
+      "category": "Threat Intelligence",
+      "publishedDate": "November 06, 2026",
+      "publishedAt": "2026-11-06T09:27:20.069Z",
+      "excerpt": "Zero-click remote code execution chain observed targeting core perimeter devices.",
+      "content": [
+        "Security analysts have uncovered widespread exploitation of an unauthenticated RCE flaw."
+      ],
+      "sections": [],
+      "keyHighlights": [
+        "Zero-click RCE",
+        "Active in the wild",
+        "Emergency patch available"
+      ],
+      "technicalInformation": [],
+      "affectedSystems": [
+        "Enterprise Router OS v4.2-v4.9"
+      ],
+      "securityRecommendations": [
+        "Apply vendor emergency update KB-99812 immediately."
+      ],
+      "image": "/cyber_hero.jpg",
+      "imageAlt": "Critical Firmware Zero-Day Discovered in Enterprise Routers",
+      "publisher": "ISACA Student Chapter",
+      "author": "Sanduni Fernando (News Contributor)",
+      "featured": false,
+      "trending": false,
+      "status": "PUBLISHED",
+      "submittedBy": {
+        "userId": "usr-contrib-1",
+        "userName": "Sanduni Fernando (News Contributor)",
+        "userEmail": "contributor@isaca.sltc.lk"
+      },
+      "tags": [
+        "ThreatIntel",
+        "Firmware",
+        "ZeroDay"
+      ],
+      "readingTimeMinutes": 1,
+      "createdAt": "2026-11-06T09:27:19.893Z",
+      "updatedAt": "2026-11-06T09:27:20.069Z",
+      "reviewerNotes": "Please provide the CVE identifier and CVSS score in the technical highlights.",
+      "approvedBy": "Devindi Silva (Chief Editor)",
+      "publishedBy": "Devindi Silva (Chief Editor)"
+    },
+    {
+      "id": "news-1793957223172-2f6a",
+      "slug": "critical-firmware-zero-day-discovered-in-enterprise-routers",
+      "title": "Critical Firmware Zero-Day Discovered in Enterprise Routers",
+      "category": "Threat Intelligence",
+      "publishedDate": "November 06, 2026",
+      "publishedAt": "2026-11-06T09:27:03.392Z",
+      "excerpt": "Zero-click remote code execution chain observed targeting core perimeter devices.",
+      "content": [
+        "Security analysts have uncovered widespread exploitation of an unauthenticated RCE flaw."
+      ],
+      "sections": [],
+      "keyHighlights": [
+        "Zero-click RCE",
+        "Active in the wild",
+        "Emergency patch available"
+      ],
+      "technicalInformation": [],
+      "affectedSystems": [
+        "Enterprise Router OS v4.2-v4.9"
+      ],
+      "securityRecommendations": [
+        "Apply vendor emergency update KB-99812 immediately."
+      ],
+      "image": "/cyber_hero.jpg",
+      "imageAlt": "Critical Firmware Zero-Day Discovered in Enterprise Routers",
+      "publisher": "ISACA Student Chapter",
+      "author": "Sanduni Fernando (News Contributor)",
+      "featured": false,
+      "trending": false,
+      "status": "PUBLISHED",
+      "submittedBy": {
+        "userId": "usr-contrib-1",
+        "userName": "Sanduni Fernando (News Contributor)",
+        "userEmail": "contributor@isaca.sltc.lk"
+      },
+      "tags": [
+        "ThreatIntel",
+        "Firmware",
+        "ZeroDay"
+      ],
+      "readingTimeMinutes": 1,
+      "createdAt": "2026-11-06T09:27:03.197Z",
+      "updatedAt": "2026-11-06T09:27:03.392Z",
+      "reviewerNotes": "Please provide the CVE identifier and CVSS score in the technical highlights.",
+      "approvedBy": "Devindi Silva (Chief Editor)",
+      "publishedBy": "Devindi Silva (Chief Editor)"
+    },
+    {
+      "id": "news-5",
+      "slug": "news-5",
+      "title": "Cyber chief: UK facing AI-powered attacks on critical infrastructure within two years",
+      "category": "AI Security",
+      "publishedDate": "November 03, 2026",
+      "publishedAt": "2026-11-03T00:00:00.000Z",
+      "excerpt": "The UK National Cyber Security Centre warns that AI could accelerate ransomware and exploit automation against essential utilities by 2028.",
+      "content": [],
+      "sections": [
+        {
+          "heading": "Strategic Forecast and Emergent Threat Vectors",
+          "paragraphs": [
+            "In its annual State of the Cyber Nation assessment, the UK National Cyber Security Centre (NCSC) highlighted the rapid convergence of large language models and autonomous exploitation toolkits. The intelligence forecast warns that hostile state-sponsored groups and syndicated ransomware cartels will likely integrate machine-learning pipelines into existing command-and-control operations within twenty-four months.",
+            "Rather than inventing novel attack surfaces, artificial intelligence accelerates traditional kill chains. Reconnaissance cycles that previously required weeks of manual network surveying can now execute in minutes, enabling threat actors to identify zero-day exposures and unpatched edge infrastructure at machine speed."
+          ]
+        },
+        {
+          "heading": "Resilience Priorities for Critical Infrastructure",
+          "paragraphs": [
+            "The advisory specifically addresses operators of power grids, water treatment facilities, telecommunications backbones, and healthcare logistics. Analysts stress that attackers frequently leverage legacy operational technology (OT) bridged inadvertently to corporate IT networks.",
+            "Defenders are strongly urged to close persistent architectural gaps, enforce rigorous segmentation between administrative environments and industrial telemetry, and implement multi-factor authentication across every remote maintenance portal."
+          ]
+        }
+      ],
+      "keyHighlights": [
+        "The NCSC projects AI will dramatically scale threat actors' efficiency in vulnerability reconnaissance and weaponization.",
+        "National critical infrastructure operators are advised to prepare defenses against autonomous ransomware variants before 2028.",
+        "Emphasizes foundational cyber hygiene over specialized tooling as the single most effective barrier against AI threat vectors."
+      ],
+      "technicalInformation": [
+        "Automated payload polymorphism: Machine learning algorithms dynamically obfuscate malicious binaries to evade heuristic endpoint detection.",
+        "High-velocity credential stuffing: Neural networks generate highly context-aware social engineering scripts calibrated to specific departmental roles.",
+        "Vulnerability synthesis: Automated scripts ingest CVE disclosures to synthesize working proof-of-concept exploits within hours of public release."
+      ],
+      "affectedSystems": [
+        "SCADA & Operational Technology (OT) edge gateways",
+        "Enterprise Identity Providers (Active Directory, Azure AD/Entra ID)",
+        "Unpatched edge firewalls and SSL VPN terminators",
+        "Public cloud orchestration endpoints (Kubernetes API clusters)"
+      ],
+      "securityRecommendations": [
+        "Establish strict air-gapping or micro-segmentation between corporate IT networks and industrial control operations.",
+        "Mandate phishing-resistant FIDO2 hardware tokens across all external management interfaces.",
+        "Deploy behavioral anomaly detection to identify automated lateral movement across internal subnets.",
+        "Maintain validated, offline, immutable system backups tested against full-scale ransomware restoration drills."
+      ],
+      "image": "/it_audit.jpg",
+      "imageAlt": "Cybersecurity engineer monitoring threat intelligence dashboards",
+      "publisher": "UK National Cyber Security Centre",
+      "author": "NCSC Intelligence Desk",
+      "sourceUrl": "https://www.ncsc.gov.uk/news/cyber-chief-uk-facing-ai-powered-attacks-on-critical-infrastructure-in-two-years",
+      "sourceName": "National Cyber Security Centre (NCSC)",
+      "featured": true,
+      "trending": true,
+      "status": "PUBLISHED",
+      "submittedBy": {
+        "userId": "usr-admin-1",
+        "userName": "SLTC ISACA Super Admin",
+        "userEmail": "admin@isaca.sltc.lk"
+      },
+      "readingTimeMinutes": 5,
+      "seoTitle": "Cyber chief: UK facing AI-powered attacks on critical infrastructure within two years",
+      "seoDescription": "The UK National Cyber Security Centre warns that AI could accelerate ransomware and exploit automation against essential utilities by 2028.",
+      "tags": [
+        "AI Security",
+        "Cybersecurity",
+        "ISACA"
+      ],
+      "createdAt": "2026-11-03T00:00:00.000Z",
+      "updatedAt": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "news-6",
+      "slug": "news-6",
+      "title": "Cyber attack on Publica software supplier: data leak confirmed",
+      "category": "Data Breaches",
+      "publishedDate": "October 08, 2026",
+      "publishedAt": "2026-10-08T00:00:00.000Z",
+      "excerpt": "Swiss authorities confirm an ongoing investigation into a third-party software provider breach impacting records held by the Federal Pension Fund.",
+      "content": [],
+      "sections": [
+        {
+          "heading": "Supply-Chain Compromise and Incident Timeline",
+          "paragraphs": [
+            "The Swiss Federal Department of Foreign Affairs (FDFA) confirmed that an external software development partner utilized by the Swiss Federal Pension Fund Publica fell victim to a sophisticated intrusion. Threat actors compromised service account credentials at the provider, obtaining lateral access to client data repositories.",
+            "Upon discovering anomalous outbound telemetry at the end of September 2026, the vendor engaged external digital forensics specialists, isolated affected database instances, and notified federal supervisory authorities alongside impacted institutional clients."
+          ]
+        },
+        {
+          "heading": "Ongoing Investigation and Impact Mitigation",
+          "paragraphs": [
+            "Federal prosecutors have launched an expansive inquiry in coordination with the Federal Office of Police (fedpol). Investigators are currently reconstructing forensic logs to ascertain the exact volume and sensitivity of member records exfiltrated during the intrusion window.",
+            "Publica has initiated direct communication protocols to notify affected beneficiaries, while mandating comprehensive cryptographic rotation across all external API tokens and service interfaces linked to third-party providers."
+          ]
+        }
+      ],
+      "keyHighlights": [
+        "A supply-chain compromise at a key IT vendor resulted in unauthorized exfiltration of sensitive municipal and pension records.",
+        "The Swiss Office of the Attorney General opened a federal criminal proceeding into data theft and digital sabotage.",
+        "The incident underscores escalating risks stemming from vendor software integrations and shared API ecosystems."
+      ],
+      "technicalInformation": [
+        "Compromised OAuth service principal tokens permitted unauthorized cross-tenant data queries.",
+        "Encrypted egress channels masqueraded as normal TLS 1.3 telemetry to bypass standard perimeter filters.",
+        "Database schema dump commands executed under hijacked administrative service identities."
+      ],
+      "affectedSystems": [
+        "Third-party SaaS administration portals and database replicas",
+        "Publica pension account records management systems",
+        "Enterprise REST API integration endpoints and OAuth authorization scopes"
+      ],
+      "securityRecommendations": [
+        "Perform continuous security audits and least-privilege scoping on third-party service provider access.",
+        "Enforce token expiration limits and IP-binding on all service-to-service API connections.",
+        "Implement automated database activity monitoring (DAM) alerting on abnormal bulk query volumes.",
+        "Establish vendor incident response SLAs requiring notification within 24 hours of suspected compromise."
+      ],
+      "image": "/hacking_workshop.jpg",
+      "imageAlt": "Forensics investigators analyzing server logs and breach indicators",
+      "publisher": "Swiss Federal Department of Foreign Affairs",
+      "author": "Federal Forensics Unit",
+      "sourceUrl": "https://www.fdfa.admin.ch/en/newnsb/FjG4XOIms04s",
+      "sourceName": "Federal Department of Foreign Affairs (FDFA)",
+      "featured": false,
+      "trending": true,
+      "status": "PUBLISHED",
+      "submittedBy": {
+        "userId": "usr-admin-1",
+        "userName": "SLTC ISACA Super Admin",
+        "userEmail": "admin@isaca.sltc.lk"
+      },
+      "readingTimeMinutes": 5,
+      "seoTitle": "Cyber attack on Publica software supplier: data leak confirmed",
+      "seoDescription": "Swiss authorities confirm an ongoing investigation into a third-party software provider breach impacting records held by the Federal Pension Fund.",
+      "tags": [
+        "Data Breaches",
+        "Cybersecurity",
+        "ISACA"
+      ],
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "news-7",
+      "slug": "news-7",
+      "title": "Cybercrime: Computer network used by ransomware group dismantled in coordinated international operation",
+      "category": "Malware & Ransomware",
+      "publishedDate": "October 01, 2026",
+      "publishedAt": "2026-10-01T00:00:00.000Z",
+      "excerpt": "Federal police and international partners successfully seize command infrastructure and decrypt keys belonging to the KillSec ransomware syndicate.",
+      "content": [],
+      "sections": [
+        {
+          "heading": "Coordinated Law Enforcement Strike",
+          "paragraphs": [
+            "In a multi-jurisdictional takedown dubbed Operation Iron Gate, Switzerland's Federal Office of Police (fedpol) partnered with European judicial authorities to neutralize the technical backbone of the KillSec ransomware syndicate. Over thirty virtual private servers distributed across multiple hosting jurisdictions were taken down concurrently.",
+            "KillSec, which operated under a Ransomware-as-a-Service (RaaS) model, had extorted millions from European mid-market enterprises since late 2023. The group specialized in double-extortion tactics, pairing cryptographic file locking with threats of public data leak disclosures."
+          ]
+        },
+        {
+          "heading": "Key Recovery and Ongoing Proceedings",
+          "paragraphs": [
+            "A major victory of the operation was the acquisition of server images containing cryptographic seed pairs. Forensic specialists are actively extracting decryption keys to assist victims in restoring scrambled data without paying criminal ransoms.",
+            "While this server disruption severely cripples KillSec's operational readiness, law enforcement cautions that decentralized affiliate operators often regroup under newly branded banners, necessitating ongoing defensive vigilance."
+          ]
+        }
+      ],
+      "keyHighlights": [
+        "A cross-border law enforcement initiative dismantled servers and data repositories powering the KillSec extortion operation.",
+        "Swiss fedpol and the Office of the Attorney General seized key command nodes and secured private decryption keys.",
+        "The disruption halts active affiliate campaigns targeting manufacturing and municipal healthcare infrastructure."
+      ],
+      "technicalInformation": [
+        "Custom Rust-based ransomware payloads utilizing ChaCha20-Poly1305 symmetric stream encryption.",
+        "Decentralized command-and-control (C2) servers hosted across bulletproof service providers using Fast Flux DNS routing.",
+        "Exfiltration pipelines utilizing modified Rclone binaries disguised as standard backup tasks."
+      ],
+      "affectedSystems": [
+        "Windows Domain Controllers and Active Directory forest trusts",
+        "VMware ESXi and Hyper-V hypervisors hosting mission-critical workloads",
+        "Network Attached Storage (NAS) appliances exposed via unauthenticated SMB ports"
+      ],
+      "securityRecommendations": [
+        "Block unauthenticated SMB (Port 445) and RDP (Port 3389) traffic directly at all perimeter firewalls.",
+        "Harden virtualization hosts (ESXi/Hyper-V) with restricted management interfaces and dedicated out-of-band VLANs.",
+        "Deploy Endpoint Detection and Response (EDR) solutions configured in active blocking mode against known Rust/Go cryptors.",
+        "Maintain multi-region air-gapped backup snapshots with immutable write-once-read-many (WORM) locks."
+      ],
+      "image": "/cyber_summit.jpg",
+      "imageAlt": "Law enforcement operations center monitoring threat syndicate infrastructure",
+      "publisher": "Swiss Federal Office of Police",
+      "author": "Special Investigations Taskforce",
+      "sourceUrl": "https://www.fedpol.admin.ch/en/newnsb/cBOoSTI5a7sc",
+      "sourceName": "Federal Office of Police (fedpol)",
+      "featured": false,
+      "trending": true,
+      "status": "PUBLISHED",
+      "submittedBy": {
+        "userId": "usr-admin-1",
+        "userName": "SLTC ISACA Super Admin",
+        "userEmail": "admin@isaca.sltc.lk"
+      },
+      "readingTimeMinutes": 5,
+      "seoTitle": "Cybercrime: Computer network used by ransomware group dismantled in coordinated international operation",
+      "seoDescription": "Federal police and international partners successfully seize command infrastructure and decrypt keys belonging to the KillSec ransomware syndicate.",
+      "tags": [
+        "Malware & Ransomware",
+        "Cybersecurity",
+        "ISACA"
+      ],
+      "createdAt": "2026-10-01T00:00:00.000Z",
+      "updatedAt": "2026-10-01T00:00:00.000Z"
+    },
+    {
+      "id": "news-1",
+      "slug": "news-1",
+      "title": "ISACA Research Team Highlights Emerging Cloud Misconfiguration and IAM Vulnerability Trends",
+      "category": "Research",
+      "publishedDate": "September 02, 2026",
+      "publishedAt": "2026-09-02T00:00:00.000Z",
+      "excerpt": "Research by the ISACA Student Chapter reveals common multi-cloud permission flaws that expose academic and enterprise systems to privilege escalation.",
+      "content": [],
+      "sections": [
+        {
+          "heading": "Empirical Cloud Security Audit Findings",
+          "paragraphs": [
+            "The ISACA Student Research Unit, in partnership with faculty advisors from the School of Computing, concluded a six-month telemetry review evaluating cloud security posture across simulated academic infrastructure and enterprise staging environments.",
+            "The study uncovered widespread reliance on default configuration profiles. Administrators frequently grant broad wildcard permissions (such as `iam:*` or `s3:*`) to accelerate CI/CD deployments, which attackers routinely exploit during initial foothold compromises."
+          ]
+        },
+        {
+          "heading": "Automated Detection and Principle of Least Privilege",
+          "paragraphs": [
+            "The research paper introduces an automated auditing framework that benchmarks cloud tenancy policies against CIS Benchmarks and ISO 27001 standards. The tool identifies unrotated access keys older than 90 days and flags inactive roles with administrative scopes.",
+            "By implementing continuous policy validation in pre-deployment pipelines, security administrators can detect and eliminate privilege escalation pathways before infrastructure code merges to production."
+          ]
+        }
+      ],
+      "keyHighlights": [
+        "Over 65% of audited cloud environments contained over-permissive IAM wildcard policies permitting lateral privilege escalation.",
+        "Publicly accessible storage buckets and lingering service account keys remain the top root causes for cloud data exposure.",
+        "Provides actionable architectural hardening guidelines tailored for university computing clusters and modern DevOps pipelines."
+      ],
+      "technicalInformation": [
+        "Instance Metadata Service v1 (IMDSv1) SSRF vectors enabling EC2 IAM role credential extraction.",
+        "Excessive `AssumeRole` and `PassRole` permissions enabling privilege escalation to full Cloud Administrator.",
+        "Hardcoded long-lived API keys embedded within client-side container environment files."
+      ],
+      "affectedSystems": [
+        "AWS IAM Policies and S3 Object Storage ACLs",
+        "Microsoft Azure Role-Based Access Control (RBAC) scopes",
+        "Google Cloud Platform (GCP) Service Accounts and Workload Identity pools",
+        "Kubernetes cluster role bindings and service account tokens"
+      ],
+      "securityRecommendations": [
+        "Enforce IMDSv2 globally across all cloud virtual machines to mitigate server-side request forgery (SSRF).",
+        "Replace static long-lived credentials with temporary, short-lived tokens via OpenID Connect (OIDC).",
+        "Automate periodic permission boundary audits using Cloud Infrastructure Entitlement Management (CIEM) tools.",
+        "Implement strict preventative guardrails using AWS Service Control Policies (SCPs) or Azure Management Policies."
+      ],
+      "image": "/cyber_hero.jpg",
+      "imageAlt": "Cloud architecture security diagram and identity telemetry visualization",
+      "publisher": "SLTC ISACA Student Group Research Unit",
+      "author": "ISACA Research Team",
+      "featured": false,
+      "trending": false,
+      "status": "PUBLISHED",
+      "submittedBy": {
+        "userId": "usr-admin-1",
+        "userName": "SLTC ISACA Super Admin",
+        "userEmail": "admin@isaca.sltc.lk"
+      },
+      "readingTimeMinutes": 5,
+      "seoTitle": "ISACA Research Team Highlights Emerging Cloud Misconfiguration and IAM Vulnerability Trends",
+      "seoDescription": "Research by the ISACA Student Chapter reveals common multi-cloud permission flaws that expose academic and enterprise systems to privilege escalation.",
+      "tags": [
+        "Research",
+        "Cybersecurity",
+        "ISACA"
+      ],
+      "createdAt": "2026-09-02T00:00:00.000Z",
+      "updatedAt": "2026-09-02T00:00:00.000Z"
+    },
+    {
+      "id": "news-2",
+      "slug": "news-2",
+      "title": "Understanding the Impact of Generative AI on Modern Cybersecurity Defense Strategies",
+      "category": "AI Security",
+      "publishedDate": "August 28, 2026",
+      "publishedAt": "2026-08-28T00:00:00.000Z",
+      "excerpt": "An analysis of how SOC teams deploy specialized machine learning models to detect automated adversary phishing and rapid payload mutation.",
+      "content": [],
+      "sections": [
+        {
+          "heading": "The Evolving Asymmetry of AI in Cyber Offense",
+          "paragraphs": [
+            "The proliferation of uncensored open-weight LLMs has significantly lowered technical barriers for cybercriminals. Attackers can now generate multilingual spear-phishing lures personalized using publicly scraped corporate executive data, achieving unprecedented click-through rates.",
+            "Furthermore, autonomous scripting agents are increasingly deployed to automate basic vulnerability scanning, reconnaissance indexing, and payload re-compilation to bypass static hash-based security filters."
+          ]
+        },
+        {
+          "heading": "Defensive Adaptation: Autonomous SecOps and Threat Modeling",
+          "paragraphs": [
+            "To counter automated adversary campaigns, defensive architectures are transitioning toward behavioral telemetry processing. Specialized defensive models ingest millions of authentication logs, API call patterns, and network flows to identify subtle anomalies.",
+            "Security Operations Centers (SOCs) employing AI co-pilots report a 40% reduction in mean time to detect (MTTD), allowing human analysts to concentrate on complex threat hunting and containment decisions."
+          ]
+        }
+      ],
+      "keyHighlights": [
+        "Adversaries utilize generative AI models to construct hyper-personalized spear-phishing campaigns lacking conventional grammatical tells.",
+        "Defenders are responding with semantic analysis engines capable of parsing intent and detecting synthetic linguistic indicators.",
+        "Explores defensive LLMs assisting Tier-1 SOC analysts in correlating multi-source alert telemetry in real time."
+      ],
+      "technicalInformation": [
+        "Direct and indirect prompt injection attacks against corporate retrieval-augmented generation (RAG) pipelines.",
+        "Synthetic spear-phishing vectors evading conventional Bayesian email spam heuristics.",
+        "Automated payload polymorphism utilizing LLM-assisted code refactoring to bypass signature-based AV."
+      ],
+      "affectedSystems": [
+        "Secure Email Gateways (SEG) and corporate spam filtering systems",
+        "Corporate LLM integrations and enterprise chatbot endpoints",
+        "Security Information and Event Management (SIEM) ingest pipelines"
+      ],
+      "securityRecommendations": [
+        "Implement natural language processing (NLP) filters trained on synthetic writing detection within inbound mail servers.",
+        "Sanitize and validate all external prompt inputs fed into enterprise LLM and internal AI agents.",
+        "Conduct regular tabletop simulation exercises focused on AI-augmented identity theft and deepfake voice fraud.",
+        "Deploy context-aware zero-trust authentication challenges when high-risk actions are initiated via communication channels."
+      ],
+      "image": "/it_audit.jpg",
+      "imageAlt": "Neural network visualization displaying cyber defensive intelligence nodes",
+      "publisher": "SLTC ISACA Student Group",
+      "author": "Cybersecurity Editorial Board",
+      "featured": false,
+      "trending": false,
+      "status": "PUBLISHED",
+      "submittedBy": {
+        "userId": "usr-admin-1",
+        "userName": "SLTC ISACA Super Admin",
+        "userEmail": "admin@isaca.sltc.lk"
+      },
+      "readingTimeMinutes": 5,
+      "seoTitle": "Understanding the Impact of Generative AI on Modern Cybersecurity Defense Strategies",
+      "seoDescription": "An analysis of how SOC teams deploy specialized machine learning models to detect automated adversary phishing and rapid payload mutation.",
+      "tags": [
+        "AI Security",
+        "Cybersecurity",
+        "ISACA"
+      ],
+      "createdAt": "2026-08-28T00:00:00.000Z",
+      "updatedAt": "2026-08-28T00:00:00.000Z"
+    },
+    {
+      "id": "news-3",
+      "slug": "news-3",
+      "title": "Best Practices for Securing Personal Data in an Interconnected Campus Ecosystem",
+      "category": "Digital Privacy",
+      "publishedDate": "August 18, 2026",
+      "publishedAt": "2026-08-18T00:00:00.000Z",
+      "excerpt": "Practical guidance for students and researchers on multi-factor authentication, device encryption, and safe remote connection standards.",
+      "content": [],
+      "sections": [
+        {
+          "heading": "The Complexities of Higher Education Cyber Environments",
+          "paragraphs": [
+            "Colleges and universities balance the dual imperatives of open academic research collaboration and rigorous information security. With students, faculty, and visiting scholars connecting personal laptops, tablets, and smartphones, institutional perimeter defenses face distinct hurdles.",
+            "Adversaries frequently target campus networks to harvest intellectual property, access proprietary academic databases, or use compromised student accounts as stepping stones for wider attacks."
+          ]
+        },
+        {
+          "heading": "Essential Personal Hygiene for Students and Researchers",
+          "paragraphs": [
+            "Securing student identities starts with moving away from SMS-based two-factor authentication in favor of hardware security keys or authenticator apps. In addition, activating BitLocker or FileVault full-disk encryption ensures that lost or stolen laptops do not lead to data compromises.",
+            "When utilizing campus Wi-Fi, students should verify network SSIDs and employ encrypted DNS to protect browsing habits from eavesdropping on open shared subnets."
+          ]
+        }
+      ],
+      "keyHighlights": [
+        "University networks present unique threat surfaces due to thousands of unmanaged BYOD endpoints connecting daily.",
+        "Phishing remains the predominant initial entry vector targeting student university portal credentials.",
+        "Provides straightforward steps for full-disk encryption, password vault adoption, and privacy protection on campus Wi-Fi."
+      ],
+      "technicalInformation": [
+        "Rogue access point (Evil Twin) attacks impersonating university eduroam and guest Wi-Fi networks.",
+        "Credential harvesting portals mimicking single sign-on (SSO) login screens.",
+        "Cleartext credential sniffing across unsegmented laboratory subnets."
+      ],
+      "affectedSystems": [
+        "Student Information Systems (SIS) and University Portal logins",
+        "Learning Management Systems (Canvas, Moodle, Blackboard)",
+        "Unencrypted personal laptops, USB flash drives, and portable storage devices"
+      ],
+      "securityRecommendations": [
+        "Adopt hardware security tokens (FIDO2/WebAuthn) or time-based authenticator apps for all university accounts.",
+        "Enable hardware-backed full-disk encryption (BitLocker on Windows, FileVault on macOS) on all mobile devices.",
+        "Use university-approved VPN services when transmitting academic research files across external or public networks.",
+        "Utilize an enterprise-grade password manager to maintain unique, complex credentials for every service."
+      ],
+      "image": "/hacking_workshop.jpg",
+      "imageAlt": "Students collaborating on laptop privacy configurations in university lab",
+      "publisher": "SLTC ISACA Student Group",
+      "author": "Student Privacy Taskforce",
+      "featured": false,
+      "trending": false,
+      "status": "PUBLISHED",
+      "submittedBy": {
+        "userId": "usr-admin-1",
+        "userName": "SLTC ISACA Super Admin",
+        "userEmail": "admin@isaca.sltc.lk"
+      },
+      "readingTimeMinutes": 5,
+      "seoTitle": "Best Practices for Securing Personal Data in an Interconnected Campus Ecosystem",
+      "seoDescription": "Practical guidance for students and researchers on multi-factor authentication, device encryption, and safe remote connection standards.",
+      "tags": [
+        "Digital Privacy",
+        "Cybersecurity",
+        "ISACA"
+      ],
+      "createdAt": "2026-08-18T00:00:00.000Z",
+      "updatedAt": "2026-08-18T00:00:00.000Z"
+    },
+    {
+      "id": "news-4",
+      "slug": "news-4",
+      "title": "Modern Approaches to Securing Campus Networks: Implementing Zero-Trust Architectures",
+      "category": "Network Security",
+      "publishedDate": "August 12, 2026",
+      "publishedAt": "2026-08-12T00:00:00.000Z",
+      "excerpt": "Exploring zero-trust principles, micro-segmentation, and automated perimeter threat mitigation in high-density academic network infrastructure.",
+      "content": [],
+      "sections": [
+        {
+          "heading": "Deconstructing Legacy Campus Perimeter Defenses",
+          "paragraphs": [
+            "Historically, universities relied on strong perimeter firewalls with wide-open internal subnets. Once a user connected through VPN or on-campus Ethernet, implicit trust was granted across the local area network. This architecture allows a single malware infection on a student device to propagate laterally toward administrative domains.",
+            "Under Zero Trust, the network operates on the assumption of breach. Implicit trust is eliminated; every access request must be explicitly authenticated, authorized, and cryptographically verified regardless of physical location."
+          ]
+        },
+        {
+          "heading": "Micro-Segmentation and Continuous Policy Enforcement",
+          "paragraphs": [
+            "Implementing software-defined micro-segmentation divides campus infrastructure into logical security zones. Strict access control lists (ACLs) prevent traffic from student dormitory VLANs from directly routing to sensitive research databases or university payroll servers.",
+            "Next-generation firewalls equipped with deep packet inspection (DPI) continuously inspect east-west internal traffic, detecting and isolating unauthorized scanning activities before threat actors achieve persistence."
+          ]
+        }
+      ],
+      "keyHighlights": [
+        "Traditional castle-and-moat perimeter models fail to protect complex modern academic environments.",
+        "Zero-Trust Architecture (ZTA) mandates continuous verification of every user, device, and network transaction.",
+        "Micro-segmentation effectively isolates student dorm networks, faculty research, and financial administrative servers."
+      ],
+      "technicalInformation": [
+        "802.1X Network Access Control (NAC) enforcing device health compliance checks prior to subnet admission.",
+        "Software-Defined Perimeter (SDP) architecture replacing legacy full-tunnel SSL VPNs.",
+        "Real-time TLS 1.3 encrypted traffic analysis utilizing machine-learning packet metadata classification."
+      ],
+      "affectedSystems": [
+        "Campus Core Layer-3 Routing Switches and VLAN boundaries",
+        "Enterprise Wi-Fi 6E Wireless LAN Controllers (WLCs)",
+        "University Data Center hypervisor virtual switches and SAN storage networks"
+      ],
+      "securityRecommendations": [
+        "Implement 802.1X dynamic VLAN assignment based on user role and endpoint security posture.",
+        "Deploy micro-segmentation firewalls to enforce zero-trust isolation between student, administrative, and research networks.",
+        "Transition remote workers from legacy VPN concentrators to Zero Trust Network Access (ZTNA) solutions.",
+        "Enable automated quarantine protocols for endpoints exhibiting anomalous port-scanning behavior."
+      ],
+      "image": "/cyber_summit.jpg",
+      "imageAlt": "Network engineering team inspecting server racks and fiber optic switches",
+      "publisher": "SLTC ISACA Student Group",
+      "author": "Network Operations Group",
+      "featured": false,
+      "trending": false,
+      "status": "PUBLISHED",
+      "submittedBy": {
+        "userId": "usr-admin-1",
+        "userName": "SLTC ISACA Super Admin",
+        "userEmail": "admin@isaca.sltc.lk"
+      },
+      "readingTimeMinutes": 5,
+      "seoTitle": "Modern Approaches to Securing Campus Networks: Implementing Zero-Trust Architectures",
+      "seoDescription": "Exploring zero-trust principles, micro-segmentation, and automated perimeter threat mitigation in high-density academic network infrastructure.",
+      "tags": [
+        "Network Security",
+        "Cybersecurity",
+        "ISACA"
+      ],
+      "createdAt": "2026-08-12T00:00:00.000Z",
+      "updatedAt": "2026-08-12T00:00:00.000Z"
+    }
+  ],
+  "newsCategories": [
+    "Cybersecurity",
+    "Cyber Attacks",
+    "Data Breaches",
+    "AI Security",
+    "Malware & Ransomware",
+    "Vulnerabilities & CVEs",
+    "Cloud Security",
+    "Digital Privacy",
+    "Network Security",
+    "Research",
+    "Threat Intelligence",
+    "High Profile Threats",
+    "Threat Research",
+    "Vulnerability Intelligence"
+  ],
+  "newsReviews": [
+    {
+      "id": "rev-1793957240069-631e51",
+      "articleId": "news-1793957239871-077b",
+      "actorId": "usr-chief-1",
+      "actorName": "Devindi Silva (Chief Editor)",
+      "actorRole": "CHIEF_EDITOR",
+      "action": "PUBLISH",
+      "timestamp": "2026-11-06T09:27:20.069Z"
+    },
+    {
+      "id": "rev-1793957240062-0de0e7",
+      "articleId": "news-1793957239871-077b",
+      "actorId": "usr-chief-1",
+      "actorName": "Devindi Silva (Chief Editor)",
+      "actorRole": "CHIEF_EDITOR",
+      "action": "APPROVE",
+      "timestamp": "2026-11-06T09:27:20.062Z"
+    },
+    {
+      "id": "rev-1793957239997-6a3b92",
+      "articleId": "news-1793957239871-077b",
+      "actorId": "usr-contrib-1",
+      "actorName": "Sanduni Fernando (News Contributor)",
+      "actorRole": "NEWS_CONTRIBUTOR",
+      "action": "SUBMIT",
+      "timestamp": "2026-11-06T09:27:19.997Z"
+    },
+    {
+      "id": "rev-1793957239988-bd1d20",
+      "articleId": "news-1793957239871-077b",
+      "actorId": "usr-editor-1",
+      "actorName": "Naveen Perera (News Editor)",
+      "actorRole": "NEWS_EDITOR",
+      "action": "REQUEST_CHANGES",
+      "feedback": "Please provide the CVE identifier and CVSS score in the technical highlights.",
+      "timestamp": "2026-11-06T09:27:19.988Z"
+    },
+    {
+      "id": "rev-1793957239979-eb5c8e",
+      "articleId": "news-1793957239871-077b",
+      "actorId": "usr-editor-1",
+      "actorName": "Naveen Perera (News Editor)",
+      "actorRole": "NEWS_EDITOR",
+      "action": "START_REVIEW",
+      "timestamp": "2026-11-06T09:27:19.979Z"
+    },
+    {
+      "id": "rev-1793957239912-40a701",
+      "articleId": "news-1793957239871-077b",
+      "actorId": "usr-contrib-1",
+      "actorName": "Sanduni Fernando (News Contributor)",
+      "actorRole": "NEWS_CONTRIBUTOR",
+      "action": "SUBMIT",
+      "timestamp": "2026-11-06T09:27:19.912Z"
+    },
+    {
+      "id": "rev-1793957223392-089c5e",
+      "articleId": "news-1793957223172-2f6a",
+      "actorId": "usr-chief-1",
+      "actorName": "Devindi Silva (Chief Editor)",
+      "actorRole": "CHIEF_EDITOR",
+      "action": "PUBLISH",
+      "timestamp": "2026-11-06T09:27:03.393Z"
+    },
+    {
+      "id": "rev-1793957223381-1a5b7f",
+      "articleId": "news-1793957223172-2f6a",
+      "actorId": "usr-chief-1",
+      "actorName": "Devindi Silva (Chief Editor)",
+      "actorRole": "CHIEF_EDITOR",
+      "action": "APPROVE",
+      "timestamp": "2026-11-06T09:27:03.381Z"
+    },
+    {
+      "id": "rev-1793957223308-584c79",
+      "articleId": "news-1793957223172-2f6a",
+      "actorId": "usr-contrib-1",
+      "actorName": "Sanduni Fernando (News Contributor)",
+      "actorRole": "NEWS_CONTRIBUTOR",
+      "action": "SUBMIT",
+      "timestamp": "2026-11-06T09:27:03.308Z"
+    },
+    {
+      "id": "rev-1793957223299-329b54",
+      "articleId": "news-1793957223172-2f6a",
+      "actorId": "usr-editor-1",
+      "actorName": "Naveen Perera (News Editor)",
+      "actorRole": "NEWS_EDITOR",
+      "action": "REQUEST_CHANGES",
+      "feedback": "Please provide the CVE identifier and CVSS score in the technical highlights.",
+      "timestamp": "2026-11-06T09:27:03.299Z"
+    },
+    {
+      "id": "rev-1793957223290-93308a",
+      "articleId": "news-1793957223172-2f6a",
+      "actorId": "usr-editor-1",
+      "actorName": "Naveen Perera (News Editor)",
+      "actorRole": "NEWS_EDITOR",
+      "action": "START_REVIEW",
+      "timestamp": "2026-11-06T09:27:03.290Z"
+    },
+    {
+      "id": "rev-1793957223220-dba829",
+      "articleId": "news-1793957223172-2f6a",
+      "actorId": "usr-contrib-1",
+      "actorName": "Sanduni Fernando (News Contributor)",
+      "actorRole": "NEWS_CONTRIBUTOR",
+      "action": "SUBMIT",
+      "timestamp": "2026-11-06T09:27:03.220Z"
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "audit-1793972161813-bdc11044",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_COMMITTEE_MEMBER",
+      "resource": "COMMITTEE",
+      "resourceId": "com-pres-1",
+      "details": {
+        "name": "Kavindu Perera",
+        "position": "President"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T13:36:01.813Z"
+    },
+    {
+      "id": "audit-1793972161787-62bf6182",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_TEAM_MEMBER",
+      "resource": "TEAM",
+      "resourceId": "pres-1",
+      "details": {
+        "name": "Kavindu Perera"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T13:36:01.787Z"
+    },
+    {
+      "id": "audit-1793972161762-e97c4c7e",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "LOGIN",
+      "resource": "AUTH",
+      "details": {
+        "email": "admin@isaca.sltc.lk"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T13:36:01.762Z"
+    },
+    {
+      "id": "audit-1793972155385-dc3136b2",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "LOGIN",
+      "resource": "AUTH",
+      "details": {
+        "email": "admin@isaca.sltc.lk"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T13:35:55.385Z"
+    },
+    {
+      "id": "audit-1793972114626-178ae5ba",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "LOGIN",
+      "resource": "AUTH",
+      "details": {
+        "email": "admin@isaca.sltc.lk"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T13:35:14.627Z"
+    },
+    {
+      "id": "audit-1793971817106-32c081e9",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "DELETE_MEDIA",
+      "resource": "MEDIA_LIBRARY",
+      "resourceId": "med-1793968085599-e75a2d",
+      "details": {
+        "filename": "Nisal_Samarasinghe-1793968085598-296bbe.jpg",
+        "id": "med-1793968085599-e75a2d"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T13:30:17.106Z"
+    },
+    {
+      "id": "audit-1793971796970-8ec53e6b",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_COMMITTEE_MEMBER",
+      "resource": "COMMITTEE",
+      "resourceId": "com-pres-1",
+      "details": {
+        "name": "Kavindu Perera",
+        "position": "President"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T13:29:56.970Z"
+    },
+    {
+      "id": "audit-1793969523913-c2fa8494",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "LOGIN",
+      "resource": "AUTH",
+      "details": {
+        "email": "admin@isaca.sltc.lk"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T12:52:03.913Z"
+    },
+    {
+      "id": "audit-1793968114375-232f3545",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_HOMEPAGE",
+      "resource": "HOMEPAGE_CONFIG",
+      "details": {
+        "heroTitle": "ISACA"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T12:28:34.375Z"
+    },
+    {
+      "id": "audit-1793968088353-75497614",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_TEAM_MEMBER",
+      "resource": "TEAM",
+      "resourceId": "pres-1",
+      "details": {
+        "name": "Kavindu Perera"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T12:28:08.353Z"
+    },
+    {
+      "id": "audit-1793968085602-260da5b8",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPLOAD_MEDIA",
+      "resource": "MEDIA_LIBRARY",
+      "resourceId": "med-1793968085599-e75a2d",
+      "details": {
+        "filename": "Nisal_Samarasinghe-1793968085598-296bbe.jpg",
+        "size": 16730,
+        "category": "team"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T12:28:05.602Z"
+    },
+    {
+      "id": "audit-1793967974120-5a2de406",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_HOMEPAGE",
+      "resource": "HOMEPAGE_CONFIG",
+      "details": {
+        "heroTitle": "ISACA"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T12:26:14.120Z"
+    },
+    {
+      "id": "audit-1793967974100-5abdc8d1",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_HOMEPAGE",
+      "resource": "HOMEPAGE_CONFIG",
+      "details": {
+        "heroTitle": "ISACA"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T12:26:14.100Z"
+    },
+    {
+      "id": "audit-1793967974076-045ac279",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "LOGIN",
+      "resource": "AUTH",
+      "details": {
+        "email": "admin@isaca.sltc.lk"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T12:26:14.076Z"
+    },
+    {
+      "id": "audit-1793967426001-d40522a2",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_HOMEPAGE",
+      "resource": "HOMEPAGE_CONFIG",
+      "details": {
+        "heroTitle": "ISACA"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T12:17:06.001Z"
+    },
+    {
+      "id": "audit-1793967425977-8b96d54d",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "LOGIN",
+      "resource": "AUTH",
+      "details": {
+        "email": "admin@isaca.sltc.lk"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T12:17:05.977Z"
+    },
+    {
+      "id": "audit-1793967413445-178fde79",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_COMMITTEE_MEMBER",
+      "resource": "COMMITTEE",
+      "resourceId": "com-pres-1",
+      "details": {
+        "name": "Kavindu Perera",
+        "position": "President"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T12:16:53.445Z"
+    },
+    {
+      "id": "audit-1793967413420-e6aaa9cf",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_TEAM_MEMBER",
+      "resource": "TEAM",
+      "resourceId": "pres-1",
+      "details": {
+        "name": "Kavindu Perera"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T12:16:53.421Z"
+    },
+    {
+      "id": "audit-1793967413378-d2f96e1f",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "LOGIN",
+      "resource": "AUTH",
+      "details": {
+        "email": "admin@isaca.sltc.lk"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T12:16:53.378Z"
+    },
+    {
+      "id": "audit-1793966433487-390bcff1",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_HOMEPAGE",
+      "resource": "HOMEPAGE_CONFIG",
+      "details": {
+        "heroTitle": "ISACA"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T12:00:33.487Z"
+    },
+    {
+      "id": "audit-1793966397459-19560bb5",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "LOGIN",
+      "resource": "AUTH",
+      "details": {
+        "email": "admin@isaca.sltc.lk"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:59:57.459Z"
+    },
+    {
+      "id": "audit-1793965349138-7e134da8",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "DELETE_MESSAGE",
+      "resource": "CONTACT_MESSAGE",
+      "resourceId": "msg-1793965349113-1d9975",
+      "details": {
+        "messageId": "msg-1793965349113-1d9975"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:42:29.138Z"
+    },
+    {
+      "id": "audit-1793965349129-f3737d70",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_MESSAGE",
+      "resource": "CONTACT_MESSAGE",
+      "resourceId": "msg-1793965349113-1d9975",
+      "details": {
+        "messageId": "msg-1793965349113-1d9975",
+        "newStatus": "responded"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:42:29.130Z"
+    },
+    {
+      "id": "audit-1793965349100-a6681a4f",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_ABOUT_CONTENT",
+      "resource": "ABOUT_CONFIG",
+      "details": {
+        "title": "About ISACA Student Group"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:42:29.100Z"
+    },
+    {
+      "id": "audit-1793965349088-0ff0b016",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_ABOUT_CONTENT",
+      "resource": "ABOUT_CONFIG",
+      "details": {
+        "title": "About ISACA Student Group"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:42:29.088Z"
+    },
+    {
+      "id": "audit-1793965349075-c0fe9fef",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_HOMEPAGE",
+      "resource": "HOMEPAGE_CONFIG",
+      "details": {
+        "heroTitle": "ISACA"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:42:29.075Z"
+    },
+    {
+      "id": "audit-1793965349059-62b3f606",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_HOMEPAGE",
+      "resource": "HOMEPAGE_CONFIG",
+      "details": {
+        "heroTitle": "ISACA GLOBAL"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:42:29.059Z"
+    },
+    {
+      "id": "audit-1793965349048-1bb514cd",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "DELETE_PROJECT",
+      "resource": "PROJECTS",
+      "resourceId": "proj-1793965349028-db3e",
+      "details": {
+        "name": "Automated Threat Analyzer",
+        "id": "proj-1793965349028-db3e"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:42:29.048Z"
+    },
+    {
+      "id": "audit-1793965349030-39e5844b",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "CREATE_PROJECT",
+      "resource": "PROJECTS",
+      "resourceId": "proj-1793965349028-db3e",
+      "details": {
+        "name": "Automated Threat Analyzer",
+        "category": "Security Tooling"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:42:29.030Z"
+    },
+    {
+      "id": "audit-1793965349016-7693bd09",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "DELETE_COMMITTEE_MEMBER",
+      "resource": "COMMITTEE",
+      "resourceId": "com-1793965349001-b3cf",
+      "details": {
+        "name": "Automated Committee Official",
+        "id": "com-1793965349001-b3cf"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:42:29.016Z"
+    },
+    {
+      "id": "audit-1793965349004-f98ee9ab",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "CREATE_COMMITTEE_MEMBER",
+      "resource": "COMMITTEE",
+      "resourceId": "com-1793965349001-b3cf",
+      "details": {
+        "name": "Automated Committee Official",
+        "position": "Academic Liaison Officer"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:42:29.004Z"
+    },
+    {
+      "id": "audit-1793965348990-f58772e0",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "DELETE_TEAM_MEMBER",
+      "resource": "TEAM",
+      "resourceId": "team-1793965348971-23a3",
+      "details": {
+        "name": "Automated Test Director"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:42:28.990Z"
+    },
+    {
+      "id": "audit-1793965348973-dfe8bfd7",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "CREATE_TEAM_MEMBER",
+      "resource": "TEAM",
+      "resourceId": "team-1793965348971-23a3",
+      "details": {
+        "name": "Automated Test Director",
+        "role": "Chief Technology Lead"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:42:28.973Z"
+    },
+    {
+      "id": "audit-1793965348963-8f9cac02",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "LOGIN",
+      "resource": "AUTH",
+      "details": {
+        "email": "admin@isaca.sltc.lk"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:42:28.963Z"
+    },
+    {
+      "id": "audit-1793965344815-2d5c4ea5",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_HOMEPAGE",
+      "resource": "HOMEPAGE_CONFIG",
+      "details": {
+        "heroTitle": "ISACA"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:42:24.815Z"
+    },
+    {
+      "id": "audit-1793965344793-1aabacbf",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "LOGIN",
+      "resource": "AUTH",
+      "details": {
+        "email": "admin@isaca.sltc.lk"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:42:24.793Z"
+    },
+    {
+      "id": "audit-1793965252910-7bffc950",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_HOMEPAGE",
+      "resource": "HOMEPAGE_CONFIG",
+      "details": {
+        "heroTitle": "ISACA"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:40:52.910Z"
+    },
+    {
+      "id": "audit-1793965240392-7bda1e2f",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPLOAD_MEDIA",
+      "resource": "MEDIA_LIBRARY",
+      "resourceId": "med-1793965240390-458f67",
+      "details": {
+        "filename": "about-1793965240389-9af52e.jpg",
+        "size": 614115,
+        "category": "general"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:40:40.392Z"
+    },
+    {
+      "id": "audit-1793965220964-a5bdcf42",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_HOMEPAGE",
+      "resource": "HOMEPAGE_CONFIG",
+      "details": {
+        "heroTitle": "ISACA"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:40:20.964Z"
+    },
+    {
+      "id": "audit-1793965194171-671d5298",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_HOMEPAGE",
+      "resource": "HOMEPAGE_CONFIG",
+      "details": {
+        "heroTitle": "ISACA"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:39:54.171Z"
+    },
+    {
+      "id": "audit-1793965191114-14b7c6ed",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPLOAD_MEDIA",
+      "resource": "MEDIA_LIBRARY",
+      "resourceId": "med-1793965191111-8ee6aa",
+      "details": {
+        "filename": "Golden_Laurel_Congratulations_Badge-1793965191110-86ff28.png",
+        "size": 1156096,
+        "category": "general"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:39:51.114Z"
+    },
+    {
+      "id": "audit-1793964671448-a4f3d498",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "DELETE_MESSAGE",
+      "resource": "CONTACT_MESSAGE",
+      "resourceId": "msg-1793964671426-05fd3c",
+      "details": {
+        "messageId": "msg-1793964671426-05fd3c"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:31:11.448Z"
+    },
+    {
+      "id": "audit-1793964671441-877d408b",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_MESSAGE",
+      "resource": "CONTACT_MESSAGE",
+      "resourceId": "msg-1793964671426-05fd3c",
+      "details": {
+        "messageId": "msg-1793964671426-05fd3c",
+        "newStatus": "responded"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:31:11.441Z"
+    },
+    {
+      "id": "audit-1793964671417-2985361a",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_ABOUT_CONTENT",
+      "resource": "ABOUT_CONFIG",
+      "details": {
+        "title": "About ISACA Student Group"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:31:11.418Z"
+    },
+    {
+      "id": "audit-1793964671407-c8aa3e83",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_ABOUT_CONTENT",
+      "resource": "ABOUT_CONFIG",
+      "details": {
+        "title": "About ISACA Student Group"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:31:11.407Z"
+    },
+    {
+      "id": "audit-1793964671396-4a52c12c",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_HOMEPAGE",
+      "resource": "HOMEPAGE_CONFIG",
+      "details": {
+        "heroTitle": "ISACA"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:31:11.396Z"
+    },
+    {
+      "id": "audit-1793964671385-3553b057",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_HOMEPAGE",
+      "resource": "HOMEPAGE_CONFIG",
+      "details": {
+        "heroTitle": "ISACA GLOBAL"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:31:11.385Z"
+    },
+    {
+      "id": "audit-1793964671378-c390a845",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "DELETE_PROJECT",
+      "resource": "PROJECTS",
+      "resourceId": "proj-1793964671365-de20",
+      "details": {
+        "name": "Automated Threat Analyzer",
+        "id": "proj-1793964671365-de20"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:31:11.378Z"
+    },
+    {
+      "id": "audit-1793964671368-dbe58f00",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "CREATE_PROJECT",
+      "resource": "PROJECTS",
+      "resourceId": "proj-1793964671365-de20",
+      "details": {
+        "name": "Automated Threat Analyzer",
+        "category": "Security Tooling"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:31:11.368Z"
+    },
+    {
+      "id": "audit-1793964671357-88323a78",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "DELETE_COMMITTEE_MEMBER",
+      "resource": "COMMITTEE",
+      "resourceId": "com-1793964671343-e470",
+      "details": {
+        "name": "Automated Committee Official",
+        "id": "com-1793964671343-e470"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:31:11.357Z"
+    },
+    {
+      "id": "audit-1793964671346-be547ac5",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "CREATE_COMMITTEE_MEMBER",
+      "resource": "COMMITTEE",
+      "resourceId": "com-1793964671343-e470",
+      "details": {
+        "name": "Automated Committee Official",
+        "position": "Academic Liaison Officer"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:31:11.346Z"
+    },
+    {
+      "id": "audit-1793964671326-1340c4c6",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "DELETE_TEAM_MEMBER",
+      "resource": "TEAM",
+      "resourceId": "team-1793964671308-6e6b",
+      "details": {
+        "name": "Automated Test Director"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:31:11.326Z"
+    },
+    {
+      "id": "audit-1793964671310-9a3774bb",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "CREATE_TEAM_MEMBER",
+      "resource": "TEAM",
+      "resourceId": "team-1793964671308-6e6b",
+      "details": {
+        "name": "Automated Test Director",
+        "role": "Chief Technology Lead"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:31:11.310Z"
+    },
+    {
+      "id": "audit-1793964671299-0be716f7",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "LOGIN",
+      "resource": "AUTH",
+      "details": {
+        "email": "admin@isaca.sltc.lk"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:31:11.299Z"
+    },
+    {
+      "id": "audit-1793964664129-f27d311a",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_HOMEPAGE",
+      "resource": "HOMEPAGE_CONFIG",
+      "details": {
+        "heroTitle": "ISACA"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:31:04.129Z"
+    },
+    {
+      "id": "audit-1793964664106-faaea1cd",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "LOGIN",
+      "resource": "AUTH",
+      "details": {
+        "email": "admin@isaca.sltc.lk"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:31:04.107Z"
+    },
+    {
+      "id": "audit-1793964084558-177d0a47",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_HOMEPAGE",
+      "resource": "HOMEPAGE_CONFIG",
+      "details": {
+        "heroTitle": "ISACA"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:21:24.558Z"
+    },
+    {
+      "id": "audit-1793964073563-a2fd05da",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_HOMEPAGE",
+      "resource": "HOMEPAGE_CONFIG",
+      "details": {
+        "heroTitle": "ISACA"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:21:13.563Z"
+    },
+    {
+      "id": "audit-1793964031609-1efd4c00",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_HOMEPAGE",
+      "resource": "HOMEPAGE_CONFIG",
+      "details": {
+        "heroTitle": "ISACA"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:20:31.609Z"
+    },
+    {
+      "id": "audit-1793964010664-61528182",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_HOMEPAGE",
+      "resource": "HOMEPAGE_CONFIG",
+      "details": {
+        "heroTitle": "ISACA"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:20:10.664Z"
+    },
+    {
+      "id": "audit-1793963985314-90507fe1",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_HOMEPAGE",
+      "resource": "HOMEPAGE_CONFIG",
+      "details": {
+        "heroTitle": "ISACA"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:19:45.315Z"
+    },
+    {
+      "id": "audit-1793963607322-fff80060",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "DELETE_MESSAGE",
+      "resource": "CONTACT_MESSAGE",
+      "resourceId": "msg-1793963607302-747d7f",
+      "details": {
+        "messageId": "msg-1793963607302-747d7f"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:13:27.322Z"
+    },
+    {
+      "id": "audit-1793963607316-610effb1",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_MESSAGE",
+      "resource": "CONTACT_MESSAGE",
+      "resourceId": "msg-1793963607302-747d7f",
+      "details": {
+        "messageId": "msg-1793963607302-747d7f",
+        "newStatus": "responded"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:13:27.316Z"
+    },
+    {
+      "id": "audit-1793963607293-52d14fdf",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_ABOUT_CONTENT",
+      "resource": "ABOUT_CONFIG",
+      "details": {
+        "title": "About ISACA Student Group"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:13:27.293Z"
+    },
+    {
+      "id": "audit-1793963607283-d3f8ca0a",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_ABOUT_CONTENT",
+      "resource": "ABOUT_CONFIG",
+      "details": {
+        "title": "About ISACA Student Group"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:13:27.283Z"
+    },
+    {
+      "id": "audit-1793963607273-dd569887",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_HOMEPAGE",
+      "resource": "HOMEPAGE_CONFIG",
+      "details": {
+        "heroTitle": "ISACA"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:13:27.273Z"
+    },
+    {
+      "id": "audit-1793963607256-bda3ca73",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_HOMEPAGE",
+      "resource": "HOMEPAGE_CONFIG",
+      "details": {
+        "heroTitle": "ISACA GLOBAL"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:13:27.256Z"
+    },
+    {
+      "id": "audit-1793963607243-1f9fd085",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "DELETE_PROJECT",
+      "resource": "PROJECTS",
+      "resourceId": "proj-1793963607231-c244",
+      "details": {
+        "name": "Automated Threat Analyzer",
+        "id": "proj-1793963607231-c244"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:13:27.243Z"
+    },
+    {
+      "id": "audit-1793963607233-b903fc2a",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "CREATE_PROJECT",
+      "resource": "PROJECTS",
+      "resourceId": "proj-1793963607231-c244",
+      "details": {
+        "name": "Automated Threat Analyzer",
+        "category": "Security Tooling"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:13:27.233Z"
+    },
+    {
+      "id": "audit-1793963607221-4fc9ae98",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "DELETE_COMMITTEE_MEMBER",
+      "resource": "COMMITTEE",
+      "resourceId": "com-1793963607208-ac6a",
+      "details": {
+        "name": "Automated Committee Official",
+        "id": "com-1793963607208-ac6a"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:13:27.221Z"
+    },
+    {
+      "id": "audit-1793963607210-744cd9e5",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "CREATE_COMMITTEE_MEMBER",
+      "resource": "COMMITTEE",
+      "resourceId": "com-1793963607208-ac6a",
+      "details": {
+        "name": "Automated Committee Official",
+        "position": "Academic Liaison Officer"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:13:27.211Z"
+    },
+    {
+      "id": "audit-1793963607199-da71d9dc",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "DELETE_TEAM_MEMBER",
+      "resource": "TEAM",
+      "resourceId": "team-1793963607184-2a1c",
+      "details": {
+        "name": "Automated Test Director"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:13:27.199Z"
+    },
+    {
+      "id": "audit-1793963607186-d0c04e41",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "CREATE_TEAM_MEMBER",
+      "resource": "TEAM",
+      "resourceId": "team-1793963607184-2a1c",
+      "details": {
+        "name": "Automated Test Director",
+        "role": "Chief Technology Lead"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:13:27.186Z"
+    },
+    {
+      "id": "audit-1793963607175-5f077f3c",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "LOGIN",
+      "resource": "AUTH",
+      "details": {
+        "email": "admin@isaca.sltc.lk"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:13:27.175Z"
+    },
+    {
+      "id": "audit-1793963595751-5970a57e",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "DELETE_MEDIA",
+      "resource": "MEDIA_LIBRARY",
+      "resourceId": "med-1793963595722-a86d12",
+      "details": {
+        "filename": "test-direct-upload-1793963595721-598e8e.png",
+        "id": "med-1793963595722-a86d12"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:13:15.751Z"
+    },
+    {
+      "id": "audit-1793963595724-b1e80281",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPLOAD_MEDIA",
+      "resource": "MEDIA_LIBRARY",
+      "resourceId": "med-1793963595722-a86d12",
+      "details": {
+        "filename": "test-direct-upload-1793963595721-598e8e.png",
+        "size": 70,
+        "category": "general"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:13:15.724Z"
+    },
+    {
+      "id": "audit-1793963595690-17cb7e1a",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "LOGIN",
+      "resource": "AUTH",
+      "details": {
+        "email": "admin@isaca.sltc.lk"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:13:15.691Z"
+    },
+    {
+      "id": "audit-1793963524671-790228be",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "DELETE_MEDIA",
+      "resource": "MEDIA_LIBRARY",
+      "resourceId": "med-1793963524645-e434ee",
+      "details": {
+        "filename": "test-direct-upload-1793963524644-96026c.png",
+        "id": "med-1793963524645-e434ee"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:12:04.671Z"
+    },
+    {
+      "id": "audit-1793963524646-89df61e6",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPLOAD_MEDIA",
+      "resource": "MEDIA_LIBRARY",
+      "resourceId": "med-1793963524645-e434ee",
+      "details": {
+        "filename": "test-direct-upload-1793963524644-96026c.png",
+        "size": 70,
+        "category": "general"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:12:04.647Z"
+    },
+    {
+      "id": "audit-1793963524635-b1029117",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "LOGIN",
+      "resource": "AUTH",
+      "details": {
+        "email": "admin@isaca.sltc.lk"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:12:04.635Z"
+    },
+    {
+      "id": "audit-1793963495267-d640c5f5",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "LOGIN",
+      "resource": "AUTH",
+      "details": {
+        "email": "admin@isaca.sltc.lk"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:11:35.267Z"
+    },
+    {
+      "id": "audit-1793963478974-d89e0711",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "DELETE_MESSAGE",
+      "resource": "CONTACT_MESSAGE",
+      "resourceId": "msg-1793963478953-42726e",
+      "details": {
+        "messageId": "msg-1793963478953-42726e"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:11:18.974Z"
+    },
+    {
+      "id": "audit-1793963478966-ec001c6c",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_MESSAGE",
+      "resource": "CONTACT_MESSAGE",
+      "resourceId": "msg-1793963478953-42726e",
+      "details": {
+        "messageId": "msg-1793963478953-42726e",
+        "newStatus": "responded"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:11:18.966Z"
+    },
+    {
+      "id": "audit-1793963478945-11164a2e",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_ABOUT_CONTENT",
+      "resource": "ABOUT_CONFIG",
+      "details": {
+        "title": "About ISACA Student Group"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:11:18.945Z"
+    },
+    {
+      "id": "audit-1793963478934-977cefd7",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_ABOUT_CONTENT",
+      "resource": "ABOUT_CONFIG",
+      "details": {
+        "title": "About ISACA Student Group"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:11:18.934Z"
+    },
+    {
+      "id": "audit-1793963478924-d77d62d7",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_HOMEPAGE",
+      "resource": "HOMEPAGE_CONFIG",
+      "details": {
+        "heroTitle": "ISACA"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:11:18.924Z"
+    },
+    {
+      "id": "audit-1793963478914-cffa22de",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_HOMEPAGE",
+      "resource": "HOMEPAGE_CONFIG",
+      "details": {
+        "heroTitle": "ISACA GLOBAL"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:11:18.914Z"
+    },
+    {
+      "id": "audit-1793963478903-208c769f",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "DELETE_PROJECT",
+      "resource": "PROJECTS",
+      "resourceId": "proj-1793963478886-38f0",
+      "details": {
+        "name": "Automated Threat Analyzer",
+        "id": "proj-1793963478886-38f0"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:11:18.903Z"
+    },
+    {
+      "id": "audit-1793963478891-e3695fed",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "CREATE_PROJECT",
+      "resource": "PROJECTS",
+      "resourceId": "proj-1793963478886-38f0",
+      "details": {
+        "name": "Automated Threat Analyzer",
+        "category": "Security Tooling"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:11:18.891Z"
+    },
+    {
+      "id": "audit-1793963478875-812f6884",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "DELETE_COMMITTEE_MEMBER",
+      "resource": "COMMITTEE",
+      "resourceId": "com-1793963478860-504e",
+      "details": {
+        "name": "Automated Committee Official",
+        "id": "com-1793963478860-504e"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:11:18.875Z"
+    },
+    {
+      "id": "audit-1793963478863-4da83235",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "CREATE_COMMITTEE_MEMBER",
+      "resource": "COMMITTEE",
+      "resourceId": "com-1793963478860-504e",
+      "details": {
+        "name": "Automated Committee Official",
+        "position": "Academic Liaison Officer"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:11:18.863Z"
+    },
+    {
+      "id": "audit-1793963478850-6e18a3a5",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "DELETE_TEAM_MEMBER",
+      "resource": "TEAM",
+      "resourceId": "team-1793963478836-475f",
+      "details": {
+        "name": "Automated Test Director"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:11:18.850Z"
+    },
+    {
+      "id": "audit-1793963478838-09a1aeb3",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "CREATE_TEAM_MEMBER",
+      "resource": "TEAM",
+      "resourceId": "team-1793963478836-475f",
+      "details": {
+        "name": "Automated Test Director",
+        "role": "Chief Technology Lead"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:11:18.838Z"
+    },
+    {
+      "id": "audit-1793963478823-da97ee20",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "LOGIN",
+      "resource": "AUTH",
+      "details": {
+        "email": "admin@isaca.sltc.lk"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:11:18.823Z"
+    },
+    {
+      "id": "audit-1793963365982-762a213d",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "DELETE_MESSAGE",
+      "resource": "CONTACT_MESSAGE",
+      "resourceId": "msg-1793963365961-faa174",
+      "details": {
+        "messageId": "msg-1793963365961-faa174"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:09:25.982Z"
+    },
+    {
+      "id": "audit-1793963365975-e6e21ead",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_MESSAGE",
+      "resource": "CONTACT_MESSAGE",
+      "resourceId": "msg-1793963365961-faa174",
+      "details": {
+        "messageId": "msg-1793963365961-faa174",
+        "newStatus": "responded"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:09:25.975Z"
+    },
+    {
+      "id": "audit-1793963365952-cec9c267",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_ABOUT_CONTENT",
+      "resource": "ABOUT_CONFIG",
+      "details": {
+        "title": "About ISACA Student Group"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:09:25.952Z"
+    },
+    {
+      "id": "audit-1793963365941-d4b5e21b",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_ABOUT_CONTENT",
+      "resource": "ABOUT_CONFIG",
+      "details": {
+        "title": "About ISACA Student Group"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:09:25.941Z"
+    },
+    {
+      "id": "audit-1793963365928-221f754d",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_HOMEPAGE",
+      "resource": "HOMEPAGE_CONFIG",
+      "details": {
+        "heroTitle": "ISACA"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:09:25.929Z"
+    },
+    {
+      "id": "audit-1793963365919-5f25505f",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_HOMEPAGE",
+      "resource": "HOMEPAGE_CONFIG",
+      "details": {
+        "heroTitle": "ISACA GLOBAL"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:09:25.919Z"
+    },
+    {
+      "id": "audit-1793963365880-bcbc6e38",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "DELETE_TEAM_MEMBER",
+      "resource": "TEAM",
+      "resourceId": "team-1793963365864-81b1",
+      "details": {
+        "name": "Automated Test Director"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:09:25.880Z"
+    },
+    {
+      "id": "audit-1793963365865-5151c7c7",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "CREATE_TEAM_MEMBER",
+      "resource": "TEAM",
+      "resourceId": "team-1793963365864-81b1",
+      "details": {
+        "name": "Automated Test Director",
+        "role": "Chief Technology Lead"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:09:25.865Z"
+    },
+    {
+      "id": "audit-1793963365850-ac93db36",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "LOGIN",
+      "resource": "AUTH",
+      "details": {
+        "email": "admin@isaca.sltc.lk"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T11:09:25.850Z"
+    },
+    {
+      "id": "audit-1793961625675-6355d3f5",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "PUBLISH_THEME",
+      "resource": "THEME",
+      "details": {
+        "version": 4,
+        "label": "Version 4 Update"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T10:40:25.675Z"
+    },
+    {
+      "id": "audit-1793957540669-6403f22f",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPDATE_HOMEPAGE",
+      "resource": "HOMEPAGE_CONFIG",
+      "details": {
+        "heroTitle": "ISACA"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T09:32:20.669Z"
+    },
+    {
+      "id": "audit-1793957488020-6217684b",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "LOGIN",
+      "resource": "AUTH",
+      "details": {
+        "email": "admin@isaca.sltc.lk"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T09:31:28.020Z"
+    },
+    {
+      "id": "audit-1793957240097-8c2164e4",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "PUBLISH_THEME",
+      "resource": "THEME",
+      "details": {
+        "version": 3,
+        "label": "Custom Cyber Neon Theme v2"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T09:27:20.097Z"
+    },
+    {
+      "id": "audit-1793957240088-1308e002",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "SAVE_THEME_DRAFT",
+      "resource": "THEME",
+      "details": {
+        "note": "Theme draft updated with new styling tokens"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T09:27:20.088Z"
+    },
+    {
+      "id": "audit-1793957240071-18cb13ad",
+      "userId": "usr-chief-1",
+      "userName": "Devindi Silva (Chief Editor)",
+      "userRole": "CHIEF_EDITOR",
+      "action": "NEWS_PUBLISH",
+      "resource": "NEWS_WORKFLOW",
+      "resourceId": "news-1793957239871-077b",
+      "details": {
+        "articleId": "news-1793957239871-077b",
+        "title": "Critical Firmware Zero-Day Discovered in Enterprise Routers",
+        "from": "APPROVED",
+        "to": "PUBLISHED"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T09:27:20.071Z"
+    },
+    {
+      "id": "audit-1793957240063-1f57e763",
+      "userId": "usr-chief-1",
+      "userName": "Devindi Silva (Chief Editor)",
+      "userRole": "CHIEF_EDITOR",
+      "action": "NEWS_APPROVE",
+      "resource": "NEWS_WORKFLOW",
+      "resourceId": "news-1793957239871-077b",
+      "details": {
+        "articleId": "news-1793957239871-077b",
+        "title": "Critical Firmware Zero-Day Discovered in Enterprise Routers",
+        "from": "SUBMITTED",
+        "to": "APPROVED"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T09:27:20.063Z"
+    },
+    {
+      "id": "audit-1793957240055-d21421c5",
+      "userId": "usr-chief-1",
+      "userName": "Devindi Silva (Chief Editor)",
+      "userRole": "CHIEF_EDITOR",
+      "action": "LOGIN",
+      "resource": "AUTH",
+      "details": {
+        "email": "chief.editor@isaca.sltc.lk"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T09:27:20.055Z"
+    },
+    {
+      "id": "audit-1793957239999-900e0148",
+      "userId": "usr-contrib-1",
+      "userName": "Sanduni Fernando (News Contributor)",
+      "userRole": "NEWS_CONTRIBUTOR",
+      "action": "NEWS_SUBMIT",
+      "resource": "NEWS_WORKFLOW",
+      "resourceId": "news-1793957239871-077b",
+      "details": {
+        "articleId": "news-1793957239871-077b",
+        "title": "Critical Firmware Zero-Day Discovered in Enterprise Routers",
+        "from": "CHANGES_REQUESTED",
+        "to": "SUBMITTED"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T09:27:19.999Z"
+    },
+    {
+      "id": "audit-1793957239989-357ce93d",
+      "userId": "usr-editor-1",
+      "userName": "Naveen Perera (News Editor)",
+      "userRole": "NEWS_EDITOR",
+      "action": "NEWS_REQUEST_CHANGES",
+      "resource": "NEWS_WORKFLOW",
+      "resourceId": "news-1793957239871-077b",
+      "details": {
+        "articleId": "news-1793957239871-077b",
+        "title": "Critical Firmware Zero-Day Discovered in Enterprise Routers",
+        "from": "UNDER_REVIEW",
+        "to": "CHANGES_REQUESTED",
+        "feedback": "Please provide the CVE identifier and CVSS score in the technical highlights."
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T09:27:19.989Z"
+    },
+    {
+      "id": "audit-1793957239981-bf93bf0c",
+      "userId": "usr-editor-1",
+      "userName": "Naveen Perera (News Editor)",
+      "userRole": "NEWS_EDITOR",
+      "action": "NEWS_START_REVIEW",
+      "resource": "NEWS_WORKFLOW",
+      "resourceId": "news-1793957239871-077b",
+      "details": {
+        "articleId": "news-1793957239871-077b",
+        "title": "Critical Firmware Zero-Day Discovered in Enterprise Routers",
+        "from": "SUBMITTED",
+        "to": "UNDER_REVIEW"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T09:27:19.981Z"
+    },
+    {
+      "id": "audit-1793957239971-ac049b27",
+      "userId": "usr-editor-1",
+      "userName": "Naveen Perera (News Editor)",
+      "userRole": "NEWS_EDITOR",
+      "action": "LOGIN",
+      "resource": "AUTH",
+      "details": {
+        "email": "news.editor@isaca.sltc.lk"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T09:27:19.971Z"
+    },
+    {
+      "id": "audit-1793957239914-e067857e",
+      "userId": "usr-contrib-1",
+      "userName": "Sanduni Fernando (News Contributor)",
+      "userRole": "NEWS_CONTRIBUTOR",
+      "action": "NEWS_SUBMIT",
+      "resource": "NEWS_WORKFLOW",
+      "resourceId": "news-1793957239871-077b",
+      "details": {
+        "articleId": "news-1793957239871-077b",
+        "title": "Critical Firmware Zero-Day Discovered in Enterprise Routers",
+        "from": "DRAFT",
+        "to": "SUBMITTED"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T09:27:19.914Z"
+    },
+    {
+      "id": "audit-1793957239895-4f84db6d",
+      "userId": "usr-contrib-1",
+      "userName": "Sanduni Fernando (News Contributor)",
+      "userRole": "NEWS_CONTRIBUTOR",
+      "action": "CREATE_ARTICLE",
+      "resource": "NEWS_ARTICLE",
+      "resourceId": "news-1793957239871-077b",
+      "details": {
+        "title": "Critical Firmware Zero-Day Discovered in Enterprise Routers",
+        "id": "news-1793957239871-077b"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T09:27:19.895Z"
+    },
+    {
+      "id": "audit-1793957239858-d341a48c",
+      "userId": "usr-contrib-1",
+      "userName": "Sanduni Fernando (News Contributor)",
+      "userRole": "NEWS_CONTRIBUTOR",
+      "action": "LOGIN",
+      "resource": "AUTH",
+      "details": {
+        "email": "contributor@isaca.sltc.lk"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T09:27:19.858Z"
+    },
+    {
+      "id": "audit-1793957239779-a9bfd618",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "LOGIN",
+      "resource": "AUTH",
+      "details": {
+        "email": "admin@isaca.sltc.lk"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T09:27:19.779Z"
+    },
+    {
+      "id": "audit-1793957223418-706c1196",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "PUBLISH_THEME",
+      "resource": "THEME",
+      "details": {
+        "version": 2,
+        "label": "Custom Cyber Neon Theme v2"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T09:27:03.418Z"
+    },
+    {
+      "id": "audit-1793957223395-08308261",
+      "userId": "usr-chief-1",
+      "userName": "Devindi Silva (Chief Editor)",
+      "userRole": "CHIEF_EDITOR",
+      "action": "NEWS_PUBLISH",
+      "resource": "NEWS_WORKFLOW",
+      "resourceId": "news-1793957223172-2f6a",
+      "details": {
+        "articleId": "news-1793957223172-2f6a",
+        "title": "Critical Firmware Zero-Day Discovered in Enterprise Routers",
+        "from": "APPROVED",
+        "to": "PUBLISHED"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T09:27:03.395Z"
+    },
+    {
+      "id": "audit-1793957223384-e73c1e54",
+      "userId": "usr-chief-1",
+      "userName": "Devindi Silva (Chief Editor)",
+      "userRole": "CHIEF_EDITOR",
+      "action": "NEWS_APPROVE",
+      "resource": "NEWS_WORKFLOW",
+      "resourceId": "news-1793957223172-2f6a",
+      "details": {
+        "articleId": "news-1793957223172-2f6a",
+        "title": "Critical Firmware Zero-Day Discovered in Enterprise Routers",
+        "from": "SUBMITTED",
+        "to": "APPROVED"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T09:27:03.384Z"
+    },
+    {
+      "id": "audit-1793957223373-72b5c657",
+      "userId": "usr-chief-1",
+      "userName": "Devindi Silva (Chief Editor)",
+      "userRole": "CHIEF_EDITOR",
+      "action": "LOGIN",
+      "resource": "AUTH",
+      "details": {
+        "email": "chief.editor@isaca.sltc.lk"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T09:27:03.373Z"
+    },
+    {
+      "id": "audit-1793957223309-1801f5c9",
+      "userId": "usr-contrib-1",
+      "userName": "Sanduni Fernando (News Contributor)",
+      "userRole": "NEWS_CONTRIBUTOR",
+      "action": "NEWS_SUBMIT",
+      "resource": "NEWS_WORKFLOW",
+      "resourceId": "news-1793957223172-2f6a",
+      "details": {
+        "articleId": "news-1793957223172-2f6a",
+        "title": "Critical Firmware Zero-Day Discovered in Enterprise Routers",
+        "from": "CHANGES_REQUESTED",
+        "to": "SUBMITTED"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T09:27:03.310Z"
+    },
+    {
+      "id": "audit-1793957223301-4a4413cd",
+      "userId": "usr-editor-1",
+      "userName": "Naveen Perera (News Editor)",
+      "userRole": "NEWS_EDITOR",
+      "action": "NEWS_REQUEST_CHANGES",
+      "resource": "NEWS_WORKFLOW",
+      "resourceId": "news-1793957223172-2f6a",
+      "details": {
+        "articleId": "news-1793957223172-2f6a",
+        "title": "Critical Firmware Zero-Day Discovered in Enterprise Routers",
+        "from": "UNDER_REVIEW",
+        "to": "CHANGES_REQUESTED",
+        "feedback": "Please provide the CVE identifier and CVSS score in the technical highlights."
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T09:27:03.301Z"
+    },
+    {
+      "id": "audit-1793957223292-8b4b8a0c",
+      "userId": "usr-editor-1",
+      "userName": "Naveen Perera (News Editor)",
+      "userRole": "NEWS_EDITOR",
+      "action": "NEWS_START_REVIEW",
+      "resource": "NEWS_WORKFLOW",
+      "resourceId": "news-1793957223172-2f6a",
+      "details": {
+        "articleId": "news-1793957223172-2f6a",
+        "title": "Critical Firmware Zero-Day Discovered in Enterprise Routers",
+        "from": "SUBMITTED",
+        "to": "UNDER_REVIEW"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T09:27:03.292Z"
+    },
+    {
+      "id": "audit-1793957223283-94a6a7e7",
+      "userId": "usr-editor-1",
+      "userName": "Naveen Perera (News Editor)",
+      "userRole": "NEWS_EDITOR",
+      "action": "LOGIN",
+      "resource": "AUTH",
+      "details": {
+        "email": "news.editor@isaca.sltc.lk"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T09:27:03.283Z"
+    },
+    {
+      "id": "audit-1793957223222-1bc50eb2",
+      "userId": "usr-contrib-1",
+      "userName": "Sanduni Fernando (News Contributor)",
+      "userRole": "NEWS_CONTRIBUTOR",
+      "action": "NEWS_SUBMIT",
+      "resource": "NEWS_WORKFLOW",
+      "resourceId": "news-1793957223172-2f6a",
+      "details": {
+        "articleId": "news-1793957223172-2f6a",
+        "title": "Critical Firmware Zero-Day Discovered in Enterprise Routers",
+        "from": "DRAFT",
+        "to": "SUBMITTED"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T09:27:03.222Z"
+    },
+    {
+      "id": "audit-1793957223199-0c087bdd",
+      "userId": "usr-contrib-1",
+      "userName": "Sanduni Fernando (News Contributor)",
+      "userRole": "NEWS_CONTRIBUTOR",
+      "action": "CREATE_ARTICLE",
+      "resource": "NEWS_ARTICLE",
+      "resourceId": "news-1793957223172-2f6a",
+      "details": {
+        "title": "Critical Firmware Zero-Day Discovered in Enterprise Routers",
+        "id": "news-1793957223172-2f6a"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T09:27:03.199Z"
+    },
+    {
+      "id": "audit-1793957223158-1ab4f6a3",
+      "userId": "usr-contrib-1",
+      "userName": "Sanduni Fernando (News Contributor)",
+      "userRole": "NEWS_CONTRIBUTOR",
+      "action": "LOGIN",
+      "resource": "AUTH",
+      "details": {
+        "email": "contributor@isaca.sltc.lk"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T09:27:03.159Z"
+    },
+    {
+      "id": "audit-1793957223067-9b7b41c1",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "LOGIN",
+      "resource": "AUTH",
+      "details": {
+        "email": "admin@isaca.sltc.lk"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T09:27:03.067Z"
+    },
+    {
+      "id": "audit-1793957150322-a946ba88",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "LOGIN",
+      "resource": "AUTH",
+      "details": {
+        "email": "admin@isaca.sltc.lk"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T09:25:50.323Z"
+    },
+    {
+      "id": "audit-init",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "SYSTEM_INITIALIZED",
+      "resource": "SYSTEM",
+      "details": "Centralized Website Administration System initialized with secure defaults.",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T09:20:54.731Z"
+    }
+  ],
+  "homepage": {
+    "heroTitle": "ISACA",
+    "heroHighlight": "Student Group",
+    "heroSubtitle": "Sri Lanka Technology Campus",
+    "heroCtaText": "MORE DETAILS",
+    "heroCtaLink": "/about-us",
+    "heroImages": [
+      "/cyber_hero.jpg",
+      "/about.jpg"
+    ],
+    "visibleSections": {
+      "hero": true,
+      "aboutPreview": true,
+      "teamPreview": true,
+      "eventsPreview": true,
+      "newsPreview": true,
+      "committeePreview": false
+    },
+    "sectionOrder": [
+      "hero",
+      "aboutPreview",
+      "teamPreview",
+      "eventsPreview",
+      "newsPreview"
+    ],
+    "aboutPreviewTitle": "Who are we",
+    "aboutPreviewKicker": "ABOUT OUR ORGANIZATION",
+    "aboutPreviewDesc": "ISACA Student Group is an official university student organization dedicated to empowering students with practical cybersecurity knowledge, technical skills, ethical hacking awareness, and research opportunities. We bridge academic foundations with industry technology standards.",
+    "aboutPreviewCtaText": "READ MORE ABOUT OUR MISSION",
+    "aboutPreviewCtaLink": "/about-us",
+    "aboutPreviewImage": "/uploads/about-1793965240389-9af52e.jpg",
+    "aboutPreviewTitleWords": [
+      {
+        "text": "Who",
+        "color": "#ffffff"
+      },
+      {
+        "text": "are",
+        "color": "#22d3ee"
+      },
+      {
+        "text": "we",
+        "color": "#22d3ee"
+      }
+    ],
+    "teamPreviewTitle": "Meet Our Team",
+    "teamPreviewTitleWords": [
+      {
+        "text": "Meet",
+        "color": "#ffffff"
+      },
+      {
+        "text": "Our",
+        "color": "#22d3ee"
+      },
+      {
+        "text": "Team",
+        "color": "#22d3ee"
+      }
+    ],
+    "eventsPreviewTitle": "Upcoming Events",
+    "eventsPreviewTitleWords": [
+      {
+        "text": "Upcoming",
+        "color": "#ffffff"
+      },
+      {
+        "text": "Events",
+        "color": "#22d3ee"
+      }
+    ],
+    "newsPreviewTitle": "Latest Cyber News",
+    "newsPreviewTitleWords": [
+      {
+        "text": "Latest",
+        "color": "#ffffff"
+      },
+      {
+        "text": "Cyber",
+        "color": "#22d3ee"
+      },
+      {
+        "text": "News",
+        "color": "#22d3ee"
+      }
+    ],
+    "committeePreviewTitle": "Our Committee",
+    "committeePreviewTitleWords": [
+      {
+        "text": "Our",
+        "color": "#ffffff"
+      },
+      {
+        "text": "Committee",
+        "color": "#22d3ee"
+      }
+    ],
+    "teamPreviewKicker": "EXECUTIVE BOARD 2026/2027",
+    "teamPreviewDesc": "The student leaders driving ISACA Student Group forward with innovation, ethics, and professional development.",
+    "committeePreviewKicker": "LEADERSHIP & COMMITTEE",
+    "committeePreviewDesc": "Meet the student officials guiding ISACA Student Group towards academic excellence, technical innovation, and digital security awareness.",
+    "aboutPreviewIcon": "ShieldCheck",
+    "teamPreviewIcon": "Users",
+    "committeePreviewIcon": "Award",
+    "committeePreviewCtaText": "VIEW FULL COMMITTEE ROSTER",
+    "eventsPreviewKicker": "EVENTS & ACTIVITIES",
+    "eventsPreviewIcon": "Calendar",
+    "eventsPreviewCtaText": "VIEW ALL EVENTS",
+    "eventsPreviewDesc": "Discover our workshops, seminars, and student competitions.",
+    "newsPreviewKicker": "INSIGHTS & PUBLICATIONS",
+    "newsPreviewIcon": "Newspaper",
+    "newsPreviewCtaText": "VIEW ALL NEWS",
+    "newsPreviewDesc": "Stay informed about the latest developments in cybersecurity, technology and digital security."
+  },
+  "aboutContent": {
+    "title": "About ISACA Student Group",
+    "subtitle": "Empowering Students for a Secure Digital World",
+    "mainIntro": "ISACA Student Group is an official student-led university organization operating within the School of Computing. Founded by technology enthusiasts, the club provides an open platform for students interested in cybersecurity, software engineering, systems auditing, and digital risk management.",
+    "secondaryIntro": "Our initiatives include practical technical workshops, Capture The Flag (CTF) competitions, guest lectures from industry professionals, and research publications. We aim to bridge theoretical university coursework with practical industry applications.",
+    "affiliationTitle": "University Affiliation",
+    "affiliationPoints": [
+      "Recognized Student Chapter under School of Computing",
+      "Guided by Senior Faculty Advisors",
+      "Aligned with Global Cyber Standards & Ethics"
+    ],
+    "mission": "To empower students with cybersecurity knowledge, technical skills and opportunities for innovation through hands-on education, collaborative projects, and industry engagement.",
+    "vision": "To cultivate the next generation of cybersecurity leaders, ethical technologists, and IT governance specialists dedicated to building resilient and trustworthy digital systems.",
+    "values": [
+      {
+        "title": "Knowledge",
+        "description": "Fostering continuous learning, practical technical mastery, and academic research in information security."
+      },
+      {
+        "title": "Innovation",
+        "description": "Encouraging students to build, experiment, and solve real-world technology challenges through creative engineering."
+      },
+      {
+        "title": "Responsibility",
+        "description": "Promoting ethical practices, digital safety awareness, data privacy, and responsible disclosure standards."
+      },
+      {
+        "title": "Collaboration",
+        "description": "Building an inclusive community that connects students, faculty mentors, and industry experts."
+      }
+    ]
+  },
+  "team": [
+    {
+      "id": "pres-1",
+      "name": "Kavindu Perera",
+      "role": "President",
+      "image": "/uploads/Nisal_Samarasinghe-1793968085598-296bbe.jpg",
+      "description": "Updated from Committee side: Synchronized seamlessly!",
+      "socialLinks": {
+        "linkedin": "https://linkedin.com",
+        "github": "https://github.com",
+        "instagram": "https://instagram.com"
+      },
+      "order": 1,
+      "archived": false,
+      "visible": true
+    },
+    {
+      "id": "vp-1",
+      "name": "Dilini Fernando",
+      "role": "Vice President",
+      "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80",
+      "description": "Coordinating strategic initiatives, ethical hacking workshops, and student research mentorship.",
+      "socialLinks": {
+        "linkedin": "https://linkedin.com",
+        "instagram": "https://instagram.com"
+      },
+      "order": 2,
+      "archived": false,
+      "visible": true
+    },
+    {
+      "id": "sec-1",
+      "name": "Thisara Jayasinghe",
+      "role": "Secretary",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
+      "description": "Managing organizational operations, official communications, and chapter administrative governance.",
+      "socialLinks": {
+        "linkedin": "https://linkedin.com",
+        "github": "https://github.com"
+      },
+      "order": 3,
+      "archived": false,
+      "visible": true
+    },
+    {
+      "id": "asst-sec-1",
+      "name": "Maneesha Rathnayake",
+      "role": "Assistant Secretary",
+      "image": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80",
+      "description": "Assisting operational workflows, member onboarding, and official meeting documentations.",
+      "socialLinks": {
+        "linkedin": "https://linkedin.com",
+        "instagram": "https://instagram.com"
+      },
+      "order": 4,
+      "archived": false,
+      "visible": true
+    },
+    {
+      "id": "treas-1",
+      "name": "Nethmi Silva",
+      "role": "Treasurer",
+      "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80",
+      "description": "Overseeing financial planning, event sponsorships, and resource allocation for club projects.",
+      "socialLinks": {
+        "linkedin": "https://linkedin.com",
+        "instagram": "https://instagram.com"
+      },
+      "order": 5,
+      "archived": false,
+      "visible": true
+    },
+    {
+      "id": "asst-treas-1",
+      "name": "Kusal Gunaratne",
+      "role": "Assistant Treasurer",
+      "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80",
+      "description": "Assisting with club financial audits, budget tracking, and event sponsorship accounts.",
+      "socialLinks": {
+        "linkedin": "https://linkedin.com",
+        "github": "https://github.com"
+      },
+      "order": 6,
+      "archived": false,
+      "visible": true
+    },
+    {
+      "id": "webmaster-1",
+      "name": "Sanju Kulatunga",
+      "role": "Web Master",
+      "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80",
+      "description": "Developing and maintaining the official ISACA Web portal, CTF platform, and digital systems.",
+      "socialLinks": {
+        "linkedin": "https://linkedin.com",
+        "github": "https://github.com"
+      },
+      "order": 7,
+      "archived": false,
+      "visible": true
+    },
+    {
+      "id": "tech-1",
+      "name": "Ruwan Senanayake",
+      "role": "Technical Lead",
+      "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80",
+      "description": "Architecting CTF competitions, hands-on lab environments, and technical infrastructure.",
+      "socialLinks": {
+        "linkedin": "https://linkedin.com",
+        "github": "https://github.com"
+      },
+      "order": 8,
+      "archived": false,
+      "visible": true
+    },
+    {
+      "id": "event-1",
+      "name": "Anurangi Abeyratne",
+      "role": "Event Coordinator",
+      "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80",
+      "description": "Organizing guest speaker seminars, cyber summits, and university-wide hackathons.",
+      "socialLinks": {
+        "linkedin": "https://linkedin.com",
+        "instagram": "https://instagram.com"
+      },
+      "order": 9,
+      "archived": false,
+      "visible": true
+    }
+  ]
+}
