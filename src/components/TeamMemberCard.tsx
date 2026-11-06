@@ -34,7 +34,7 @@ export default function TeamMemberCard({ member }: { member: TeamMember }) {
         </span>
 
         {/* Member Name */}
-        <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight leading-tight group-hover:text-cyan-200 transition-colors">
+        <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-tight group-hover:text-cyan-200 transition-colors">
           {member.name}
         </h3>
       </div>

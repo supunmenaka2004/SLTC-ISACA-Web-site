@@ -69,7 +69,7 @@ export default function CommitteeCard({ member }: { member: CommitteeMember }) {
           </div>
 
           {/* Member Name */}
-          <h3 className="text-lg font-bold text-white group-hover:text-cyan-200 transition-colors leading-snug">
+          <h3 className="text-xl sm:text-[22px] font-bold text-white group-hover:text-cyan-200 transition-colors tracking-tight leading-tight">
             {member.name}
           </h3>
 
