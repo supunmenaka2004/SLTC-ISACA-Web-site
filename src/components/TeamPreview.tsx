@@ -1,14 +1,61 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ArrowRight, Users } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import { executiveMembers } from "@/data/team";
+import { executiveMembers, TeamMember } from "@/data/team";
 import TeamMemberCard from "./TeamMemberCard";
+import WordColoredHeading from "./WordColoredHeading";
+import DynamicIcon from "./DynamicIcon";
+import { WordColor } from "@/server/db/schema";
 
 export default function TeamPreview() {
-  const topRowMembers = executiveMembers.slice(0, 4);
-  const bottomRowMembers = executiveMembers.slice(4, 7);
+  const [membersList, setMembersList] = useState<TeamMember[]>(executiveMembers);
+  const [teamConfig, setTeamConfig] = useState<{
+    kicker: string;
+    icon: string;
+    title: string;
+    words?: WordColor[];
+    desc: string;
+  }>({
+    kicker: "EXECUTIVE BOARD 2026/2027",
+    icon: "Users",
+    title: "Meet Our Team",
+    words: [
+      { text: "Meet", color: "#ffffff" },
+      { text: "Our", color: "#22d3ee" },
+      { text: "Team", color: "#22d3ee" },
+    ],
+    desc: "The student leaders driving ISACA Student Group forward with innovation, ethics, and professional development.",
+  });
+
+  useEffect(() => {
+    async function loadTeam() {
+      try {
+        const res = await fetch("/api/public/site-data", { cache: "no-store" });
+        if (res.ok) {
+          const data = await res.json();
+          if (data.team && data.team.length > 0) {
+            setMembersList(data.team);
+          }
+          if (data.homepage) {
+            setTeamConfig({
+              kicker: data.homepage.teamPreviewKicker || "EXECUTIVE BOARD 2026/2027",
+              icon: data.homepage.teamPreviewIcon || "Users",
+              title: data.homepage.teamPreviewTitle || "Meet Our Team",
+              words: data.homepage.teamPreviewTitleWords,
+              desc: data.homepage.teamPreviewDesc || "The student leaders driving ISACA Student Group forward with innovation, ethics, and professional development.",
+            });
+          }
+        }
+      } catch {}
+    }
+    loadTeam();
+  }, []);
+
+  const topRowMembers = membersList.slice(0, 4);
+  const bottomRowMembers = membersList.slice(4, 7);
 
   return (
     <section className="bg-[#070d19] py-20 font-sans border-b border-slate-800/40 relative overflow-hidden">
@@ -23,21 +70,26 @@ export default function TeamPreview() {
           
           {/* Section label */}
           <div className="inline-flex items-center gap-3 text-cyan-300/90 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.18em] mb-5">
-            <Users className="w-3.5 h-3.5 text-cyan-400" />
+            <DynamicIcon name={teamConfig.icon || "Users"} className="w-3.5 h-3.5 text-cyan-400" />
             <span className="h-px w-7 bg-cyan-500/70" />
-            <span>EXECUTIVE BOARD 2026/2027</span>
+            <span>{teamConfig.kicker}</span>
           </div>
 
-          {/* Prominent Large Heading */}
-          <h2 className="text-4xl sm:text-5xl lg:text-[52px] font-semibold text-white tracking-[-0.045em] leading-tight">
-            Meet <span className="text-cyan-300">Our Team</span>
+          {/* Prominent Large Heading with Word Colors */}
+          <h2 className="text-4xl sm:text-5xl lg:text-[52px] font-semibold tracking-[-0.045em] leading-tight">
+            <WordColoredHeading
+              words={teamConfig.words}
+              rawText={teamConfig.title}
+              defaultColor="#ffffff"
+              highlightColor="#22d3ee"
+            />
           </h2>
 
           <div className="h-px w-16 bg-cyan-400/80 my-5" />
 
           {/* Subtitle */}
           <p className="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto font-normal leading-relaxed">
-            The people behind ISACA, working together to learn, innovate and build a safer digital future.
+            {teamConfig.desc}
           </p>
         </div>
 

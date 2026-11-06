@@ -50,7 +50,7 @@ export default function Footer() {
   useEffect(() => {
     async function loadFooter() {
       try {
-        const res = await fetch("/api/public/site-data");
+        const res = await fetch("/api/public/site-data", { cache: "no-store" });
         if (res.ok) {
           const data = await res.json();
           if (data.siteSettings) {

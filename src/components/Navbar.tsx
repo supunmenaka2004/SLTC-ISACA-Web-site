@@ -18,7 +18,7 @@ export default function Navbar() {
   useEffect(() => {
     async function fetchLogo() {
       try {
-        const res = await fetch("/api/public/site-data");
+        const res = await fetch("/api/public/site-data", { cache: "no-store" });
         if (res.ok) {
           const data = await res.json();
           if (data.theme?.logo) {

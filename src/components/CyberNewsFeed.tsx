@@ -1,25 +1,46 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Search, ShieldCheck, FileText, Sparkles } from "lucide-react";
-import { newsCategories, newsData } from "@/data/newsData";
+import { newsCategories, newsData, NewsItem } from "@/data/newsData";
 import NewsStoryCard from "@/components/NewsStoryCard";
 import TrendingNewsTicker from "@/components/TrendingNewsTicker";
 
 export default function CyberNewsFeed() {
+  const [articlesList, setArticlesList] = useState<NewsItem[]>(newsData);
+  const [categoriesList, setCategoriesList] = useState<string[]>(["All News", ...newsCategories]);
   const [activeCategory, setActiveCategory] = useState("All News");
   const [query, setQuery] = useState("");
   const [visibleCount, setVisibleCount] = useState(6);
-  const featuredArticle = newsData.find((article) => article.featured) ?? newsData[0];
-  const categories = ["All News", ...newsCategories];
+
+  useEffect(() => {
+    async function loadLiveData() {
+      try {
+        const res = await fetch("/api/public/site-data", { cache: "no-store" });
+        if (res.ok) {
+          const data = await res.json();
+          if (data.news && data.news.length > 0) {
+            setArticlesList(data.news);
+          }
+          if (data.newsCategories && data.newsCategories.length > 0) {
+            setCategoriesList(["All News", ...data.newsCategories]);
+          }
+        }
+      } catch {}
+    }
+    loadLiveData();
+  }, []);
+
+  const featuredArticle = articlesList.find((article) => article.featured) ?? articlesList[0];
+  const categories = categoriesList;
 
   const matchingArticles = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
 
-    return newsData.filter((article) => {
+    return articlesList.filter((article) => {
       const matchesCategory = activeCategory === "All News" || article.category === activeCategory;
       const matchesQuery =
         !normalizedQuery ||
@@ -29,7 +50,7 @@ export default function CyberNewsFeed() {
 
       return matchesCategory && matchesQuery;
     });
-  }, [activeCategory, query]);
+  }, [activeCategory, query, articlesList]);
 
   const showFeatured = activeCategory === "All News" && query.trim().length === 0;
   const listedArticles = matchingArticles.filter(
@@ -58,8 +79,8 @@ export default function CyberNewsFeed() {
           </div>
         </header>
 
-        {/* Cinematic Horizontal Scrolling News Ticker (KEPT UNCHANGED) */}
-        <TrendingNewsTicker />
+        {/* Cinematic Horizontal Scrolling News Ticker (Live data linked) */}
+        <TrendingNewsTicker articles={articlesList} />
 
         {/* Featured Story Full-Width Banner (KEPT UNCHANGED) */}
         {showFeatured && featuredArticle && (

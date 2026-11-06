@@ -3,11 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Flame } from "lucide-react";
-import { newsData } from "@/data/newsData";
+import { newsData, NewsItem } from "@/data/newsData";
 
-export default function TrendingNewsTicker() {
-  // 7 authentic published stories, duplicated twice per track for 4K seamless ultra-wide coverage
-  const baseItems = newsData;
+export default function TrendingNewsTicker({ articles }: { articles?: NewsItem[] }) {
+  // Use live published articles if provided, fallback to default newsData
+  const baseItems = articles && articles.length > 0 ? articles : newsData;
   const trackItems = [...baseItems, ...baseItems];
 
   return (

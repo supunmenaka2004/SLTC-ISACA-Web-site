@@ -1,15 +1,58 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ArrowRight, Calendar, MapPin, ChevronLeft, ChevronRight, X, ShieldCheck } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { eventsData, EventItem } from "@/data/eventsData";
+import WordColoredHeading from "./WordColoredHeading";
+import DynamicIcon from "./DynamicIcon";
+import { WordColor } from "@/server/db/schema";
 
 export default function UpcomingEventsSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedEvent, setSelectedEvent] = useState<EventItem | null>(null);
   const [registered, setRegistered] = useState(false);
+  const [eventsConfig, setEventsConfig] = useState<{
+    kicker: string;
+    icon: string;
+    title: string;
+    words?: WordColor[];
+    ctaText: string;
+    desc: string;
+  }>({
+    kicker: "EVENTS & ACTIVITIES",
+    icon: "Calendar",
+    title: "Upcoming Events",
+    words: [
+      { text: "Upcoming", color: "#ffffff" },
+      { text: "Events", color: "#22d3ee" },
+    ],
+    ctaText: "VIEW ALL EVENTS",
+    desc: "Discover our workshops, seminars, and student competitions.",
+  });
+
+  useEffect(() => {
+    async function loadEventsConfig() {
+      try {
+        const res = await fetch("/api/public/site-data", { cache: "no-store" });
+        if (res.ok) {
+          const data = await res.json();
+          if (data.homepage) {
+            setEventsConfig({
+              kicker: data.homepage.eventsPreviewKicker || "EVENTS & ACTIVITIES",
+              icon: data.homepage.eventsPreviewIcon || "Calendar",
+              title: data.homepage.eventsPreviewTitle || "Upcoming Events",
+              words: data.homepage.eventsPreviewTitleWords,
+              ctaText: data.homepage.eventsPreviewCtaText || "VIEW ALL EVENTS",
+              desc: data.homepage.eventsPreviewDesc || "Discover our workshops, seminars, and student competitions.",
+            });
+          }
+        }
+      } catch {}
+    }
+    loadEventsConfig();
+  }, []);
 
   const activeEvent = eventsData[currentIndex] || eventsData[0];
 
@@ -41,20 +84,25 @@ export default function UpcomingEventsSection() {
           <div>
             {/* Section label */}
             <div className="inline-flex items-center gap-3 text-cyan-300/90 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.18em] mb-5">
-              <Calendar className="w-3.5 h-3.5 text-cyan-400" />
+              <DynamicIcon name={eventsConfig.icon || "Calendar"} className="w-3.5 h-3.5 text-cyan-400" />
               <span className="h-px w-7 bg-cyan-500/70" />
-              <span>EVENTS & ACTIVITIES</span>
+              <span>{eventsConfig.kicker}</span>
             </div>
 
-            {/* Prominent Large Heading */}
-            <h2 className="text-4xl sm:text-5xl lg:text-[52px] font-semibold text-white tracking-[-0.045em] leading-tight">
-              Upcoming <span className="text-cyan-300">Events</span>
+            {/* Prominent Large Heading with Word Colors */}
+            <h2 className="text-4xl sm:text-5xl lg:text-[52px] font-semibold tracking-[-0.045em] leading-tight">
+              <WordColoredHeading
+                words={eventsConfig.words}
+                rawText={eventsConfig.title}
+                defaultColor="#ffffff"
+                highlightColor="#22d3ee"
+              />
             </h2>
 
             <div className="h-px w-16 bg-cyan-400/80 my-5" />
 
             <p className="text-slate-300 text-base sm:text-lg font-normal">
-              Discover our workshops, seminars, and student competitions.
+              {eventsConfig.desc}
             </p>
           </div>
 
@@ -63,7 +111,7 @@ export default function UpcomingEventsSection() {
             href="/events"
             className="inline-flex items-center gap-3 border-b border-cyan-500/50 pb-2 text-cyan-200 hover:border-cyan-300 hover:text-white font-semibold text-xs sm:text-sm uppercase tracking-[0.12em] transition-colors duration-300 group shrink-0"
           >
-            <span>VIEW ALL EVENTS</span>
+            <span>{eventsConfig.ctaText || "VIEW ALL EVENTS"}</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1.5 text-cyan-400" />
           </Link>
         </div>

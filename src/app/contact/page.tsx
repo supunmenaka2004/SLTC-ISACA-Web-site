@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { Mail, MapPin, Phone, Send, CheckCircle } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Mail, MapPin, Phone, Send, CheckCircle, Loader2 } from "lucide-react";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -11,12 +11,68 @@ export default function ContactPage() {
     message: "",
   });
 
+  const [contactInfo, setContactInfo] = useState({
+    address: "School of Computing, University Main Campus, Academic Block 02, Room 304.",
+    email: "contact@isacaclub.org",
+    phone: "+94 (0) 11 210 0500",
+  });
+
+  const [submitting, setSubmitting] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  useEffect(() => {
+    async function loadContactInfo() {
+      try {
+        const res = await fetch("/api/public/site-data", { cache: "no-store" });
+        if (res.ok) {
+          const data = await res.json();
+          if (data.siteSettings) {
+            setContactInfo({
+              address: data.siteSettings.address || contactInfo.address,
+              email: data.siteSettings.contactEmail || contactInfo.email,
+              phone: data.siteSettings.contactPhone || contactInfo.phone,
+            });
+          }
+        }
+      } catch {}
+    }
+    loadContactInfo();
+  }, []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (formData.name && formData.email && formData.message) {
-      setSubmitted(true);
+    if (!formData.name || !formData.email || !formData.message) {
+      setErrorMsg("Please fill in all required fields.");
+      return;
+    }
+
+    setSubmitting(true);
+    setErrorMsg(null);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        setErrorMsg(data.error || "Failed to submit inquiry. Please try again.");
+      }
+    } catch {
+      setErrorMsg("Network error occurred. Please check your connection and try again.");
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -51,8 +107,7 @@ export default function ContactPage() {
                 <MapPin className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
                 <div>
                   <span className="font-bold text-white block mb-0.5">Campus Location</span>
-                  School of Computing, University Main Campus,<br />
-                  Academic Block 02, Room 304.
+                  <span className="whitespace-pre-line leading-relaxed">{contactInfo.address}</span>
                 </div>
               </div>
 
@@ -60,8 +115,8 @@ export default function ContactPage() {
                 <Mail className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
                 <div>
                   <span className="font-bold text-white block mb-0.5">Email Inquiries</span>
-                  <a href="mailto:contact@isacaclub.org" className="text-cyan-400 hover:underline font-mono">
-                    contact@isacaclub.org
+                  <a href={`mailto:${contactInfo.email}`} className="text-cyan-400 hover:underline font-mono">
+                    {contactInfo.email}
                   </a>
                 </div>
               </div>
@@ -70,7 +125,7 @@ export default function ContactPage() {
                 <Phone className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
                 <div>
                   <span className="font-bold text-white block mb-0.5">University Office Line</span>
-                  <span className="font-mono">+94 (0) 11 210 0500</span>
+                  <span className="font-mono">{contactInfo.phone}</span>
                 </div>
               </div>
             </div>
@@ -86,6 +141,12 @@ export default function ContactPage() {
               {!submitted ? (
                 <form onSubmit={handleSubmit} className="space-y-6 font-mono">
                   
+                  {errorMsg && (
+                    <div className="p-3 bg-rose-500/10 border border-rose-500/30 rounded-md text-xs text-rose-400 font-sans">
+                      {errorMsg}
+                    </div>
+                  )}
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div className="space-y-1.5">
                       <label className="text-xs font-semibold text-slate-300 block">
@@ -145,10 +206,20 @@ export default function ContactPage() {
 
                   <button
                     type="submit"
-                    className="w-full py-3 text-xs font-bold text-[#070d19] bg-cyan-400 hover:bg-cyan-300 transition-colors rounded-md shadow-md flex items-center justify-center gap-2 cursor-pointer uppercase tracking-wider"
+                    disabled={submitting}
+                    className="w-full py-3 text-xs font-bold text-[#070d19] bg-cyan-400 hover:bg-cyan-300 disabled:opacity-50 transition-colors rounded-md shadow-md flex items-center justify-center gap-2 cursor-pointer uppercase tracking-wider"
                   >
-                    <Send className="w-3.5 h-3.5" />
-                    <span>Send Message</span>
+                    {submitting ? (
+                      <>
+                        <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                        <span>Sending...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-3.5 h-3.5" />
+                        <span>Send Message</span>
+                      </>
+                    )}
                   </button>
 
                 </form>
@@ -156,7 +227,7 @@ export default function ContactPage() {
                 <div className="text-center py-12 space-y-3 font-mono">
                   <CheckCircle className="w-10 h-10 text-emerald-400 mx-auto" />
                   <h3 className="text-lg font-bold text-white">Message Sent Successfully</h3>
-                  <p className="text-xs sm:text-sm text-slate-300 max-w-md mx-auto">
+                  <p className="text-xs sm:text-sm text-slate-300 max-w-md mx-auto font-sans">
                     Thank you, <span className="font-semibold text-white">{formData.name}</span>. Your message has been received by the ISACA Student Group committee.
                   </p>
                   <button

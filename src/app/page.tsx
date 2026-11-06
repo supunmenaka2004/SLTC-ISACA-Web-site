@@ -1,30 +1,77 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Hero from "@/components/Hero";
 import AboutPreview from "@/components/AboutPreview";
 import TeamPreview from "@/components/TeamPreview";
+import CommitteePreview from "@/components/CommitteePreview";
 import UpcomingEventsSection from "@/components/UpcomingEventsSection";
 import CyberNewsEditorialSection from "@/components/CyberNewsEditorialSection";
 
+const DEFAULT_ORDER = [
+  "hero",
+  "aboutPreview",
+  "teamPreview",
+  "committeePreview",
+  "eventsPreview",
+  "newsPreview",
+];
+
 export default function Home() {
+  const [sectionOrder, setSectionOrder] = useState<string[]>(DEFAULT_ORDER);
+  const [visibleSections, setVisibleSections] = useState<Record<string, boolean>>({
+    hero: true,
+    aboutPreview: true,
+    teamPreview: true,
+    committeePreview: true,
+    eventsPreview: true,
+    newsPreview: true,
+  });
+
+  useEffect(() => {
+    async function fetchHomeConfig() {
+      try {
+        const res = await fetch("/api/public/site-data", { cache: "no-store" });
+        if (res.ok) {
+          const data = await res.json();
+          if (data.homepage) {
+            if (data.homepage.sectionOrder && Array.isArray(data.homepage.sectionOrder) && data.homepage.sectionOrder.length > 0) {
+              setSectionOrder(data.homepage.sectionOrder);
+            }
+            if (data.homepage.visibleSections) {
+              setVisibleSections(data.homepage.visibleSections);
+            }
+          }
+        }
+      } catch {}
+    }
+    fetchHomeConfig();
+  }, []);
+
+  const renderSection = (key: string) => {
+    if (visibleSections[key] === false) return null;
+
+    switch (key) {
+      case "hero":
+        return <Hero key="hero" />;
+      case "aboutPreview":
+        return <AboutPreview key="aboutPreview" />;
+      case "teamPreview":
+        return <TeamPreview key="teamPreview" />;
+      case "committeePreview":
+        return <CommitteePreview key="committeePreview" />;
+      case "eventsPreview":
+        return <UpcomingEventsSection key="eventsPreview" />;
+      case "newsPreview":
+        return <CyberNewsEditorialSection key="newsPreview" />;
+      default:
+        return null;
+    }
+  };
+
   return (
     <div className="flex flex-col min-h-screen font-sans bg-[#070d19] text-white">
-      
-      {/* 1. Hero Section */}
-      <Hero />
-
-      {/* 2. Who We Are: About Preview Section */}
-      <AboutPreview />
-
-      {/* 3. Our Team Preview Section */}
-      <TeamPreview />
-
-      {/* 4. Featured Upcoming Events Section - 55/45 Split Layout with Bottom-Right Arrow Navigation */}
-      <UpcomingEventsSection />
-
-      {/* 5. Latest Cyber News Section - Publication Editorial Layout */}
-      <CyberNewsEditorialSection />
-
+      {sectionOrder.map((sectionKey) => renderSection(sectionKey))}
     </div>
   );
 }

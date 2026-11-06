@@ -1,15 +1,31 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ProjectCard from "@/components/ProjectCard";
-import { projectsData } from "@/data/projectsData";
+import { projectsData, ProjectItem } from "@/data/projectsData";
 
 export default function ProjectsPage() {
+  const [projectsList, setProjectsList] = useState<ProjectItem[]>(projectsData);
   const [activeStatus, setActiveStatus] = useState<string>("All");
+
+  useEffect(() => {
+    async function loadLiveProjects() {
+      try {
+        const res = await fetch("/api/public/site-data", { cache: "no-store" });
+        if (res.ok) {
+          const data = await res.json();
+          if (data.projects && data.projects.length > 0) {
+            setProjectsList(data.projects);
+          }
+        }
+      } catch {}
+    }
+    loadLiveProjects();
+  }, []);
 
   const statuses = ["All", "Active", "Completed", "Ongoing"];
 
-  const filteredProjects = projectsData.filter((proj) =>
+  const filteredProjects = projectsList.filter((proj) =>
     activeStatus === "All" ? true : proj.status === activeStatus
   );
 

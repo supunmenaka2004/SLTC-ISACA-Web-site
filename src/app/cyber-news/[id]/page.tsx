@@ -14,13 +14,28 @@ import {
 import { notFound } from "next/navigation";
 import NewsStoryCard from "@/components/NewsStoryCard";
 import NewsShareButton from "@/components/NewsShareButton";
-import { getReadingTimeMinutes, newsData } from "@/data/newsData";
+import { getReadingTimeMinutes, newsData, NewsItem } from "@/data/newsData";
+import { getDb } from "@/server/db";
+
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 type ArticlePageProps = {
   params: Promise<{ id: string }>;
 };
 
-function findArticle(id: string) {
+async function findArticle(id: string): Promise<NewsItem | undefined> {
+  try {
+    const db = await getDb();
+    const found = db.news.find(
+      (a) => (a.id === id || a.slug === id) && a.status === "PUBLISHED"
+    );
+    if (found) {
+      return found as unknown as NewsItem;
+    }
+  } catch {
+    // fallback
+  }
   return newsData.find((article) => article.id === id);
 }
 
@@ -30,7 +45,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: ArticlePageProps): Promise<Metadata> {
   const { id } = await params;
-  const article = findArticle(id);
+  const article = await findArticle(id);
 
   if (!article) {
     return { title: "Article not found | ISACA Student Group" };
@@ -50,7 +65,7 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
 
 export default async function CyberNewsArticlePage({ params }: ArticlePageProps) {
   const { id } = await params;
-  const article = findArticle(id);
+  const article = await findArticle(id);
 
   if (!article) notFound();
 
