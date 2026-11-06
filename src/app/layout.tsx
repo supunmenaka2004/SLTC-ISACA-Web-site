@@ -22,8 +22,8 @@ export default function RootLayout({
       className="dark scroll-smooth"
     >
       <body className="min-h-screen flex flex-col bg-[#02060d] text-slate-100 antialiased font-sans">
+        <Preloader />
         <ThemeProvider>
-          <Preloader />
           <Navbar />
           <main className="flex-grow">
             {children}

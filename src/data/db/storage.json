@@ -9,7 +9,7 @@
       "role": "SUPER_ADMIN",
       "status": "ACTIVE",
       "createdAt": "2026-11-06T09:20:54.731Z",
-      "lastLoginAt": "2026-11-06T13:36:01.759Z"
+      "lastLoginAt": "2026-11-06T18:04:06.838Z"
     },
     {
       "id": "usr-chief-1",
@@ -52,7 +52,8 @@
       "name": "Devindi Silva (Content Admin)",
       "role": "CONTENT_ADMIN",
       "status": "ACTIVE",
-      "createdAt": "2026-11-06T10:52:33.370Z"
+      "createdAt": "2026-11-06T10:52:33.370Z",
+      "lastLoginAt": "2026-11-06T17:58:18.844Z"
     },
     {
       "id": "usr-viewer-1",
@@ -62,7 +63,8 @@
       "name": "Auditor Guest (Viewer)",
       "role": "VIEWER",
       "status": "ACTIVE",
-      "createdAt": "2026-11-06T10:52:33.436Z"
+      "createdAt": "2026-11-06T10:52:33.436Z",
+      "lastLoginAt": "2026-11-06T17:58:04.614Z"
     }
   ],
   "siteSettings": {
@@ -116,12 +118,12 @@
     "logo": {
       "mainLogo": "/isaca_full_logo.png",
       "transparentLogo": "/isaca_transparent.png",
-      "favicon": "/favicon.ico",
-      "logoHeight": 52
+      "favicon": "/uploads/Screenshot_2026-11-06_201930-1793976607873-c19e51.png",
+      "logoHeight": 62
     },
     "isDraft": false,
-    "version": 4,
-    "updatedAt": "2026-11-06T10:40:25.672Z"
+    "version": 6,
+    "updatedAt": "2026-11-06T14:50:49.437Z"
   },
   "themeDraft": {
     "id": "theme-default",
@@ -146,14 +148,88 @@
     "logo": {
       "mainLogo": "/isaca_full_logo.png",
       "transparentLogo": "/isaca_transparent.png",
-      "favicon": "/favicon.ico",
-      "logoHeight": 52
+      "favicon": "/uploads/Screenshot_2026-11-06_201930-1793976607873-c19e51.png",
+      "logoHeight": 62
     },
     "isDraft": true,
-    "version": 4,
-    "updatedAt": "2026-11-06T10:40:25.672Z"
+    "version": 6,
+    "updatedAt": "2026-11-06T14:50:49.437Z"
   },
   "themeVersions": [
+    {
+      "id": "ver-6-293b00",
+      "version": 6,
+      "label": "Version 6 Update",
+      "config": {
+        "id": "theme-default",
+        "name": "SLTC ISACA Institutional Dark",
+        "colors": {
+          "cyanAccent": "#00F0FF"
+        },
+        "typography": {
+          "headingFont": "Plus Jakarta Sans, sans-serif",
+          "bodyFont": "Plus Jakarta Sans, sans-serif",
+          "baseFontSize": "16px",
+          "headingWeight": "700",
+          "lineHeight": "1.6",
+          "letterSpacing": "-0.02em"
+        },
+        "components": {
+          "buttonRadius": "sm",
+          "cardRadius": "0.875rem",
+          "cardGlow": true,
+          "glassmorphism": true
+        },
+        "logo": {
+          "mainLogo": "/isaca_full_logo.png",
+          "transparentLogo": "/isaca_transparent.png",
+          "favicon": "/uploads/Screenshot_2026-11-06_201930-1793976607873-c19e51.png",
+          "logoHeight": 62
+        },
+        "isDraft": false,
+        "version": 6,
+        "updatedAt": "2026-11-06T14:50:49.437Z"
+      },
+      "savedBy": "SLTC ISACA Super Admin",
+      "createdAt": "2026-11-06T14:50:49.437Z"
+    },
+    {
+      "id": "ver-5-6a8db5",
+      "version": 5,
+      "label": "Version 5 Update",
+      "config": {
+        "id": "theme-default",
+        "name": "SLTC ISACA Institutional Dark",
+        "colors": {
+          "cyanAccent": "#00F0FF"
+        },
+        "typography": {
+          "headingFont": "Plus Jakarta Sans, sans-serif",
+          "bodyFont": "Plus Jakarta Sans, sans-serif",
+          "baseFontSize": "16px",
+          "headingWeight": "700",
+          "lineHeight": "1.6",
+          "letterSpacing": "-0.02em"
+        },
+        "components": {
+          "buttonRadius": "sm",
+          "cardRadius": "0.875rem",
+          "cardGlow": true,
+          "glassmorphism": true
+        },
+        "logo": {
+          "mainLogo": "/isaca_full_logo.png",
+          "transparentLogo": "/isaca_transparent.png",
+          "favicon": "/uploads/Screenshot_2026-11-06_201930-1793976607873-c19e51.png",
+          "logoHeight": 52
+        },
+        "isDraft": false,
+        "version": 5,
+        "updatedAt": "2026-11-06T14:50:13.084Z"
+      },
+      "savedBy": "SLTC ISACA Super Admin",
+      "createdAt": "2026-11-06T14:50:13.084Z"
+    },
     {
       "id": "ver-4-05eeb0",
       "version": 4,
@@ -331,6 +407,18 @@
   ],
   "media": [
     {
+      "id": "med-1793976607874-d0bba4",
+      "filename": "Screenshot_2026-11-06_201930-1793976607873-c19e51.png",
+      "originalName": "Screenshot 2026-11-06 201930.png",
+      "mimeType": "image/png",
+      "size": 39782,
+      "url": "/uploads/Screenshot_2026-11-06_201930-1793976607873-c19e51.png",
+      "altText": "Screenshot 2026-11-06 201930",
+      "category": "logo",
+      "uploadedBy": "SLTC ISACA Super Admin",
+      "uploadedAt": "2026-11-06T14:50:07.874Z"
+    },
+    {
       "id": "med-1793965240390-458f67",
       "filename": "about-1793965240389-9af52e.jpg",
       "originalName": "about.jpg",
@@ -341,18 +429,6 @@
       "category": "general",
       "uploadedBy": "SLTC ISACA Super Admin",
       "uploadedAt": "2026-11-06T11:40:40.390Z"
-    },
-    {
-      "id": "med-1793965191111-8ee6aa",
-      "filename": "Golden_Laurel_Congratulations_Badge-1793965191110-86ff28.png",
-      "originalName": "Golden Laurel Congratulations Badge.png",
-      "mimeType": "image/png",
-      "size": 1156096,
-      "url": "/uploads/Golden_Laurel_Congratulations_Badge-1793965191110-86ff28.png",
-      "altText": "Golden Laurel Congratulations Badge",
-      "category": "general",
-      "uploadedBy": "SLTC ISACA Super Admin",
-      "uploadedAt": "2026-11-06T11:39:51.111Z"
     },
     {
       "id": "med-logo-1",
@@ -1385,6 +1461,156 @@
     }
   ],
   "auditLogs": [
+    {
+      "id": "audit-1793988246894-ae81df7c",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "LOGOUT",
+      "resource": "AUTH",
+      "details": {
+        "email": "admin@isaca.sltc.lk"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T18:04:06.894Z"
+    },
+    {
+      "id": "audit-1793988246843-5ac9c0d1",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "LOGIN",
+      "resource": "AUTH",
+      "details": {
+        "email": "admin@isaca.sltc.lk"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T18:04:06.844Z"
+    },
+    {
+      "id": "audit-1793988090517-c5a7d9d6",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "LOGIN",
+      "resource": "AUTH",
+      "details": {
+        "email": "admin@isaca.sltc.lk"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T18:01:30.517Z"
+    },
+    {
+      "id": "audit-1793987935827-33ea7b1e",
+      "userId": "usr-viewer-1",
+      "userName": "Auditor Guest (Viewer)",
+      "userRole": "VIEWER",
+      "action": "DELETE_MEDIA",
+      "resource": "MEDIA_LIBRARY",
+      "resourceId": "med-1793965191111-8ee6aa",
+      "details": {
+        "filename": "Golden_Laurel_Congratulations_Badge-1793965191110-86ff28.png",
+        "id": "med-1793965191111-8ee6aa"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T17:58:55.828Z"
+    },
+    {
+      "id": "audit-1793987898849-ff2da9ba",
+      "userId": "usr-content-1",
+      "userName": "Devindi Silva (Content Admin)",
+      "userRole": "CONTENT_ADMIN",
+      "action": "LOGIN",
+      "resource": "AUTH",
+      "details": {
+        "email": "content.admin@isaca.sltc.lk"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T17:58:18.850Z"
+    },
+    {
+      "id": "audit-1793987884618-9466a658",
+      "userId": "usr-viewer-1",
+      "userName": "Auditor Guest (Viewer)",
+      "userRole": "VIEWER",
+      "action": "LOGIN",
+      "resource": "AUTH",
+      "details": {
+        "email": "viewer@isaca.sltc.lk"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T17:58:04.619Z"
+    },
+    {
+      "id": "audit-1793976649440-e0a77b5c",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "PUBLISH_THEME",
+      "resource": "THEME",
+      "details": {
+        "version": 6,
+        "label": "Version 6 Update"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T14:50:49.440Z"
+    },
+    {
+      "id": "audit-1793976646715-0d46b03e",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "SAVE_THEME_DRAFT",
+      "resource": "THEME",
+      "details": {
+        "note": "Theme draft updated with new styling tokens"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T14:50:46.715Z"
+    },
+    {
+      "id": "audit-1793976613088-0f414311",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "PUBLISH_THEME",
+      "resource": "THEME",
+      "details": {
+        "version": 5,
+        "label": "Version 5 Update"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T14:50:13.088Z"
+    },
+    {
+      "id": "audit-1793976611169-6fcf8a8a",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "SAVE_THEME_DRAFT",
+      "resource": "THEME",
+      "details": {
+        "note": "Theme draft updated with new styling tokens"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T14:50:11.169Z"
+    },
+    {
+      "id": "audit-1793976607876-06a45595",
+      "userId": "usr-admin-1",
+      "userName": "SLTC ISACA Super Admin",
+      "userRole": "SUPER_ADMIN",
+      "action": "UPLOAD_MEDIA",
+      "resource": "MEDIA_LIBRARY",
+      "resourceId": "med-1793976607874-d0bba4",
+      "details": {
+        "filename": "Screenshot_2026-11-06_201930-1793976607873-c19e51.png",
+        "size": 39782,
+        "category": "logo"
+      },
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-06T14:50:07.876Z"
+    },
     {
       "id": "audit-1793972161813-bdc11044",
       "userId": "usr-admin-1",

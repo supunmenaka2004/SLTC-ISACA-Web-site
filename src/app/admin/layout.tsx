@@ -91,13 +91,16 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           if (data.authenticated && data.user) {
             setSession(data.user);
           } else {
-            router.push("/admin/login");
+            setSession(null);
+            router.replace("/admin/login");
           }
         } else {
-          router.push("/admin/login");
+          setSession(null);
+          router.replace("/admin/login");
         }
       } catch {
-        router.push("/admin/login");
+        setSession(null);
+        router.replace("/admin/login");
       } finally {
         setLoading(false);
       }
@@ -148,7 +151,19 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     );
   }
 
-  const role = session?.role || "SUPER_ADMIN";
+  // Block unauthenticated access completely
+  if (!session) {
+    return (
+      <div className="min-h-screen bg-[#030712] flex items-center justify-center text-white">
+        <div className="flex flex-col items-center gap-3">
+          <div className="w-8 h-8 border-2 border-cyan-400 border-t-transparent rounded-full animate-spin" />
+          <p className="text-xs uppercase tracking-widest text-slate-400 font-mono">Redirecting to login...</p>
+        </div>
+      </div>
+    );
+  }
+
+  const role = session.role;
   const isSuperAdmin = role === "SUPER_ADMIN";
   const isContentAdmin = role === "CONTENT_ADMIN" || isSuperAdmin;
   const isViewer = role === "VIEWER";
