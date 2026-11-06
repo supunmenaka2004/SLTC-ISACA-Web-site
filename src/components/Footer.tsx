@@ -1,6 +1,8 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Mail } from "lucide-react";
 import IsacaFullLogo from "./IsacaFullLogo";
 
@@ -25,7 +27,58 @@ const YouTubeIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
   </svg>
 );
 
+const InstagramIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+  </svg>
+);
+
 export default function Footer() {
+  const pathname = usePathname();
+  const [footerInfo, setFooterInfo] = useState({
+    email: "isaca@sltc.ac.lk",
+    tagline: "Empowering students with practical cybersecurity knowledge, technical skills, and industry standards.",
+    linkedin: "https://linkedin.com",
+    github: "https://github.com",
+    youtube: "https://youtube.com",
+    instagram: "https://instagram.com",
+    logoSrc: "/isaca_transparent.png",
+  });
+
+  useEffect(() => {
+    async function loadFooter() {
+      try {
+        const res = await fetch("/api/public/site-data");
+        if (res.ok) {
+          const data = await res.json();
+          if (data.siteSettings) {
+            setFooterInfo((prev) => ({
+              ...prev,
+              email: data.siteSettings.contactEmail || prev.email,
+              tagline: data.siteSettings.tagline || prev.tagline,
+              linkedin: data.siteSettings.socials?.linkedin || prev.linkedin,
+              github: data.siteSettings.socials?.github || prev.github,
+              youtube: data.siteSettings.socials?.youtube || prev.youtube,
+              instagram: data.siteSettings.socials?.instagram || prev.instagram,
+            }));
+          }
+          if (data.theme?.logo) {
+            setFooterInfo((prev) => ({
+              ...prev,
+              logoSrc: data.theme.logo.transparentLogo || data.theme.logo.mainLogo || prev.logoSrc,
+            }));
+          }
+        }
+      } catch {}
+    }
+    loadFooter();
+  }, []);
+
+  if (pathname && pathname.startsWith("/admin")) {
+    return null;
+  }
   return (
     <footer className="bg-[#03060d] text-slate-300 border-t border-slate-800/80 pt-14 pb-10 font-sans">
       <div className="max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-8">
@@ -36,10 +89,10 @@ export default function Footer() {
           {/* Column 1: Brand Logo & Short Tagline */}
           <div className="md:col-span-5 flex flex-col items-start gap-3">
             <Link href="/" className="inline-block">
-              <IsacaFullLogo height={48} />
+              <IsacaFullLogo src={footerInfo.logoSrc} height={48} />
             </Link>
             <p className="text-xs sm:text-sm text-slate-400 font-normal leading-relaxed mt-1 max-w-sm">
-              Empowering students with practical cybersecurity knowledge, technical skills, and industry standards.
+              {footerInfo.tagline}
             </p>
           </div>
 
@@ -51,7 +104,6 @@ export default function Footer() {
             <div className="grid grid-cols-2 gap-2 text-xs font-medium text-slate-300">
               <Link href="/" className="hover:text-cyan-400 transition-colors py-1">Home</Link>
               <Link href="/about-us" className="hover:text-cyan-400 transition-colors py-1">About Us</Link>
-              <Link href="/about-us#team" className="hover:text-cyan-400 transition-colors py-1">Team</Link>
               <Link href="/committee" className="hover:text-cyan-400 transition-colors py-1">Committee</Link>
               <Link href="/projects" className="hover:text-cyan-400 transition-colors py-1">Projects</Link>
               <Link href="/cyber-news" className="hover:text-cyan-400 transition-colors py-1">Cyber News</Link>
@@ -66,40 +118,59 @@ export default function Footer() {
                 Connect With Us
               </h4>
               <div className="flex items-center gap-2.5">
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-slate-900 border border-slate-800 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 transition-colors"
-                  aria-label="LinkedIn"
-                >
-                  <LinkedInIcon />
-                </a>
-                <a
-                  href="https://github.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-slate-900 border border-slate-800 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 transition-colors"
-                  aria-label="GitHub"
-                >
-                  <GitHubIcon />
-                </a>
-                <a
-                  href="mailto:contact@isacaclub.org"
-                  className="p-2 rounded-full bg-slate-900 border border-slate-800 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 transition-colors"
-                  aria-label="Mail"
-                >
-                  <Mail className="w-4 h-4" />
-                </a>
-                <a
-                  href="https://youtube.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-slate-900 border border-slate-800 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 transition-colors"
-                  aria-label="YouTube"
-                >
-                  <YouTubeIcon />
-                </a>
+                {footerInfo.linkedin && (
+                  <a
+                    href={footerInfo.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-full bg-slate-900 border border-slate-800 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 transition-colors"
+                    aria-label="LinkedIn"
+                  >
+                    <LinkedInIcon />
+                  </a>
+                )}
+                {footerInfo.github && (
+                  <a
+                    href={footerInfo.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-full bg-slate-900 border border-slate-800 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 transition-colors"
+                    aria-label="GitHub"
+                  >
+                    <GitHubIcon />
+                  </a>
+                )}
+                {footerInfo.email && (
+                  <a
+                    href={`mailto:${footerInfo.email}`}
+                    className="p-2 rounded-full bg-slate-900 border border-slate-800 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 transition-colors"
+                    aria-label="Mail"
+                  >
+                    <Mail className="w-4 h-4" />
+                  </a>
+                )}
+                {footerInfo.youtube && (
+                  <a
+                    href={footerInfo.youtube}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-full bg-slate-900 border border-slate-800 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 transition-colors"
+                    aria-label="YouTube"
+                  >
+                    <YouTubeIcon />
+                  </a>
+                )}
+                {footerInfo.instagram && (
+                  <a
+                    href={footerInfo.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-full bg-slate-900 border border-slate-800 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 transition-colors"
+                    aria-label="Instagram"
+                  >
+                    <InstagramIcon className="w-4 h-4" />
+                  </a>
+                )}
               </div>
             </div>
           </div>

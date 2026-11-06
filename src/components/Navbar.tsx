@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
@@ -9,12 +9,37 @@ import IsacaFullLogo from "./IsacaFullLogo";
 
 export default function Navbar() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [logoData, setLogoData] = useState<{ src?: string; height?: number }>({
+    src: "/isaca_transparent.png",
+    height: 58,
+  });
   const pathname = usePathname();
+
+  useEffect(() => {
+    async function fetchLogo() {
+      try {
+        const res = await fetch("/api/public/site-data");
+        if (res.ok) {
+          const data = await res.json();
+          if (data.theme?.logo) {
+            setLogoData({
+              src: data.theme.logo.transparentLogo || data.theme.logo.mainLogo || "/isaca_transparent.png",
+              height: data.theme.logo.logoHeight || 58,
+            });
+          }
+        }
+      } catch {}
+    }
+    fetchLogo();
+  }, []);
+
+  if (pathname && pathname.startsWith("/admin")) {
+    return null;
+  }
 
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about-us" },
-    { name: "Team", href: "/about-us#team" },
     { name: "Committee", href: "/committee" },
     { name: "Projects", href: "/projects" },
     { name: "Cyber News", href: "/cyber-news" },
@@ -30,7 +55,7 @@ export default function Navbar() {
           
           {/* Left: Official Full ISACA Brand Logo */}
           <Link href="/" className="flex items-center group shrink-0 ml-1 sm:ml-3">
-            <IsacaFullLogo height={58} />
+            <IsacaFullLogo src={logoData.src} height={logoData.height} />
           </Link>
 
           {/* Center/Right Navigation Links in User Specified Order */}
