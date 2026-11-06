@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import WordColoredHeading from "./WordColoredHeading";
 import DynamicIcon from "./DynamicIcon";
 import { WordColor } from "@/server/db/schema";
+import { getPublicSiteData } from "@/lib/siteDataClient";
 
 export default function AboutPreview() {
   const [aboutConfig, setAboutConfig] = useState<{
@@ -32,21 +33,18 @@ export default function AboutPreview() {
   useEffect(() => {
     async function loadAboutPreview() {
       try {
-        const res = await fetch("/api/public/site-data", { cache: "no-store" });
-        if (res.ok) {
-          const data = await res.json();
-          if (data.homepage) {
-            setAboutConfig({
-              aboutPreviewTitle: data.homepage.aboutPreviewTitle || "Who We Are",
-              aboutPreviewTitleWords: data.homepage.aboutPreviewTitleWords,
-              aboutPreviewKicker: data.homepage.aboutPreviewKicker || "ABOUT OUR ORGANIZATION",
-              aboutPreviewIcon: data.homepage.aboutPreviewIcon || "ShieldCheck",
-              aboutPreviewDesc: data.homepage.aboutPreviewDesc || "ISACA Student Group is an official university student organization dedicated to empowering students with practical cybersecurity knowledge, technical skills, ethical hacking awareness, and research opportunities. We bridge academic foundations with industry technology standards.",
-              aboutPreviewCtaText: data.homepage.aboutPreviewCtaText || "READ MORE ABOUT OUR MISSION",
-              aboutPreviewCtaLink: data.homepage.aboutPreviewCtaLink || "/about-us",
-              aboutPreviewImage: data.homepage.aboutPreviewImage || "/about.jpg",
-            });
-          }
+        const data = await getPublicSiteData();
+        if (data?.homepage) {
+          setAboutConfig({
+            aboutPreviewTitle: data.homepage.aboutPreviewTitle || "Who We Are",
+            aboutPreviewTitleWords: data.homepage.aboutPreviewTitleWords,
+            aboutPreviewKicker: data.homepage.aboutPreviewKicker || "ABOUT OUR ORGANIZATION",
+            aboutPreviewIcon: data.homepage.aboutPreviewIcon || "ShieldCheck",
+            aboutPreviewDesc: data.homepage.aboutPreviewDesc || "ISACA Student Group is an official university student organization dedicated to empowering students with practical cybersecurity knowledge, technical skills, ethical hacking awareness, and research opportunities. We bridge academic foundations with industry technology standards.",
+            aboutPreviewCtaText: data.homepage.aboutPreviewCtaText || "READ MORE ABOUT OUR MISSION",
+            aboutPreviewCtaLink: data.homepage.aboutPreviewCtaLink || "/about-us",
+            aboutPreviewImage: data.homepage.aboutPreviewImage || "/about.jpg",
+          });
         }
       } catch {}
     }

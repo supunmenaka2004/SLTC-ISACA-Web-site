@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import ProjectCard from "@/components/ProjectCard";
 import { projectsData, ProjectItem } from "@/data/projectsData";
+import { getPublicSiteData } from "@/lib/siteDataClient";
 
 export default function ProjectsPage() {
   const [projectsList, setProjectsList] = useState<ProjectItem[]>(projectsData);
@@ -11,12 +12,9 @@ export default function ProjectsPage() {
   useEffect(() => {
     async function loadLiveProjects() {
       try {
-        const res = await fetch("/api/public/site-data", { cache: "no-store" });
-        if (res.ok) {
-          const data = await res.json();
-          if (data.projects && data.projects.length > 0) {
-            setProjectsList(data.projects);
-          }
+        const data = await getPublicSiteData();
+        if (data?.projects && data.projects.length > 0) {
+          setProjectsList(data.projects);
         }
       } catch {}
     }

@@ -87,6 +87,7 @@ export default function TrendingNewsTicker({ articles }: { articles?: NewsItem[]
                   src={news.image}
                   alt={news.imageAlt}
                   fill
+                  priority={index < 4}
                   sizes="(max-width: 640px) 290px, 330px"
                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
@@ -135,6 +136,7 @@ export default function TrendingNewsTicker({ articles }: { articles?: NewsItem[]
                   src={news.image}
                   alt={news.imageAlt}
                   fill
+                  priority={index < 4}
                   sizes="(max-width: 640px) 290px, 330px"
                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />

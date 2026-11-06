@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Mail, MapPin, Phone, Send, CheckCircle, Loader2 } from "lucide-react";
+import { getPublicSiteData } from "@/lib/siteDataClient";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -24,16 +25,13 @@ export default function ContactPage() {
   useEffect(() => {
     async function loadContactInfo() {
       try {
-        const res = await fetch("/api/public/site-data", { cache: "no-store" });
-        if (res.ok) {
-          const data = await res.json();
-          if (data.siteSettings) {
-            setContactInfo({
-              address: data.siteSettings.address || contactInfo.address,
-              email: data.siteSettings.contactEmail || contactInfo.email,
-              phone: data.siteSettings.contactPhone || contactInfo.phone,
-            });
-          }
+        const data = await getPublicSiteData();
+        if (data?.siteSettings) {
+          setContactInfo({
+            address: data.siteSettings.address || contactInfo.address,
+            email: data.siteSettings.contactEmail || contactInfo.email,
+            phone: data.siteSettings.contactPhone || contactInfo.phone,
+          });
         }
       } catch {}
     }

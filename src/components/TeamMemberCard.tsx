@@ -17,6 +17,9 @@ export default function TeamMemberCard({ member }: { member: TeamMember }) {
       <img
         src={member.image}
         alt={member.name}
+        loading="eager"
+        decoding="async"
+        fetchPriority="high"
         className="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.025]"
       />
 

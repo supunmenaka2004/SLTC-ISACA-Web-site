@@ -8,6 +8,7 @@ import { ArrowRight, Search, ShieldCheck, FileText, Sparkles } from "lucide-reac
 import { newsCategories, newsData, NewsItem } from "@/data/newsData";
 import NewsStoryCard from "@/components/NewsStoryCard";
 import TrendingNewsTicker from "@/components/TrendingNewsTicker";
+import { getPublicSiteData } from "@/lib/siteDataClient";
 
 export default function CyberNewsFeed() {
   const [articlesList, setArticlesList] = useState<NewsItem[]>(newsData);
@@ -19,15 +20,12 @@ export default function CyberNewsFeed() {
   useEffect(() => {
     async function loadLiveData() {
       try {
-        const res = await fetch("/api/public/site-data", { cache: "no-store" });
-        if (res.ok) {
-          const data = await res.json();
-          if (data.news && data.news.length > 0) {
-            setArticlesList(data.news);
-          }
-          if (data.newsCategories && data.newsCategories.length > 0) {
-            setCategoriesList(["All News", ...data.newsCategories]);
-          }
+        const data = await getPublicSiteData();
+        if (data?.news && data.news.length > 0) {
+          setArticlesList(data.news);
+        }
+        if (data?.newsCategories && data.newsCategories.length > 0) {
+          setCategoriesList(["All News", ...data.newsCategories]);
         }
       } catch {}
     }
@@ -96,7 +94,7 @@ export default function CyberNewsFeed() {
                 src={featuredArticle.image}
                 alt={featuredArticle.imageAlt}
                 fill
-                loading="eager"
+                priority={true}
                 sizes="(max-width: 1280px) 100vw, 1280px"
                 className="-z-20 object-cover transition-transform duration-700 group-hover:scale-[1.025]"
               />

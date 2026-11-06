@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import CommitteeCard from "@/components/CommitteeCard";
 import { committeeData, CommitteeMember } from "@/data/committeeData";
+import { getPublicSiteData } from "@/lib/siteDataClient";
 
 export default function CommitteePage() {
   const [membersList, setMembersList] = useState<CommitteeMember[]>(committeeData);
@@ -11,12 +12,9 @@ export default function CommitteePage() {
   useEffect(() => {
     async function loadLiveCommittee() {
       try {
-        const res = await fetch("/api/public/site-data", { cache: "no-store" });
-        if (res.ok) {
-          const data = await res.json();
-          if (data.committee && data.committee.length > 0) {
-            setMembersList(data.committee);
-          }
+        const data = await getPublicSiteData();
+        if (data?.committee && data.committee.length > 0) {
+          setMembersList(data.committee);
         }
       } catch {}
     }

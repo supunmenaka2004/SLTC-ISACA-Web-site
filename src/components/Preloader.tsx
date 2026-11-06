@@ -1,14 +1,20 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Preloader() {
+  const pathname = usePathname();
   const [mounted, setMounted] = useState(false);
   const [loading, setLoading] = useState(true);
   const [progress, setProgress] = useState(0);
   const [statusText, setStatusText] = useState("INITIALIZING SYSTEM");
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+
+  if (pathname && pathname.startsWith("/admin")) {
+    return null;
+  }
 
   // Background Cyber Network Canvas Animation
   useEffect(() => {
@@ -84,11 +90,16 @@ export default function Preloader() {
     }
   }, []);
 
-  // Progress Timer
+  // Progress Timer - High Speed Initial Splash Only
   useEffect(() => {
+    if (typeof window !== "undefined" && sessionStorage.getItem("isaca_visited")) {
+      setLoading(false);
+      return;
+    }
+
     let currentProgress = 0;
     const interval = setInterval(() => {
-      currentProgress += 3;
+      currentProgress += 15;
       if (currentProgress >= 100) {
         currentProgress = 100;
         clearInterval(interval);
@@ -103,11 +114,14 @@ export default function Preloader() {
       } else {
         setStatusText("INITIALIZING SYSTEM");
       }
-    }, 35);
+    }, 25);
 
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+      try {
+        sessionStorage.setItem("isaca_visited", "true");
+      } catch {}
+    }, 380);
 
     return () => {
       clearInterval(interval);

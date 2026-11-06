@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import IsacaFullLogo from "./IsacaFullLogo";
+import { getPublicSiteData } from "@/lib/siteDataClient";
 
 export default function Navbar() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -18,15 +19,12 @@ export default function Navbar() {
   useEffect(() => {
     async function fetchLogo() {
       try {
-        const res = await fetch("/api/public/site-data", { cache: "no-store" });
-        if (res.ok) {
-          const data = await res.json();
-          if (data.theme?.logo) {
-            setLogoData({
-              src: data.theme.logo.transparentLogo || data.theme.logo.mainLogo || "/isaca_transparent.png",
-              height: data.theme.logo.logoHeight || 58,
-            });
-          }
+        const data = await getPublicSiteData();
+        if (data?.theme?.logo) {
+          setLogoData({
+            src: data.theme.logo.transparentLogo || data.theme.logo.mainLogo || "/isaca_transparent.png",
+            height: data.theme.logo.logoHeight || 58,
+          });
         }
       } catch {}
     }
@@ -66,6 +64,7 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
+                  prefetch={true}
                   className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all relative ${
                     isActive
                       ? "bg-slate-800/90 text-white border border-blue-500/40 shadow-sm"
@@ -105,6 +104,7 @@ export default function Navbar() {
                     <Link
                       key={link.name}
                       href={link.href}
+                      prefetch={true}
                       onClick={() => setIsMobileOpen(false)}
                       className={`text-xs font-semibold px-4 py-2.5 rounded-xl transition-all ${
                         isActive

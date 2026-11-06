@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Mail } from "lucide-react";
 import IsacaFullLogo from "./IsacaFullLogo";
+import { getPublicSiteData } from "@/lib/siteDataClient";
 
 const LinkedInIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -50,26 +51,23 @@ export default function Footer() {
   useEffect(() => {
     async function loadFooter() {
       try {
-        const res = await fetch("/api/public/site-data", { cache: "no-store" });
-        if (res.ok) {
-          const data = await res.json();
-          if (data.siteSettings) {
-            setFooterInfo((prev) => ({
-              ...prev,
-              email: data.siteSettings.contactEmail || prev.email,
-              tagline: data.siteSettings.tagline || prev.tagline,
-              linkedin: data.siteSettings.socials?.linkedin || prev.linkedin,
-              github: data.siteSettings.socials?.github || prev.github,
-              youtube: data.siteSettings.socials?.youtube || prev.youtube,
-              instagram: data.siteSettings.socials?.instagram || prev.instagram,
-            }));
-          }
-          if (data.theme?.logo) {
-            setFooterInfo((prev) => ({
-              ...prev,
-              logoSrc: data.theme.logo.transparentLogo || data.theme.logo.mainLogo || prev.logoSrc,
-            }));
-          }
+        const data = await getPublicSiteData();
+        if (data?.siteSettings) {
+          setFooterInfo((prev) => ({
+            ...prev,
+            email: data.siteSettings.contactEmail || prev.email,
+            tagline: data.siteSettings.tagline || prev.tagline,
+            linkedin: data.siteSettings.socials?.linkedin || prev.linkedin,
+            github: data.siteSettings.socials?.github || prev.github,
+            youtube: data.siteSettings.socials?.youtube || prev.youtube,
+            instagram: data.siteSettings.socials?.instagram || prev.instagram,
+          }));
+        }
+        if (data?.theme?.logo) {
+          setFooterInfo((prev) => ({
+            ...prev,
+            logoSrc: data.theme.logo.transparentLogo || data.theme.logo.mainLogo || prev.logoSrc,
+          }));
         }
       } catch {}
     }

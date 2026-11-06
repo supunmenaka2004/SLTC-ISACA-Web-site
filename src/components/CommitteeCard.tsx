@@ -37,6 +37,9 @@ export default function CommitteeCard({ member }: { member: CommitteeMember }) {
             <img
               src={member.image}
               alt={member.name}
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
               className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
               onError={() => setImgError(true)}
             />

@@ -8,6 +8,7 @@ import NewsStoryCard from "@/components/NewsStoryCard";
 import WordColoredHeading from "./WordColoredHeading";
 import DynamicIcon from "./DynamicIcon";
 import { WordColor } from "@/server/db/schema";
+import { getPublicSiteData } from "@/lib/siteDataClient";
 
 export default function CyberNewsEditorialSection() {
   const [featuredNews, setFeaturedNews] = useState<NewsItem[]>(newsData.slice(0, 3));
@@ -34,22 +35,19 @@ export default function CyberNewsEditorialSection() {
   useEffect(() => {
     async function loadLive() {
       try {
-        const res = await fetch("/api/public/site-data", { cache: "no-store" });
-        if (res.ok) {
-          const data = await res.json();
-          if (data.news && data.news.length > 0) {
-            setFeaturedNews(data.news.slice(0, 3));
-          }
-          if (data.homepage) {
-            setNewsConfig({
-              kicker: data.homepage.newsPreviewKicker || "INSIGHTS & PUBLICATIONS",
-              icon: data.homepage.newsPreviewIcon || "Newspaper",
-              title: data.homepage.newsPreviewTitle || "Latest Cyber News",
-              words: data.homepage.newsPreviewTitleWords,
-              ctaText: data.homepage.newsPreviewCtaText || "VIEW ALL NEWS",
-              desc: data.homepage.newsPreviewDesc || "Stay informed about the latest developments in cybersecurity, technology and digital security.",
-            });
-          }
+        const data = await getPublicSiteData();
+        if (data?.news && data.news.length > 0) {
+          setFeaturedNews(data.news.slice(0, 3));
+        }
+        if (data?.homepage) {
+          setNewsConfig({
+            kicker: data.homepage.newsPreviewKicker || "INSIGHTS & PUBLICATIONS",
+            icon: data.homepage.newsPreviewIcon || "Newspaper",
+            title: data.homepage.newsPreviewTitle || "Latest Cyber News",
+            words: data.homepage.newsPreviewTitleWords,
+            ctaText: data.homepage.newsPreviewCtaText || "VIEW ALL NEWS",
+            desc: data.homepage.newsPreviewDesc || "Stay informed about the latest developments in cybersecurity, technology and digital security.",
+          });
         }
       } catch {}
     }

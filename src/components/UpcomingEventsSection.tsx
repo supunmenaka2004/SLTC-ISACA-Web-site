@@ -8,6 +8,7 @@ import { eventsData, EventItem } from "@/data/eventsData";
 import WordColoredHeading from "./WordColoredHeading";
 import DynamicIcon from "./DynamicIcon";
 import { WordColor } from "@/server/db/schema";
+import { getPublicSiteData } from "@/lib/siteDataClient";
 
 export default function UpcomingEventsSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -35,19 +36,16 @@ export default function UpcomingEventsSection() {
   useEffect(() => {
     async function loadEventsConfig() {
       try {
-        const res = await fetch("/api/public/site-data", { cache: "no-store" });
-        if (res.ok) {
-          const data = await res.json();
-          if (data.homepage) {
-            setEventsConfig({
-              kicker: data.homepage.eventsPreviewKicker || "EVENTS & ACTIVITIES",
-              icon: data.homepage.eventsPreviewIcon || "Calendar",
-              title: data.homepage.eventsPreviewTitle || "Upcoming Events",
-              words: data.homepage.eventsPreviewTitleWords,
-              ctaText: data.homepage.eventsPreviewCtaText || "VIEW ALL EVENTS",
-              desc: data.homepage.eventsPreviewDesc || "Discover our workshops, seminars, and student competitions.",
-            });
-          }
+        const data = await getPublicSiteData();
+        if (data?.homepage) {
+          setEventsConfig({
+            kicker: data.homepage.eventsPreviewKicker || "EVENTS & ACTIVITIES",
+            icon: data.homepage.eventsPreviewIcon || "Calendar",
+            title: data.homepage.eventsPreviewTitle || "Upcoming Events",
+            words: data.homepage.eventsPreviewTitleWords,
+            ctaText: data.homepage.eventsPreviewCtaText || "VIEW ALL EVENTS",
+            desc: data.homepage.eventsPreviewDesc || "Discover our workshops, seminars, and student competitions.",
+          });
         }
       } catch {}
     }

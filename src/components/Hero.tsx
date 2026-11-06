@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import AnimatedNetwork from "./AnimatedNetwork";
+import { getPublicSiteData } from "@/lib/siteDataClient";
 
 export default function Hero() {
   const [heroConfig, setHeroConfig] = useState({
@@ -17,18 +18,15 @@ export default function Hero() {
   useEffect(() => {
     async function loadHero() {
       try {
-        const res = await fetch("/api/public/site-data", { cache: "no-store" });
-        if (res.ok) {
-          const data = await res.json();
-          if (data.homepage) {
-            setHeroConfig({
-              heroTitle: data.homepage.heroTitle || "ISACA",
-              heroHighlight: data.homepage.heroHighlight || "Student Group",
-              heroSubtitle: data.homepage.heroSubtitle || "Sri Lanka Technology Campus",
-              heroCtaText: data.homepage.heroCtaText || "MORE DETAILS",
-              heroCtaLink: data.homepage.heroCtaLink || "/about-us",
-            });
-          }
+        const data = await getPublicSiteData();
+        if (data?.homepage) {
+          setHeroConfig({
+            heroTitle: data.homepage.heroTitle || "ISACA",
+            heroHighlight: data.homepage.heroHighlight || "Student Group",
+            heroSubtitle: data.homepage.heroSubtitle || "Sri Lanka Technology Campus",
+            heroCtaText: data.homepage.heroCtaText || "MORE DETAILS",
+            heroCtaLink: data.homepage.heroCtaLink || "/about-us",
+          });
         }
       } catch {}
     }

@@ -9,6 +9,7 @@ import TeamMemberCard from "./TeamMemberCard";
 import WordColoredHeading from "./WordColoredHeading";
 import DynamicIcon from "./DynamicIcon";
 import { WordColor } from "@/server/db/schema";
+import { getPublicSiteData } from "@/lib/siteDataClient";
 
 export default function TeamPreview() {
   const [membersList, setMembersList] = useState<TeamMember[]>(executiveMembers);
@@ -33,21 +34,18 @@ export default function TeamPreview() {
   useEffect(() => {
     async function loadTeam() {
       try {
-        const res = await fetch("/api/public/site-data", { cache: "no-store" });
-        if (res.ok) {
-          const data = await res.json();
-          if (data.team && data.team.length > 0) {
-            setMembersList(data.team);
-          }
-          if (data.homepage) {
-            setTeamConfig({
-              kicker: data.homepage.teamPreviewKicker || "EXECUTIVE BOARD 2026/2027",
-              icon: data.homepage.teamPreviewIcon || "Users",
-              title: data.homepage.teamPreviewTitle || "Meet Our Team",
-              words: data.homepage.teamPreviewTitleWords,
-              desc: data.homepage.teamPreviewDesc || "The student leaders driving ISACA Student Group forward with innovation, ethics, and professional development.",
-            });
-          }
+        const data = await getPublicSiteData();
+        if (data?.team && data.team.length > 0) {
+          setMembersList(data.team);
+        }
+        if (data?.homepage) {
+          setTeamConfig({
+            kicker: data.homepage.teamPreviewKicker || "EXECUTIVE BOARD 2026/2027",
+            icon: data.homepage.teamPreviewIcon || "Users",
+            title: data.homepage.teamPreviewTitle || "Meet Our Team",
+            words: data.homepage.teamPreviewTitleWords,
+            desc: data.homepage.teamPreviewDesc || "The student leaders driving ISACA Student Group forward with innovation, ethics, and professional development.",
+          });
         }
       } catch {}
     }

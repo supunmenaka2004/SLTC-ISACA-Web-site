@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { getPublicSiteData } from "@/lib/siteDataClient";
 import { BookOpen, Lightbulb, Shield, Users, Target, Eye } from "lucide-react";
 import TeamPreview from "@/components/TeamPreview";
 
@@ -44,26 +45,23 @@ export default function AboutPage() {
   useEffect(() => {
     async function loadAbout() {
       try {
-        const res = await fetch("/api/public/site-data", { cache: "no-store" });
-        if (res.ok) {
-          const data = await res.json();
-          if (data.aboutContent) {
-            setContent((prev) => ({
-              title: data.aboutContent.title || prev.title,
-              subtitle: data.aboutContent.subtitle || prev.subtitle,
-              mainIntro: data.aboutContent.mainIntro || prev.mainIntro,
-              secondaryIntro: data.aboutContent.secondaryIntro || prev.secondaryIntro,
-              affiliationTitle: data.aboutContent.affiliationTitle || prev.affiliationTitle,
-              affiliationPoints: data.aboutContent.affiliationPoints && data.aboutContent.affiliationPoints.length > 0 
-                ? data.aboutContent.affiliationPoints 
-                : prev.affiliationPoints,
-              mission: data.aboutContent.mission || prev.mission,
-              vision: data.aboutContent.vision || prev.vision,
-              values: data.aboutContent.values && data.aboutContent.values.length > 0 
-                ? data.aboutContent.values 
-                : prev.values,
-            }));
-          }
+        const data = await getPublicSiteData();
+        if (data?.aboutContent) {
+          setContent((prev) => ({
+            title: data.aboutContent.title || prev.title,
+            subtitle: data.aboutContent.subtitle || prev.subtitle,
+            mainIntro: data.aboutContent.mainIntro || prev.mainIntro,
+            secondaryIntro: data.aboutContent.secondaryIntro || prev.secondaryIntro,
+            affiliationTitle: data.aboutContent.affiliationTitle || prev.affiliationTitle,
+            affiliationPoints: data.aboutContent.affiliationPoints && data.aboutContent.affiliationPoints.length > 0 
+              ? data.aboutContent.affiliationPoints 
+              : prev.affiliationPoints,
+            mission: data.aboutContent.mission || prev.mission,
+            vision: data.aboutContent.vision || prev.vision,
+            values: data.aboutContent.values && data.aboutContent.values.length > 0 
+              ? data.aboutContent.values 
+              : prev.values,
+          }));
         }
       } catch {}
     }
